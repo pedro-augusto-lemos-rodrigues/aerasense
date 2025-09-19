@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Aerosense - Sensor de Gás em Cozinhas Industriais
 
 - Projeto de Pesquisa e Inovação - SPTECH
@@ -16,3 +17,7 @@
 - [Murilo Santos](https://github.com/Murilo2305)
 
 - [Pedro Augusto](https://github.com/pedro-augusto-lemos-rodrigues)
+=======
+# aerosense
+Uau
+>>>>>>> e5d217a8ac362600bd0309392439047ba09aef33
