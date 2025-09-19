@@ -5,7 +5,7 @@
 
 ## Equipe
 
-- [Arthur Rogério](https://github.com/arthur-rogeriozip)
+- [Arthur Rogério](https://github.com/arthurrogeriozip)
 
 - [Aurora Carvalho](https://github.com/aurora-carvalhoi)
 
