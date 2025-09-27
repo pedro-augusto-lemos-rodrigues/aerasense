@@ -1,0 +1,16 @@
+/* Importação de fonte */
+@import url("font.css");
+
+:root {
+    --color-primary: #3b9ddc;
+    --color-lightblue: #5397c3;
+    --color-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit-Regular", sans-serif;
+    scroll-behavior: smooth;
+}
