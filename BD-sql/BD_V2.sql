@@ -56,3 +56,5 @@ porcentagem decimal(5,2),
 DtHr datetime default current_timestamp
 );
 
+insert into sensor values
+	(default,1,'1234XLR8','0.7',default);
