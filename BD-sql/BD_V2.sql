@@ -43,45 +43,16 @@ constraint fkEmpresaFuncionario
 insert into funcionario values
 	(default,'12345678910','Pedro','Pedro@email','(11) 912345678','SENHAPEDRO',1),
 	(default,'12345678911','Marcos','Marcos@email','(11) 987654321','SENHAMARCOS',2);
-    
-/*
-Individual é um termo placeholder. Cada sensor teria uma tabela própria que seria nomeada como o código individual do sensor, que seria um 
-código alfanumérico. Essa é a tabela que receberá os dados do sensor.
-*/
-    
-create table individual(
-idIndiviual int primary key auto_increment,
-porcentagemGas decimal(5,2),
-Dt datetime default current_timestamp
-);
 
-insert into individual values 
-	(default,'0.5',default),
-	(default,'0.3',default);
+
     
-    select * from individual;
-  
-/*
-A tabela sensor listará todos os sensores do nosso sistema, seus códigos, e a qual empresa eles pertencem.
-*/
-  
 create table sensor(
-idSensor int primary key auto_increment,
-codigo char(12) unique,
+idSensor int auto_increment,
 fkEmpresa int,
-constraint fkEmpresaSensor
-	foreign key(fkEmpresa)
-    references empresa(idEmpresa)
+constraint pkSensorEmpresa
+	primary key(idSensor,fkEmpresa),
+codigo char(8) not null,
+porcentagem decimal(5,2),
+DtHr datetime default current_timestamp
 );
 
-insert into sensor values
-	(default,'12wd34fg56tr',1),
-	(default,'09as87gb65zx',2);
-    
-select f.nome as Funcionário,
-	e.nome as empresa,
-	s.codigo as sensor
-    from sensor as s join empresa as e
-		on s.fkEmpresa = e.idEmpresa
-	join funcionario as f
-		on f.fkEmpresa = e.idEmpresa;
