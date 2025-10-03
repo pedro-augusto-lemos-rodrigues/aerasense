@@ -1,4 +1,4 @@
-# Aerosense - Sensor de Gás em Cozinhas Industriais
+# Aerasense - Sensor de Gás em Cozinhas Industriais
 
 - Projeto de Pesquisa e Inovação - SPTECH
 
