@@ -7,6 +7,10 @@
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <link rel="stylesheet" href="public/assets/css/styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn-br.icons8.com/docs/s2iiYaFfVEeQjH2NKSVMPw/style.css"
+        />
         <title>aerosense | Home</title>
     </head>
 
@@ -48,5 +52,19 @@
                 </div>
             </nav>
         </header>
+
+        <script type="text/javascript">
+            ((url, e, k) => {
+                fetch(url)
+                    .then((x) => x.json())
+                    .then((d) => {
+                        for (k of Object.keys(d))
+                            if ((e = document.getElementById(k)))
+                                e.innerText = d[k];
+                    });
+            })(
+                `https://cdn-br.icons8.com/docs/s2iiYaFfVEeQjH2NKSVMPw/text.json`,
+            );
+        </script>
     </body>
 </html>
