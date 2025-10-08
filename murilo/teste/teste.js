@@ -36,11 +36,11 @@ const servidor = (ArrayVal1, Arrayval2) => {
         console.log(`API executada com sucesso na porta ${SERVIDOR_PORTA}`);
     });
 
-    app.get('/sensores/val1', (_, response) => {
-        return response.json(val1);
+    app.get('/sensores/ArrayVal1', (_, response) => {
+        return response.json(ArrayVal1);
     });
-    app.get('/sensores/val2', (_, response) => {
-        return response.json(val2);
+    app.get('/sensores/ArrayVal2', (_, response) => {
+        return response.json(ArrayVal2);
     });
 }
 
@@ -55,6 +55,8 @@ const pros = async (ArrayVal1,Arrayval2) => {
             [1, 1, 1, val1]
         );
 
+        console.log(ArrayVal1);
+
         poolBancoDados.execute(
             'INSERT INTO dado(fkSensor,fkSetor,fkEmpresa,porcentagem) VALUES (?, ?, ?, ?)',
             [2, 2, 2, val2]
@@ -63,10 +65,9 @@ const pros = async (ArrayVal1,Arrayval2) => {
         console.log('dados inseridos');
 
         ArrayVal1.push(val1);
-        Arrayval2.push(val2)
+        ArrayVal2.push(val2);
 
     }, 1000);
-
 
 }
 
@@ -74,12 +75,12 @@ const pros = async (ArrayVal1,Arrayval2) => {
 (async () => {
 
     ArrayVal1 = [];
-    Arrayval2 = [];
+    ArrayVal2 = [];
 
     pros(
 
         ArrayVal1,
-        Arrayval2
+        ArrayVal2
 
     );
 

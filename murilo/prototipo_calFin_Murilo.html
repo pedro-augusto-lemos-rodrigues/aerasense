@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo Calculadora</title>
+</head>
+<body>
+    
+    <div>
+
+        <h1>Calculadora financeira</h1>
+
+        <div>
+            
+            <b >Quantas cozinhas industriais sua empresa têm?</b>
+            
+            <div>
+
+                <a title="Nós usamos esse valor para calcular os impactos que uma explosão teria na sua empresa como um todo">(?)</a>
+
+            </div>
+
+            <input id="input_setores" type="number">
+        
+        </div>
+
+        <div>
+            
+            Qual é o lucro mensal da sua empresa?
+
+            <div>
+
+                <a title="Nós usamos essa informação para calcular o quanto você perderá no caso de interdição ou necessidade de reconstrução da sua cozinha">(?)</a>
+
+            </div>
+
+            <input id="input_lucro" type="number">
+        
+        </div>
+
+        <div >
+
+            Qantos funcionários você tem por cozinha?
+            
+            <div>
+
+                <a title="Nós usamos essa informação para calcular a indenização que você terá que pagar caso seus funcionários sofram algum ferimento devido a vazamentos de GLP">(?)</a>
+
+            </div>
+
+            <input id="input_fun" type="number">
+
+        </div>
+
+        <div >
+
+            Qual a idade média dos seus funcionários?
+            
+            <div>
+
+                <a title="Nós usamos essa informação para calcular a indenização que você terá que pagar caso seus funcionários sofram algum ferimento devido a vazamentos de GLP">(?)</a>
+
+            </div>
+
+            <input id="input_idade" type="number">
+
+        </div>
+
+        <div >
+
+            Qual o salário médio dos seus funcionários?
+            
+            <div>
+
+                <a title="Nós usamos essa informação para calcular a indenização que você terá que pagar caso seus funcionários sofram algum ferimento devido a vazamentos de GLP">(?)</a>
+
+            </div>
+
+            <input id="input_sal" type="number">
+
+        </div>
+
+        <div >
+
+            Qual é o preço dos seus equipamentos por setor?
+
+            <div>
+
+                <a title="Nós usamos esse valor para calcular quanto você gastaria com novos equipamentos no caso da perda deles">(?)</a>
+
+            </div>
+
+            <input id="input_equip" type="number">
+
+        </div>
+
+        <button onclick="Calcular()">Calcuar</button>
+
+    </div>
+
+    <div id="div_resultado">
+
+
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function Calcular(){
+
+        var idade = input_idade.value;
+        var sal = input_sal.value;
+        var equip = input_equip.value;
+        var setores = input_setores.value;
+        var lucro = input_lucro.value;
+        var fun = input_fun.value;
+
+        var min = Number(0.05*(sal*13*(76.8 - idade))); 
+        var max = Number(setores*fun*0.05*(sal*13*(76.8 - idade))) + Number(equip) + Number(lucro);
+
+        div_resultado.innerHTML =`
+        No caso de um vazamento de gás não detectado na sua empresa que chegue a níveis de inflamabilidade,
+        seguindo as regras brasileiras de calculo de indenização,
+        você pode ter que gastar  qualquer coisa entre ${(0.05*(sal*13*(76.8 - idade)))} e
+        ${(0.8*(sal*13*(76.8 - idade)))} por funcionário ferido desconsiderando mortes.<br> 
+        Além disso, você pode peder todos os equipamentos da cozinha do acidente ou todos os da sua fábrica.
+        Ou seja, qualquer coisa entre ${equip/setores} e ${equip}.<br>
+        Somado a isso, no caso deu uma explosão, cada cozinha ou sua fábrica inteira podem
+        passar um espaço de tempo altamente variável fechadas.<br>
+        A cada mês parada, cada uma de suas cozinhas deixará de gerar R$${(lucro/setores).toFixed(2)}.
+        Com nosso serviço, você pode evitar a perdas de R$${min} (considerando que o vazamento tenha sido pequeno,
+        não tenha afetado a sua infraestrutura e so tenha ferido levemente um de seus funcionários) à
+        ${max} (Considerando uma explosão de larga escala que deixe todos seus funcionarios feridos e que cause
+        a perda total dos seus equipamentos e mantendo sua cozinha parada por um mês).
+        `;
+
+    }
+
+</script>
