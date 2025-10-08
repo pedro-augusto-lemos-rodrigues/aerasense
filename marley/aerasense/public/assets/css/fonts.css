@@ -1,0 +1,17 @@
+/* Font Regular */
+@font-face {
+    font-family: "Kanit-Regular";
+    src: url("../fonts/Kanit/Kanit-Regular.ttf");
+}
+
+/* Font Medium */
+@font-face {
+    font-family: "Kanit-Medium";
+    src: url("../fonts/Kanit/Kanit-Medium.ttf");
+}
+
+/* Font Bold */
+@font-face {
+    font-family: "Kanit-Bold";
+    src: url("../fonts/Kanit/Kanit-Bold.ttf");
+}

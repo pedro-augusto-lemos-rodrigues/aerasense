@@ -1,0 +1,152 @@
+@import url(default.css);
+
+body {
+    background-color: var(--color-white);
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header .header-content {
+    margin: 10% 0% 5% 10%;
+    display: flex;
+}
+
+.header-content .left,
+.header-content right {
+    width: 50vw;
+}
+
+.header-content .left h1 {
+    font-size: 2.5rem;
+    padding: 0px 45px 0px 0px;
+}
+
+nav {
+    box-shadow:
+        rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    margin: 0px 5%;
+    border-radius: 16px;
+    padding: 3px 50px;
+    justify-content: space-between;
+    position: fixed;
+    top: 20px;
+    width: 90%;
+    background-color: var(--color-white);
+}
+
+nav .logo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .logo-area img {
+    width: 160px;
+}
+
+nav .links {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .links ul {
+    list-style: none;
+}
+
+nav .links ul li a {
+    margin: 0px 10px;
+    color: var(--color-black);
+    text-decoration: none;
+}
+
+nav .links li a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+nav .buttons-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .buttons-area .buttons {
+    display: flex;
+}
+
+nav .buttons-area .buttons a {
+    text-align: center;
+    padding: 10px 30px;
+    border: 1px solid var(--color-primary);
+    text-decoration: none;
+    margin: 0px 5px;
+    width: 145px;
+    border-radius: 16px;
+    color: var(--color-black);
+    transition: 200ms ease-in-out;
+}
+
+nav .buttons-area .buttons a:nth-child(2) {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+nav .buttons-area .buttons a:nth-child(2):hover {
+    background-color: var(--color-secondary);
+}
+
+nav .buttons-area .buttons a:nth-child(1):hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-content .left {
+    margin-left: -100px;
+}
+
+.header-content .right img {
+    width: 40vw;
+    border-radius: 16px;
+    box-shadow: -20px 12px 0px var(--color-terciary);
+}
+
+.header-content .paragraph-header p {
+    padding: 20px 65px 0px 0px;
+}
+
+.header-content .cta {
+    margin: 50px 0px;
+}
+
+.header-content .cta a {
+    padding: 20px 100px;
+    border-radius: 16px;
+    color: var(--color-white);
+    text-decoration: none;
+    background-color: var(--color-primary);
+    transition: 200ms ease-in-out;
+    font-family: var(--font-medium);
+}
+
+.header-content a:hover {
+    background-color: var(--color-secondary);
+}
