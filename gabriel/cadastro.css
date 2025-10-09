@@ -75,6 +75,7 @@ img{
     align-items: center;
     flex-direction: column;
     width: 100%;
+    gap: 10px;
 }
 .container-nome{
     display: flex;
@@ -135,4 +136,8 @@ img{
     background-color: #3B9EDB;
     border: none;
     cursor: pointer;
+}
+.Erros{
+    color: #FF3A3A;
+    font-size: 18px;
 }

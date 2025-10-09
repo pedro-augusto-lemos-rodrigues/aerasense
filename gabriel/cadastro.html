@@ -37,7 +37,7 @@
                 </div>
                 <div class="container-input">
                     <span class="minitext">CNPJ *</span>
-                    <input type="text" placeholder="00.000.000/0001-XX" id="input_CNPJ">
+                    <input type="text" placeholder="00.000.000/0001-XX" id="input_CNPJ" oninput="mascaracpnj()">
                 </div>
                 <div class="hr"></div>
                 <div class="container-input">
@@ -46,20 +46,21 @@
                 </div>
                 <div class="container-input">
                     <span class="minitext">Celular *</span>
-                    <input type="number" placeholder="(11) 95746-7475" id="input_celular">
+                    <input type="text" placeholder="(11) 95746-7475" id="input_celular" oninput="mascaracelular()">
                 </div>
                 <div class="container-input">
                     <span class="minitext">Senha *</span>
-                    <input type="password" placeholder="text" id="input_senha">
+                    <input type="text" placeholder="Sua senha" id="input_senha">
                 </div>
                 <div class="container-input">
                     <span class="minitext">Confirmar senha *</span>
-                    <input type="text" placeholder="Confirmação de senha" id="input_confirmsenha">
+                    <input type="password" placeholder="Confirmação de senha" id="input_confirmsenha">
                 </div>
             </div>
             <div class="container-mensagens-errors">
-                <span class="Erros"></span>
+                <span class="Erros" id="ID_Erros"></span>
             </div>
+            
             <div class="container-termocondi">
                 <input type="checkbox" id="input_termo">
                 <span>Concordo com os <a href="">Termos e Condições</a></span>
