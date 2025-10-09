@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+
+</head>
+<body>
+    <div class="main-container">
+
+        <div class="header">
+            <img src="assets/logo.svg" alt="Aerasense Logo" class="logo">
+        </div>
+
+
+        <h2 class="titulo">Faça login</h2>
+
+        <div>
+
+            <label for="ipt_email">E-mail</label>
+            <input type="email" id="ipt_email">
+            
+            <br><br>
+
+            <label for="ipt_senha">Senha</label>
+            <input type="password" id="ipt_senha">
+
+            <div id="div_mensagemErro" class="mensagemErro">
+                <span>E-mail ou senha incorretos</span>
+            </div>
+
+            <div class="recuperarSenha">
+                
+                <a href="#">
+                    Recuperar senha
+                </a>
+                
+            </div>
+
+            <button onclick="conta()" class="botaoEntrar">Entrar na conta</button>
+            
+        </div>
+
+        <div class="registro">
+            <span>Não possui cadastro? 
+
+                <a href="#">
+                    Registre-se
+                </a>
+
+            </span>
+        </div>
+
+    </div>
+    
+</body>
+</html>
