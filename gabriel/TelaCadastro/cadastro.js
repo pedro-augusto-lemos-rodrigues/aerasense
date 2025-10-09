@@ -49,14 +49,14 @@ function CadastrarForms(e){
     // Validar 8 caracteres
     if(senha.length >= 8){
         MinCatere = true
-        
     }
     
     // Deve ter mínimo 2 letras maiúsculas: ABCDEFG.
     var i = 0
     var count = 0
     while(i<senha.length){
-          if(isNaN(senha[i])){
+       if(!isNaN(senha[i])){
+            i++
             continue
         }else{
             if( senha[i] == senha[i].toUpperCase()){
@@ -64,12 +64,10 @@ function CadastrarForms(e){
             }
         }
         if(count == 2){
+            CaracMax = true
             break
         }
         i++
-    }
-    if(count >= 2){
-        CaracMax = true
     }
     
     
@@ -77,51 +75,46 @@ function CadastrarForms(e){
     i = 0
     count = 0
     while(i<senha.length){
-        if(isNaN(senha[i])){
+        if(!isNaN(senha[i])){
+              i++
             continue
         }else{
             if( senha[i] == senha[i].toLowerCase()){
                 count++
+                CaracMin = true
                 break
             }
         }
         i++
     }
-    if(count >= 1){
-         CaracMin = true
-    }
-    
+
+    i = 0
     // Tem no mínimo 1 número: 123456.
     while(i<senha.length){
-        if(isNaN(senha[i]) ){
-            count++
+       if(!isNaN(senha[i])){
+            CaracNumero = true
             break
         }
         i++
     }
-    if(count >= 1){
-        CaracNumero = true
-    }
+    
 
     // Tem no mínimo 1 símbolos: !@#$%^&* 
     listaSimbolosString = '!@#$%^&*'
-    var i = 0
+    i = 0
     var b = 0
     var count = false
                            
     while(i<senha.length){ 
         while(b<listaSimbolosString.length){
             if(senha[i] == listaSimbolosString[b]){
-                count = true
+                CaracSimb = true
                 break
             }
             b++
         }
+        b = 0
         i++
-    }
-    if(count){
-         CaracSimb = true
-        
     }
     
 //     MinCatere = false
@@ -129,6 +122,7 @@ function CadastrarForms(e){
 //     CaracMin = false
 //     CaracNumero = false
 //     CaracSimb = false
+
     if(!MinCatere){
         ID_Erros.innerHTML += `Sua senha deve ter no minino 8 caracteres!<br>`
     }
@@ -144,6 +138,11 @@ function CadastrarForms(e){
     if(!CaracSimb){
         ID_Erros.innerHTML += `Sua senha deve ter no mínimo 1 símbolos: !@#$%^&*<br>`
     }
+    if(MinCatere&&CaracMax&&CaracMin&&CaracNumero&&CaracSimb){
+        alert("Cadastro realizado com sucesso!")
+        window.location.href = './../../marley/aerasense/index.html';
+    }
+    
 }
 function mascaracelular(){
         let input = event.target;
