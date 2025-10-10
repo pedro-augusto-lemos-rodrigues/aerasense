@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <script src="login.js"></script>
+    <!-- <script src="login.js"></script> -->
+     
     <link rel="stylesheet" href="login.css">
-    <title>Login</title>
+    <title>Aerasense | Login</title>
 
 </head>
 <body>
@@ -22,12 +23,10 @@
         <div>
 
             <label for="ipt_email">E-mail</label>
-            <input type="email" id="ipt_email">
-            
-            <br><br>
+            <input type="email" placeholder="Digite seu E-mail cadastrado" id="ipt_email" style="display: block;">
 
             <label for="ipt_senha">Senha</label>
-            <input type="password" id="ipt_senha">
+            <input type="password" placeholder="Digite sua senha cadastrada" id="ipt_senha" style="display: block;">
 
             <div id="div_mensagemErro" class="mensagemErro">
                 <span>E-mail ou senha incorretos</span>
@@ -38,10 +37,12 @@
                 <a href="#">
                     Recuperar senha
                 </a>
-                
+
             </div>
 
             <button onclick="conta()" class="botaoEntrar">Entrar na conta</button>
+
+            <div id="div_mensagem"></div>
             
         </div>
 
