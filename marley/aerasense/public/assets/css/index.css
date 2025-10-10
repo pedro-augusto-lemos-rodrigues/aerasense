@@ -150,3 +150,87 @@ nav .buttons-area .buttons a:nth-child(1):hover {
 .header-content a:hover {
     background-color: var(--color-secondary);
 }
+
+.cookies-banner {
+    left: 20%;
+    bottom: 20px;
+    padding: 10px 30px;
+    border: 1px solid var(--color-primary);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    border-radius: 16px;
+}
+
+.banner-content {
+    margin: 0px 5px;
+}
+
+.banner-content p a {
+    margin: 0px 5px;
+}
+
+.cookies-banner .content {
+    display: flex;
+    align-items: center;
+}
+
+.cookies-banner img {
+    width: 50px;
+}
+
+.cookies-banner a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.cookies-banner a:hover {
+    color: var(--color-secondary);
+}
+
+.cookies-banner img {
+    width: 35px;
+}
+
+.cookies-banner h3 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.cookies-banner p {
+    font-family: var(--font-regular);
+}
+
+.cookies-banner .buttons {
+    display: flex;
+}
+
+.cookies-banner .buttons button {
+    padding: 16px 50px;
+    transition: 180ms ease-in-out;
+    border: 1px solid var(--color-primary);
+    border-radius: 16px;
+    margin: 0px 5px;
+}
+
+.cookies-banner .buttons button:nth-child(1) {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    cursor: pointer;
+}
+
+.cookies-banner .buttons button:nth-child(1):hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.cookies-banner .buttons button:nth-child(2) {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.cookies-banner .buttons button:nth-child(2):hover {
+    background-color: var(--color-secondary);
+}
