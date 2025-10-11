@@ -1,76 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="cadastro.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastro.css">
+        <script src="cadastro.js"></script>
+        <link
+            rel="shortcut icon"
+            href="assets/favicon.svg"
+            type="image/x-icon"
+        />
+        <title>aerasense</title>
+    </head>
 
-    <script src="cadastro.js"></script>
-    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
-    <title>aerasense</title>
-</head>
+    <body>
+        <div class="main-container">
+            <div class="header">
+                <img src="assets/logo.svg" alt="" />
+                <h1>Cadastre-se</h1>
+            </div>
 
-<body>
-    <div class="main-container">
+            <form onsubmit="CadastrarForms(event)" class="fomrs">
+                <div class="container-nome">
+                    <div class="container-input">
+                        <span class="minitext">Nome *</span>
+                        <input
+                            type="text"
+                            placeholder="Seu Nome"
+                            id="input_name"
+                        />
+                    </div>
+                    <div class="container-input">
+                        <span class="minitext">Sobrenome *</span>
+                        <input
+                            type="text"
+                            placeholder="Seu Sobrenome"
+                            id="input_sobrenome"
+                        />
+                    </div>
+                </div>
+                <div class="container-infos">
+                    <div class="container-input">
+                        <span class="minitext">Sua empresa *</span>
+                        <input
+                            type="text"
+                            placeholder="Nome da empresa"
+                            id="input_empresa"
+                        />
+                    </div>
+                    <div class="container-input">
+                        <span class="minitext">CNPJ *</span>
+                        <input
+                            type="text"
+                            placeholder="00.000.000/0001-XX"
+                            id="input_CNPJ"
+                            oninput="mascaracpnj()"
+                        />
+                    </div>
+                    <div class="hr"></div>
+                    <div class="container-input">
+                        <span class="minitext">Email *</span>
+                        <input
+                            type="email"
+                            placeholder="E-mail da empresa"
+                            id="input_email"
+                        />
+                    </div>
+                    <div class="container-input">
+                        <span class="minitext">Celular *</span>
+                        <input
+                            type="text"
+                            placeholder="(11) 95746-7475"
+                            id="input_celular"
+                            oninput="mascaracelular()"
+                        />
+                    </div>
+                    <div class="container-input">
+                        <span class="minitext">Senha *</span>
+                        <input
+                            type="password"
+                            placeholder="Sua senha"
+                            id="input_senha"
+                        />
+                    </div>
+                    <div class="container-input">
+                        <span class="minitext">Confirmar senha *</span>
+                        <input
+                            type="password"
+                            placeholder="Confirmação de senha"
+                            id="input_confirmsenha"
+                        />
+                    </div>
+                </div>
+                <div class="container-mensagens-errors">
+                    <span class="Erros" id="ID_Erros"></span>
+                </div>
 
-        <div class="header">
-            <img src="assets/logo.svg" alt="">
-            <h1>Cadastre-se</h1>
+                <div class="container-termocondi">
+                    <input type="checkbox" id="input_termo" />
+                    <span
+                        >Concordo com os <a href="">Termos e Condições</a></span
+                    >
+                </div>
+                <div class="divcadastrologin">
+                    <button class="btncadastrar">Cadastre-se</button>
+                    <span>Já possui uma conta? <a href="">Faça login</a></span>
+                </div>
+            </form>
         </div>
-
-        <form onsubmit="CadastrarForms(event)" class="fomrs">
-            <div class="container-nome">
-                <div class="container-input">
-                    <span class="minitext">Nome *</span>
-                    <input type="text" placeholder="Seu Nome" id="input_name">
-                </div>
-                <div class="container-input">
-                    <span class="minitext">Sobrenome *</span>
-                    <input type="text" placeholder="Seu Sobrenome" id="input_sobrenome">
-                </div>
-            </div>
-            <div class="container-infos">
-                <div class="container-input">
-                    <span class="minitext">Sua empresa *</span>
-                    <input type="text" placeholder="Nome da empresa" id="input_empresa">
-                </div>
-                <div class="container-input">
-                    <span class="minitext">CNPJ *</span>
-                    <input type="text" placeholder="00.000.000/0001-XX" id="input_CNPJ" oninput="mascaracpnj()">
-                </div>
-                <div class="hr"></div>
-                <div class="container-input">
-                    <span class="minitext">Email *</span>
-                    <input type="email" placeholder="E-mail da empresa" id="input_email">
-                </div>
-                <div class="container-input">
-                    <span class="minitext">Celular *</span>
-                    <input type="text" placeholder="(11) 95746-7475" id="input_celular" oninput="mascaracelular()">
-                </div>
-                <div class="container-input">
-                    <span class="minitext">Senha *</span>
-                    <input type="text" placeholder="Sua senha" id="input_senha">
-                </div>
-                <div class="container-input">
-                    <span class="minitext">Confirmar senha *</span>
-                    <input type="password" placeholder="Confirmação de senha" id="input_confirmsenha">
-                </div>
-            </div>
-            <div class="container-mensagens-errors">
-                <span class="Erros" id="ID_Erros"></span>
-            </div>
-            
-            <div class="container-termocondi">
-                <input type="checkbox" id="input_termo">
-                <span>Concordo com os <a href="">Termos e Condições</a></span>
-            </div>
-            <div class="divcadastrologin">
-                <button class="btncadastrar">Cadastre-se</button>
-                <span>Já possui uma conta? <a href="">Faça login</a></span>
-            </div>
-        </form>
-    </div>
-</body>
-
+    </body>
 </html>
