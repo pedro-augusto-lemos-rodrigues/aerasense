@@ -21,4 +21,15 @@
     margin: 0;
     box-sizing: border-box;
     font-family: var(--font-regular);
+    scroll-behavior: smooth;
+}
+
+body {
+    cursor: default;
+    background-color: var(--color-white);
+}
+
+a,
+button {
+    cursor: pointer;
 }

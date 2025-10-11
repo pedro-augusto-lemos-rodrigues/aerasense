@@ -1,13 +1,10 @@
 @import url(default.css);
 
-body {
-    background-color: var(--color-white);
-    scroll-behavior: smooth;
-}
-
 header {
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;
+    background-color: var(--color-white);
 }
 
 header .header-content {
@@ -26,9 +23,7 @@ header .header-content {
 }
 
 nav {
-    box-shadow:
-        rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
     display: flex;
     margin: 0px 5%;
     border-radius: 16px;
@@ -155,13 +150,14 @@ nav .buttons-area .buttons a:nth-child(1):hover {
     left: 20%;
     bottom: 20px;
     padding: 10px 30px;
-    border: 1px solid var(--color-primary);
     display: none;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     z-index: 10;
     border-radius: 16px;
+    background-color: var(--color-white);
+    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.2);
 }
 
 .banner-content {
@@ -182,7 +178,7 @@ nav .buttons-area .buttons a:nth-child(1):hover {
 }
 
 .cookies-banner a {
-    color: var(--color-primary);
+    color: var(--color-terciary);
     text-decoration: none;
 }
 
@@ -196,7 +192,7 @@ nav .buttons-area .buttons a:nth-child(1):hover {
 
 .cookies-banner h3 {
     font-weight: bold;
-    text-decoration: underline;
+    color: var(--color-primary);
 }
 
 .cookies-banner p {
@@ -210,9 +206,9 @@ nav .buttons-area .buttons a:nth-child(1):hover {
 .cookies-banner .buttons button {
     padding: 16px 50px;
     transition: 180ms ease-in-out;
-    border: 1px solid var(--color-primary);
     border-radius: 16px;
     margin: 0px 5px;
+    border: 1px solid var(--color-primary);
 }
 
 .cookies-banner .buttons button:nth-child(1) {
@@ -233,4 +229,270 @@ nav .buttons-area .buttons a:nth-child(1):hover {
 
 .cookies-banner .buttons button:nth-child(2):hover {
     background-color: var(--color-secondary);
+}
+
+/* Main */
+main {
+    background-color: var(--color-white);
+}
+
+/* Section Contact */
+main .contact {
+    padding: 5%;
+}
+
+main .contact-container {
+    background-color: var(--color-primary);
+    border-radius: 16px;
+    display: flex;
+}
+
+main .contact-container .image {
+    background-image: url("../images/tecnico-olhando-focado-enquanto-trabalha.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 600px;
+}
+
+main .formulario {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0;
+    margin: 5%;
+}
+
+main .formulario .title h2 {
+    font-size: 2.1rem;
+    color: var(--color-white);
+}
+
+main .formulario label {
+    margin: 3px 0px;
+    color: var(--color-white);
+    font-weight: bold;
+}
+main .input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main .input-container input,
+textarea {
+    padding: 10px;
+    border-radius: 16px;
+    border: none;
+    transition: 200ms ease-in-out;
+}
+
+main .input-container input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-secondary);
+}
+
+.check {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.check input {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+.send {
+    width: 100%;
+}
+
+.send button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-white);
+    border-radius: 16px;
+    background-color: var(--color-terciary);
+    transition: 200ms ease-in-out;
+}
+
+.send button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-terciary);
+    padding: 5% 5% 2% 5%;
+    border-radius: 16px 16px 0px 0px;
+}
+
+footer .logo {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .logo img {
+    width: 200px;
+    margin: 2px 0px;
+}
+
+footer .container-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .container-about {
+    width: 35vw;
+}
+
+footer .about,
+footer .slogan {
+    color: var(--color-white);
+    margin: 5px 0px;
+}
+
+footer h2 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+footer .social {
+    display: flex;
+    align-items: center;
+}
+
+footer .social-links {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+}
+
+footer .social-links a {
+    margin: 0px 5px;
+}
+
+footer .line {
+    margin: 30px 0px;
+    height: 1px;
+    width: 100%;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer .container-2 {
+    display: flex;
+    margin-top: 10px;
+    color: var(--color-white);
+    justify-content: space-between;
+}
+
+footer .box,
+footer h3 {
+    color: var(--color-white);
+    margin: 10px 0px;
+}
+
+.box a {
+    color: var(--color-white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.box img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+footer .box li:hover {
+    text-decoration: underline;
+}
+
+footer h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+footer .container-form {
+    display: flex;
+    justify-content: end;
+}
+
+footer .newsletter {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: var(--color-white);
+    margin-top: 10px;
+}
+
+.newsletter #title {
+    font-weight: bold;
+    margin: 5px 0px;
+}
+
+#none:hover {
+    text-decoration: none;
+}
+
+footer .newsletter input {
+    padding: 10px;
+    border: 1px solid var(--color-primary);
+    transition: 250ms ease-in-out;
+    border-radius: 16px;
+}
+
+footer .newsletter .email-input {
+    width: 100%;
+}
+
+footer .newsletter input:focus-visible {
+    outline: 1px solid var(--color-primary);
+}
+
+footer .newsletter input[type="email"] {
+    width: 400px;
+}
+
+footer .newsletter button {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: 10px 50px;
+    border-radius: 16px;
+    border: 1px solid var(--color-primary);
+    transition: 180ms ease-in-out;
+}
+
+footer .newsletter button:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+footer .newsletter .termos-input {
+    margin-top: 5px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin: 5px 0px;
+}
+
+footer .footer-item {
+    margin-right: 20px;
+}
+
+.copyright {
+    bottom: 10px;
+    background-color: var(--color-primary);
+    text-transform: uppercase;
+    padding: 1% 5%;
+    color: var(--color-white);
 }
