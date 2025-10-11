@@ -34,9 +34,9 @@
                     <div class="container-input">
                         <span class="minitext">Sobrenome *</span>
                         <input
-                            type="text"
-                            placeholder="Seu Sobrenome"
-                            id="input_sobrenome"
+                        type="text"
+                        placeholder="Seu Sobrenome"
+                        id="input_sobrenome"
                         />
                     </div>
                 </div>
@@ -44,53 +44,61 @@
                     <div class="container-input">
                         <span class="minitext">Sua empresa *</span>
                         <input
-                            type="text"
-                            placeholder="Nome da empresa"
-                            id="input_empresa"
+                        type="text"
+                        placeholder="Nome da empresa"
+                        id="input_empresa"
                         />
                     </div>
                     <div class="container-input">
                         <span class="minitext">CNPJ *</span>
                         <input
-                            type="text"
-                            placeholder="00.000.000/0001-XX"
-                            id="input_CNPJ"
-                            oninput="mascaracpnj()"
+                        type="text"
+                        placeholder="00.000.000/0001-XX"
+                        id="input_CNPJ"
+                        oninput="mascaracpnj()"
                         />
                     </div>
                     <div class="hr"></div>
                     <div class="container-input">
                         <span class="minitext">Email *</span>
                         <input
-                            type="email"
-                            placeholder="E-mail da empresa"
-                            id="input_email"
+                        type="email"
+                        placeholder="E-mail da empresa"
+                        id="input_email"
                         />
                     </div>
                     <div class="container-input">
                         <span class="minitext">Celular *</span>
                         <input
-                            type="text"
-                            placeholder="(11) 95746-7475"
-                            id="input_celular"
-                            oninput="mascaracelular()"
+                        type="text"
+                        placeholder="(11) 95746-7475"
+                        id="input_celular"
+                        oninput="mascaracelular()"
                         />
                     </div>
                     <div class="container-input">
+                        
                         <span class="minitext">Senha *</span>
-                        <input
+                        <div class="container-input-senha">
+                            <input
                             type="password"
                             placeholder="Sua senha"
                             id="input_senha"
-                        />
+                            />
+                            <button id="BtnOcultarSenha" onclick="FnOcultarSenha(1)" type="button"></button>
+                        </div>
                     </div>
                     <div class="container-input">
                         <span class="minitext">Confirmar senha *</span>
-                        <input
+                        <div class="container-input-senha">
+
+                            <input
                             type="password"
                             placeholder="Confirmação de senha"
                             id="input_confirmsenha"
-                        />
+                            />
+                            <button id="BtnOcultarConfSenha" onclick="FnOcultarSenha(2)" type="button"></button>
+                        </div>
                     </div>
                 </div>
                 <div class="container-mensagens-errors">
