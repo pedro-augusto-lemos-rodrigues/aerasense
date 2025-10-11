@@ -182,3 +182,25 @@ function mascaracpnj(){
   valor = valor.replace(/(\d{4})(\d)/, '$1-$2');
     input_CNPJ.value = valor
 }
+function FnOcultarSenha(senha){
+    // 1 - Input Senha
+    // 2 - Input confirmar senha
+    var Input = senha
+    if(Input == 1){
+        if(input_senha.type == 'password'){
+            input_senha.type = 'text'
+            BtnOcultarSenha.style.opacity = '60%'
+        }else{
+            input_senha.type = 'password'
+            BtnOcultarSenha.style.opacity = '100%'
+        }
+    }else{
+        if(input_confirmsenha.type == 'password'){
+            input_confirmsenha.type = 'text'
+            BtnOcultarConfSenha.style.opacity = '60%'
+        }else{
+            input_confirmsenha.type = 'password'
+            BtnOcultarConfSenha.style.opacity = '100%'
+        }
+    }
+}
