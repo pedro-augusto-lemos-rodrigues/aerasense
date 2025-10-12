@@ -1,4 +1,4 @@
-![Aerasense](marley/aerasense/public/assets/images/logo.svg)
+![Aerasense](marley/aerasense/public/assets/images/banner.png)
 
 # Aerasense
 
