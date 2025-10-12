@@ -27,7 +27,7 @@ nav {
     display: flex;
     margin: 0px 5%;
     border-radius: 16px;
-    padding: 3px 50px;
+    padding: 10px 50px;
     justify-content: space-between;
     position: fixed;
     top: 20px;
@@ -236,6 +236,14 @@ main {
     background-color: var(--color-white);
 }
 
+main .service-real-time {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+main .service-real-time img {
+    width: 100%;
+}
+
 /* Section Contact */
 main .contact {
     padding: 5%;
@@ -248,7 +256,7 @@ main .contact-container {
 }
 
 main .contact-container .image {
-    background-image: url("../images/tecnico-olhando-focado-enquanto-trabalha.png");
+    background-image: url("../images/tecnico-olhando-focado-enquanto-trabalha.avif");
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
