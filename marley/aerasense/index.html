@@ -24,7 +24,7 @@
 
     <body>
         <!--Header-->
-        <header>
+        <header id="header">
             <!--Navbar-->
             <nav>
                 <!--Logo-->
@@ -40,16 +40,18 @@
                     <div class="links">
                         <ul>
                             <li>
-                                <a href="index.html">Início</a>
+                                <a href="#header">Início</a>
                             </li>
                             <li>
-                                <a href="#">Produtos</a>
+                                <a href="#products">Produtos</a>
                             </li>
                             <li>
                                 <a href="#">Serviços</a>
                             </li>
                             <li>
-                                <a href="#">Quem somos</a>
+                                <a href="../../arthur/sobrenos.html"
+                                    >Quem somos</a
+                                >
                             </li>
                             <li>
                                 <a href="#">Trabalhe conosco</a>
@@ -71,7 +73,7 @@
 
                     <!--Login and Register-->
                     <div class="buttons">
-                        <a href="#">Login</a>
+                        <a href="../../pedro/login.html">Login</a>
                         <a href="../../gabriel/TelaCadastro/cadastro.html"
                             >Cadastro</a
                         >
@@ -106,58 +108,99 @@
                     </div>
                 </div>
                 <div class="right">
-                    <img src="public/assets/images/cilindros.avif" alt="" />
+                    <img
+                        src="public/assets/images/pexels-mikhail-nilov-8943269.avif"
+                        alt=""
+                    />
                 </div>
             </div>
         </header>
 
         <!--Main-->
         <main>
+            <!--Products-->
+            <section id="products"></section>
+
             <!--Real time monitoring-->
             <section class="service-real-time">
                 <div class="real-time">
                     <img src="./public/assets/images/tubulacoes.avif" alt="" />
                 </div>
+                <div class="content">
+                    <h2>Sensor de GLP para detecção em tempo real</h2>
+                    <p>
+                        Nossa Tecnologia de sensores possui baixa latência, com
+                        agilidade e precisão para detectar vazamentos de gás em
+                        poucos segundos. Garanta que não há vazamentos e receba
+                        alertas rápidos para tomar medidas preventivas.
+                    </p>
+                </div>
             </section>
 
+            <div id="contact"></div>
+
             <!--Contact-->
-            <section class="contact" id="contact">
-                <div class="contact-container">
-                    <div class="image"></div>
-
-                    <form class="formulario">
-                        <div class="title">
-                            <h2>Entre em contato conosco</h2>
-                        </div>
-
-                        <div class="input-container">
-                            <label for="input_nome">Nome *</label>
-                            <input type="text" id="input_nome" />
-                        </div>
-
-                        <div class="input-container">
-                            <label for="input_email">E-mail *</label>
-                            <input type="email" id="input_email" required />
-                        </div>
-
-                        <div class="input-container">
-                            <label for="input_mensagem">Mensagem *</label>
-                            <textarea cols="10" rows="5"></textarea>
-                        </div>
-
-                        <div class="check">
-                            <input type="checkbox" id="input_check" required />
-                            <label for="input_check"
-                                >Autorizo receber respostas, notícias e
-                                informações através deste e-mail</label
-                            >
-                        </div>
-
-                        <div class="send">
-                            <button>Enviar</button>
-                        </div>
-                    </form>
+            <section class="contact">
+                <div class="imagem">
+                    <img src="./public/assets/images/tecnico.avif" alt="" />
                 </div>
+
+                <form class="" id="">
+                    <div class="container-form">
+                        <h2>Entre em contato conosco</h2>
+                        <div class="inputs">
+                            <label for="input_name">Nome</label>
+                            <input
+                                type="text"
+                                id="input_name"
+                                required
+                                placeholder="Digite seu nome"
+                            />
+                        </div>
+                        <div class="inputs">
+                            <label for="input_email">E-mail</label>
+                            <input
+                                type="email"
+                                id="input_email"
+                                required
+                                placeholder="seuemail@email.com"
+                            />
+                        </div>
+                        <div class="inputs">
+                            <label for="input_tel">E-mail</label>
+                            <input
+                                type="tel"
+                                id="input_tel"
+                                required
+                                placeholder="(DDD) 9XXXX-XXXX"
+                            />
+                        </div>
+                        <div class="inputs">
+                            <label for="input_mensagem">Mensagem</label>
+                            <textarea
+                                cols="5"
+                                rows="3"
+                                placeholder="Digite sua mensagem "
+                            ></textarea>
+                        </div>
+                        <div class="inputs" id="check">
+                            <input
+                                type="checkbox"
+                                required
+                                id="checkbox_accept"
+                            />
+                            <label for="checkbox_accept" id="label_a"
+                                >Autorizo que receber respostas, mensagens e
+                                e-mails por meio dos dados informados e estou
+                                ciente da
+                                <a href="#">política de privacidade</a>
+                            </label>
+                        </div>
+                        <div class="inputs">
+                            <button type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </form>
             </section>
         </main>
 

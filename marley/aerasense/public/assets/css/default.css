@@ -29,6 +29,11 @@ body {
     background-color: var(--color-white);
 }
 
+::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
 a,
 button {
     cursor: pointer;

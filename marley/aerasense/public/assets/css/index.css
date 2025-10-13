@@ -5,11 +5,13 @@ header {
     justify-content: center;
     margin-bottom: 40px;
     background-color: var(--color-white);
+    height: 100vh;
 }
 
 header .header-content {
     margin: 10% 0% 5% 10%;
     display: flex;
+    align-self: center;
 }
 
 .header-content .left,
@@ -236,12 +238,44 @@ main {
     background-color: var(--color-white);
 }
 
+main .products {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    padding: 2%;
+    margin: 5%;
+    border-radius: 16px;
+}
+
 main .service-real-time {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    padding: 2%;
+    margin: 5%;
+    border-radius: 16px;
+}
+
+main .real-time {
+    width: 50%;
+}
+
+main .service-real-time .content {
+    width: 50%;
+    padding: 3%;
+}
+
+main .service-real-time .content h2 {
+    margin-bottom: 60px;
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+main .service-real-time .content p {
+    font-size: 20px;
 }
 
 main .service-real-time img {
     width: 100%;
+    border-radius: 16px;
 }
 
 /* Section Contact */
@@ -249,87 +283,88 @@ main .contact {
     padding: 5%;
 }
 
-main .contact-container {
-    background-color: var(--color-primary);
+main .contact {
+    display: flex;
+    background-color: var(--color-terciary);
+    margin: 0% 5% 2% 5%;
     border-radius: 16px;
-    display: flex;
 }
 
-main .contact-container .image {
-    background-image: url("../images/tecnico-olhando-focado-enquanto-trabalha.avif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 600px;
-    width: 600px;
+#contact {
+    height: 100px;
 }
 
-main .formulario {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 0;
-    margin: 5%;
-}
-
-main .formulario .title h2 {
-    font-size: 2.1rem;
-    color: var(--color-white);
-}
-
-main .formulario label {
-    margin: 3px 0px;
-    color: var(--color-white);
-    font-weight: bold;
-}
-main .input-container {
-    display: flex;
-    flex-direction: column;
+main .contact .imagem {
     width: 100%;
 }
 
-main .input-container input,
-textarea {
+main .contact img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+main form {
+    color: var(--color-white);
+    margin-left: 50px;
+}
+
+main form .container-form label::after {
+    content: "*";
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+main form .inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px;
+}
+
+main form .inputs button {
     padding: 10px;
     border-radius: 16px;
-    border: none;
-    transition: 200ms ease-in-out;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
-main .input-container input:focus-visible,
-textarea:focus-visible {
-    outline: 2px solid var(--color-secondary);
+#label_a {
+    font-size: 12px;
 }
 
-.check {
+#check {
     display: flex;
     flex-direction: row;
-    margin: 10px 0px;
-    align-items: center;
+    align-self: center;
 }
 
-.check input {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
+#check label {
+    text-align: left;
 }
 
-.send {
-    width: 100%;
+#check label a {
+    color: var(--color-primary);
 }
 
-.send button {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--color-secondary);
-    color: var(--color-white);
-    border-radius: 16px;
-    background-color: var(--color-terciary);
-    transition: 200ms ease-in-out;
+#check input {
+    margin-right: 10px;
 }
 
-.send button:hover {
-    background-color: var(--color-secondary);
+main form .inputs input,
+textarea {
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid var(--color-primary);
+    transition: 180ms ease-in-out;
+}
+
+main form .inputs input:focus-visible,
+textarea:focus-visible {
+    outline: 1px solid var(--color-secondary);
+}
+
+main form .container-form h2 {
+    font-size: 2rem;
 }
 
 /* Footer */
@@ -495,6 +530,10 @@ footer ul li {
 
 footer .footer-item {
     margin-right: 20px;
+}
+
+footer .footer-item li {
+    width: max-content;
 }
 
 .copyright {
