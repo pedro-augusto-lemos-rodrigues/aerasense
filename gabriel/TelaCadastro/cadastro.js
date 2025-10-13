@@ -18,18 +18,22 @@ function CadastrarForms(e){
         ID_Erros.innerHTML = 'Algum campo não está devidamente preenchido!'
         return
     }
-    if( /[0-9]/.test(nome)|| sobrenome == "" || /[0-9]/.test(sobrenome)){
+    // Valida se contem numero nos campos: Nome e sobrenome
+    if( /[0-9]/.test(nome)|| /[0-9]/.test(sobrenome)){
         ID_Erros.innerHTML = 'Campo nome ou sobrenome invalido!'
         return
     }
+     // Valida a quantidade de numeros no CNPJ obs: com os pontos e traços inclusos
     if(cnpj.length < 14){
         ID_Erros.innerHTML = 'Campo CNPJ invalido ou incompleto!'
         return
     }
+    // Valida se a senha é diferente da confirmarsenha
     if(senha != confirmasenha){
         ID_Erros.innerHTML = 'Senhas digitadas diferentes. Revise sua senha!'
         return
     }
+     // Valida o checkbox
     if(checkbox == false){
         ID_Erros.innerHTML = 'Concorde com os termos de uso e lincença para prosseguir!'
         return
@@ -54,6 +58,7 @@ function CadastrarForms(e){
     // Deve ter mínimo 2 letras maiúsculas: ABCDEFG.
     var i = 0
     var count = 0
+    // Para cada letra, ele faz um if para ver se ela é maiuscula
     while(i<senha.length){
        if(!isNaN(senha[i])){
             i++
@@ -74,6 +79,7 @@ function CadastrarForms(e){
     // Deve ter mínimo 1 letra minúscula: abcdefgh.
     i = 0
     count = 0
+    // Para cada letra, ele faz um if para ver se ela é minuscula 
     while(i<senha.length){
         if(!isNaN(senha[i])){
               i++
@@ -90,6 +96,7 @@ function CadastrarForms(e){
 
     i = 0
     // Tem no mínimo 1 número: 123456.
+    // Para cada letra, ele faz um if para ver se ela é um numero
     while(i<senha.length){
        if(!isNaN(senha[i])){
             CaracNumero = true
@@ -104,8 +111,9 @@ function CadastrarForms(e){
     i = 0
     var b = 0
     var count = false
-                           
+    // Para cada letra, ele entra no segundo while
     while(i<senha.length){ 
+        // Já no segundo while, ele ve se a letra é um dos simbolos da variavel(string) listaSimbolosString
         while(b<listaSimbolosString.length){
             if(senha[i] == listaSimbolosString[b]){
                 CaracSimb = true
@@ -152,19 +160,24 @@ function mascaracelular(){
         // g → significa “global”, ou seja, ele vai procurar em toda a string, não só na primeira ocorrência.
         // \D → qualquer caractere que não seja um dígito (ou seja, tudo que não é 0–9).
 
+        // Dá um replace nos carateres que são LETRAS(De 'A' a 'Z', tanto minusculo quanto maiuculo)
         valor = valor.replace(/\D/g, '');
+        // Limita a variavel valor para somente 11 caracteres
         valor = valor.substring(0,11)
+
         // Aplica a máscara (XX) XXXXX-XXXX
+
+        //Quando a varivel passa de 3 caracteres(cotando com o zero)
         if (valor.length > 2) {
+                // Aplica aos 2 primeiros caractestes o: '()' Ex: (11) XXX
             valor = `(${valor.substring(0, 2)}) ${valor.substring(2)}`;
         }
+
         if (valor.length > 10) {
+            // Aplica apos os 10 primeiros caractestes um: '-' Ex: (11) XXXX-XXX
             valor = `${valor.substring(0, 10)}-${valor.substring(10)}`;
         }
-        // Adiciona o espaço após o DDD caso não tenha
-        if (valor.length > 3 && valor[3] != ' ') {
-            valor = `${valor.substring(0, 3)}${valor.substring(3)}`;
-        }
+        
 
         input.value = valor;
 
@@ -174,8 +187,27 @@ function mascaracpnj(){
     valor = valor.substring(0,15)
    
     
-    
-  // Aplica a máscara passo a passo
+  // Regex complexo, vamos lá
+  // Todo Regex começa e termina assim:  /  /  
+  // ^(\d{2})  pega os DOIS({2}) primeiros(^) numeros(\d) dá variavel valor
+  // (\d) pega todos os NUMEROS
+
+
+  // replace(ValorX, ValorY) muda o valorX pelo valorY
+  // replace(/^(\d{2})(\d)/, '$1.$2')
+  // ' /^(\d{2}) (\d)/ ' tem dois valores ai: 
+
+  // 1: " /^(\d{2}) "  
+  // E  
+  // 2: " (\d)/ "
+
+  //  '$1.$2'   $1 é o primeiro valor(/^(\d{2})) e o $2 é o segundo((\d)/)
+  // Agora é adicionar um ponto no meio desses valores '$1 . $2' 
+
+  // Essa logica se aplica para todos os regex seguintes
+
+  // mascara do CNPJ
+  // 
   valor = valor.replace(/^(\d{2})(\d)/, '$1.$2');
   valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
   valor = valor.replace(/\.(\d{3})(\d)/, '.$1/$2');
