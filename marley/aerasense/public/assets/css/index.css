@@ -254,6 +254,11 @@ main .service-real-time {
     border-radius: 16px;
 }
 
+main .service-2 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 main .real-time {
     width: 50%;
 }
@@ -309,7 +314,7 @@ main form {
 }
 
 main form .container-form label::after {
-    content: "*";
+    content: " *";
     color: var(--color-primary);
     font-size: 1rem;
 }
