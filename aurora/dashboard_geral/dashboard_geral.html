@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Geral</title>
+    <link rel="stylesheet" href="style_dashGeral.css">
+</head>
+<body>
+    <!-- Início do menu lateral de navegação -->
+    <nav id="sidebar">
+        <!-- lista principal de links -->
+        <ul> 
+            <!-- itens do menu -->
+            <li>
+                <span class="logo"><img src="logo/Logo.svg" alt="aerasense"></span>
+                <button onclick="toggleMenu()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                </button>
+            </li>
+            <li class="active">
+                <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h240v-560H200v560Zm320 0h240v-280H520v280Zm0-360h240v-200H520v200Z"/></svg>
+                <span>Dashboard Geral</span>
+                </a>
+            </li>
+            <li>
+                <!-- botão de menu dropdown, abre outros links -->
+                <button id="botaoSub" onclick="abrirSubmenu()" class="dropdown-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M220-80q-58 0-99-41t-41-99q0-58 41-99t99-41q18 0 35 4.5t32 12.5l153-153v-110q-44-13-72-49.5T340-740q0-58 41-99t99-41q58 0 99 41t41 99q0 48-28 84.5T520-606v110l154 153q15-8 31.5-12.5T740-360q58 0 99 41t41 99q0 58-41 99t-99 41q-58 0-99-41t-41-99q0-18 4.5-35t12.5-32L480-424 343-287q8 15 12.5 32t4.5 35q0 58-41 99t-99 41Zm520-80q25 0 42.5-17.5T800-220q0-25-17.5-42.5T740-280q-25 0-42.5 17.5T680-220q0 25 17.5 42.5T740-160ZM480-680q25 0 42.5-17.5T540-740q0-25-17.5-42.5T480-800q-25 0-42.5 17.5T420-740q0 25 17.5 42.5T480-680ZM220-160q25 0 42.5-17.5T280-220q0-25-17.5-42.5T220-280q-25 0-42.5 17.5T160-220q0 25 17.5 42.5T220-160Z"/></svg>
+                <span>Setores</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                </button>
+                <ul class="sub-menu" id="subMenu">
+                    <div>
+                    <li><a href="">Setor A</a></li>
+                    <li><a href="">Setor B</a></li>
+                    <li><a href="">Setor C</a></li>
+                    <li><a href="">Setor D</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M197-197q-54-55-85.5-127.5T80-480q0-84 31.5-156.5T197-763l57 57q-44 44-69 102t-25 124q0 67 25 125t69 101l-57 57Zm113-113q-32-33-51-76.5T240-480q0-51 19-94.5t51-75.5l57 57q-22 22-34.5 51T320-480q0 33 12.5 62t34.5 51l-57 57Zm170-90q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm170 90-57-57q22-22 34.5-51t12.5-62q0-33-12.5-62T593-593l57-57q32 32 51 75.5t19 94.5q0 50-19 93.5T650-310Zm113 113-57-57q44-44 69-102t25-124q0-67-25-125t-69-101l57-57q54 54 85.5 126.5T880-480q0 83-31.5 155.5T763-197Z"/></svg>
+                <span>Sensores</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M120-160v-80h480v80H120Zm520-280q-83 0-141.5-58.5T440-640q0-83 58.5-141.5T640-840q83 0 141.5 58.5T840-640q0 83-58.5 141.5T640-440Zm-520-40v-80h252q7 22 16 42t22 38H120Zm0 160v-80h376q23 14 49 23.5t55 13.5v43H120Zm500-280h40v-160h-40v160Zm20 80q8 0 14-6t6-14q0-8-6-14t-14-6q-8 0-14 6t-6 14q0 8 6 14t14 6Z"/></svg>
+                <span>Alertas</span>
+                </a>
+            </li>
+            <li class="perfil">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
+                <span>Fernando Brandão</span>
+                <button id="buttonLogOut" class="logOut-btn" onclick="logOut()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+            </button>
+            </li>
+        </ul>
+    </nav>
+    <!-- fim do menu lateral de navegação -->
+     <!-- conteúdo principal da página, no caso, os chart.js -->
+    <main>
+        <div class="container">
+            <h2>Parte 1</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos, asperiores delectus? Rem minima quidem quo repellat ea provident temporibus inventore? Voluptatibus repellendus iure facere. Reprehenderit itaque suscipit delectus totam quas!
+            </p>
+        </div>
+        <div class="container">
+            <h2>Parte 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos non dolorem aut tempora voluptatum molestiae commodi corporis sunt, reprehenderit voluptas quam quod atque perspiciatis, doloribus, impedit libero maxime a similique eaque maiores laudantium. Corrupti quae aperiam quam non sit tempore officia neque reprehenderit modi, cupiditate error eligendi totam eius veniam beatae iusto! Placeat iste nostrum repellendus, expedita magnam voluptatum qui adipisci reiciendis recusandae cumque fugiat saepe, modi a natus animi autem praesentium error quibusdam ad non tempore sed repellat ea. Iusto qui facilis, nihil molestiae cupiditate ab, ut commodi, esse aut modi tempora labore quisquam id. Repudiandae, dolorum maxime?
+            </p>
+        </div>
+        <div class="container">
+            <h2>Teste</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat accusantium cum dolorum vero aspernatur ipsum ullam sapiente ducimus, corrupti atque placeat incidunt quos, harum, impedit aliquid necessitatibus sunt rerum quam itaque voluptas amet perspiciatis quidem sit. Odit error dicta sunt distinctio, neque aliquid commodi ipsa assumenda cum molestiae excepturi pariatur dignissimos nostrum debitis! Facere, necessitatibus molestias voluptas exercitationem libero eaque illum dicta tempore quis aspernatur velit ducimus laudantium debitis numquam quibusdam quidem! Porro eaque velit rerum quidem accusamus nihil saepe quas aliquam non sequi, esse ipsam, voluptates nam nobis ut, vitae expedita commodi illum officiis excepturi et aliquid quam culpa obcaecati. Dolorem, in nam. Omnis quibusdam eos iste quod quo alias eum, suscipit itaque iusto consequuntur hic saepe iure! Debitis sapiente aperiam inventore dolor illum facilis reiciendis mollitia, voluptas quaerat tempore sequi incidunt laborum fuga officiis nemo aliquam ipsa nulla labore perferendis quidem veritatis doloremque? Earum voluptatem voluptas officia totam molestiae neque nemo autem, veniam inventore odio vero rem fugiat, deserunt hic distinctio ad dolorum repellendus maiores! Deserunt eum esse adipisci, ex doloribus ullam reiciendis earum aut pariatur provident vero modi et vitae minima tempore, repellat sit. Reprehenderit deserunt veritatis assumenda rem quis dolorem dignissimos id, voluptatibus deleniti placeat vero, ipsa fugit optio distinctio! Impedit voluptas nostrum temporibus itaque quibusdam ex iusto omnis cumque maiores mollitia? Eveniet totam debitis eius numquam laborum? Nesciunt minus corporis molestias, quidem aperiam exercitationem repudiandae quas illo cum tempore possimus, eius, culpa eveniet ducimus nemo fuga voluptatibus voluptatem? Ducimus vitae voluptate dolores quae ipsum temporibus sequi perferendis modi inventore non tenetur error exercitationem voluptates dicta, illum asperiores necessitatibus voluptas facere aspernatur officia odio ex? Temporibus repellat facere neque obcaecati minus corrupti id dolorem, officia voluptatem repellendus cum qui! Soluta dignissimos nesciunt alias similique ex fuga nostrum, ducimus quibusdam qui tenetur harum deleniti veritatis unde saepe! Molestias quasi quibusdam minus ipsum consectetur cupiditate voluptatem aperiam. Iusto culpa porro magnam voluptas delectus voluptatibus incidunt est velit saepe, et fugit provident qui dolore ex dolorem error numquam illo earum necessitatibus dignissimos obcaecati dolorum. Magnam soluta, excepturi vero fugit, libero inventore atque vel beatae ipsam expedita dolorum saepe suscipit illo repudiandae cumque consequuntur quod hic amet voluptas autem quas non sint, numquam explicabo! Fuga, cupiditate ut corrupti porro odit iusto eum officiis neque laudantium, recusandae unde nulla tenetur eveniet, quasi rerum! Ut, eligendi quod dolorem reprehenderit, mollitia dolores quibusdam, iusto culpa velit atque laudantium placeat assumenda facilis delectus! Quasi dolores beatae dolorum harum nesciunt asperiores autem iusto officia dolorem! Quo perspiciatis cum sequi culpa nobis nulla itaque impedit accusamus, tempore ab. Et pariatur sunt recusandae, ut debitis aut facilis incidunt laboriosam aliquid reiciendis, expedita dolorum porro mollitia, cum neque atque suscipit voluptate. At itaque tenetur ullam commodi culpa voluptatibus magnam exercitationem, accusamus aliquam earum harum odit deserunt esse? Ducimus at odio, illo architecto labore tempora possimus natus molestiae fugit modi voluptatum illum blanditiis veniam cum eius assumenda laborum. Amet esse sunt eveniet beatae libero dicta dolore repudiandae expedita nihil, molestiae perspiciatis, commodi eum pariatur asperiores debitis quasi veniam veritatis?
+            </p>
+        </div>
+    </main>
+</body>
+<script src="app_dashGeral.js"></script>
+</html>

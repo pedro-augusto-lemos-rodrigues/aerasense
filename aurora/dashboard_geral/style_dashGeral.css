@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* aqui em cima importei a fonte pra pag da dashboard*/
+/* aqui no root vai todo o design de cores base da página */
+:root{
+--cor-base: #0A2B40;
+--cor-hover: #18628D;
+--cor-ativo: #3B9DDC;
+--cor-texto: #ffffff;
+--cor-texto2: #000000;
+--cor-bg: #ffffff;
+}
+
+/* seletor de estilos universal, aplica pra tudo no doc */
+*{
+margin: 0;
+padding: 0;
+}
+
+/* mesma ideia do root, mas mais usado pra tamanhos, fontes e layout */
+html{
+font-family: Kanit, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* tamanho de fonte relativo ao padrão do html (rem) */
+line-height: 1.5rem ;
+}
+
+body{
+    /* tam dinâmico de acordo com tam da tela*/
+    min-height: 100vh; 
+    background-color: var(--cor-base);
+    color: var(--cor-texto);
+    display: grid;
+    /* a medida fração do espaço (flexível), proporcional dentro de um grid*/
+    grid-template-columns: auto 1fr;
+}
+
+/* =============== INÍCIO DO CSS DO MENU LATERAL AKA SIDEBAR =============== */
+
+#sidebar{
+    box-sizing: border-box;
+    height: 100vh;
+    width: 250px;
+    padding: 5px 1em;
+    background-color: var(--cor-base);
+    
+    position: sticky; /* serve pra ficar no lugar, mas não dar overlap nos textos*/
+    top: 0;
+    align-self: start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+#sidebar.close{
+    padding: 5px;
+    width: 59px; 
+}
+
+#sidebar ul{
+    list-style: none;  /* remove os bullet points q aparecem originalmente no modelo lista */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* aqui é onde organiza a logo e o botãozinho que abre e fecha a sidebar aka menu*/
+#sidebar > ul > li:first-child{
+display: flex;
+justify-content: flex-end;
+margin-bottom: 16px;
+.logo{
+    height: auto;
+    width: 60%;
+}
+}
+
+/*aqui é onde faz ficar colorido onde tá clicado*/
+#sidebar ul li.active a{
+    background-color: var(--cor-ativo);
+    color: var(--cor-texto);
+    svg{
+        fill: var(--cor-texto);
+    }
+}
+
+/*aqui é onde deixa bonito os itens do menu*/
+#sidebar a, #sidebar .dropdown-btn, #sidebar .logo, #sidebar .perfil, #sidebar .logOut-btn{
+    border-radius: .5em;
+    padding: .85em;
+    text-decoration: none;
+    color: var(--cor-texto);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.perfil { text-wrap: wrap; }              /* desfaz o nowrap herdado do #sidebar pra poder quebrar a linha no nome */
+
+
+.perfil span {
+  flex: 1;                                /* ocupa o espaço flexível entre os ícones */
+  min-width: 0;                           /* necessário pro flex permitir quebra */
+  white-space: normal;                    /* ctz que quebra o texto */
+  line-height: 1.25;
+}
+
+/*Ícones fixos (não esticam nem saem do lugar) */
+.perfil svg { flex: 0 0 auto; }
+
+/*aqui muda o tamanho dos ícones da parte do perfil, supostamente era pra mudar só o do avatar, mas mudou os dois e ficou bom, então é isso*/
+.perfil svg:first-child{
+  width: 1.75em;   /* cresce/encolhe em relação à fonte */
+  height: 1.75em;
+}
+
+.perfil {
+    margin-top: auto; /*taca o perfil la pro final da sidebar*/
+}
+
+.dropdown-btn, .logOut-btn{
+    /*alinha os botões setinha pra abrir o sub menu e o de logout*/
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* pra ficar dinâmico de acordo com o nome, precisava fazer essas alterações específicas */
+.perfil .logOut-btn {
+  width: auto;            /* sobrescreve o width:100% herdado */
+  margin-left: auto;      /* cola o botão à direita respeitando a margem */
+  padding: .35em;         /* aumenta o raio de clique sem aumentar a altura do resto*/
+  display: flex;
+  align-items: center;
+}
+
+
+#sidebar svg{
+    /*aqui define que os ícones gerais da página não redimensionem e define a cor deles*/
+    flex-shrink: 0;
+    fill: var(--cor-texto);
+}
+
+/*aqui garante que os textos fiquem no meio */
+#sidebar a span, #sidebar .dropdown-btn span, #sidebar .logOut-btn span{
+    flex-grow: 1;
+}
+
+
+#sidebar a:hover, #sidebar .dropdown-btn:hover, #sidebar .logOut-btn:hover{
+    /* autoexplicativo: corzinha quando passa o mouse em cima*/
+    background-color: var(--cor-hover);
+}
+
+
+#sidebar .sub-menu{
+    /*aqui, de uma forma mais simples, o tamanho do submenu acompanha o resto, então mesmo que adicione mais setores, ele vai aumentando*/
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 300ms ease-in-out;
+
+    > div{ /*quando fecha o menu, ele esconde os textos*/
+        overflow: hidden;
+    }
+}
+#sidebar .sub-menu.show{ /*ajusta a altura do submenu*/
+    grid-template-rows: 1fr;
+}
+.dropdown-btn svg{ /*transição animada*/
+    transition: 200ms ease;
+}
+.rotate svg:last-child{ /*rotaciona a setinha*/
+    rotate: 180deg;
+}
+
+#sidebar .sub-menu a{ /*identação do submenu*/
+    padding-left: 2em;
+}
+
+#toggle-btn{ /* ajuste do botão que abre e fecha o menu*/
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+
+    svg{ /*rotaciona a seta q abre e fecha o menu com transição animada*/
+        transition: rotate 150ms ease;
+    }
+
+}
+
+    #toggle-btn:hover{
+        background-color: var(--cor-hover);
+    }
+/* =============== FIM DO CSS DO MENU =============== */
+
+main{
+    padding: min(30px, 7%);
+    background-color: var(--cor-bg);
+    color: var(--cor-texto2);
+}
+main p{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.container {
+    margin-bottom: 20px;
+    /* espaçamento acompanha o tamanho do texto (em) */
+    padding: min(3em, 15%);
+}
