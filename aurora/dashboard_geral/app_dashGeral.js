@@ -25,5 +25,5 @@ function abrirSubmenu(){
 }
 
 function logOut(){
-// location.replace(''); precisa incluir o caminho certinho pra redirecionar pro login ou pag inicial, o que vcs preferirem
+  window.location.href="../../marley/aerasense/index.html"
 }
