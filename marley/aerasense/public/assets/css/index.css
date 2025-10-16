@@ -1,5 +1,7 @@
+/* Import default styles */
 @import url(default.css);
 
+/* Header */
 header {
     display: flex;
     justify-content: center;
@@ -25,6 +27,43 @@ header .header-content {
     color: var(--color-terciary);
 }
 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-content .left {
+    margin-left: -100px;
+}
+
+.header-content .right img {
+    width: 40vw;
+    border-radius: 16px;
+    box-shadow: -20px 12px 0px var(--color-terciary);
+}
+
+.header-content .paragraph-header p {
+    padding: 20px 65px 0px 0px;
+}
+
+.header-content .cta {
+    margin: 50px 0px;
+}
+
+.header-content .cta a {
+    padding: 20px 100px;
+    border-radius: 16px;
+    color: var(--color-white);
+    text-decoration: none;
+    background-color: var(--color-primary);
+    transition: 200ms ease-in-out;
+    font-family: var(--font-medium);
+}
+
+.header-content a:hover {
+    background-color: var(--color-secondary);
+}
+
 .mousedown {
     position: absolute;
     z-index: 1;
@@ -35,6 +74,7 @@ header .header-content {
     width: 50px;
 }
 
+/* Navbar */
 nav {
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -122,43 +162,7 @@ nav .buttons-area .buttons a:nth-child(1):hover {
     color: var(--color-white);
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.header-content .left {
-    margin-left: -100px;
-}
-
-.header-content .right img {
-    width: 40vw;
-    border-radius: 16px;
-    box-shadow: -20px 12px 0px var(--color-terciary);
-}
-
-.header-content .paragraph-header p {
-    padding: 20px 65px 0px 0px;
-}
-
-.header-content .cta {
-    margin: 50px 0px;
-}
-
-.header-content .cta a {
-    padding: 20px 100px;
-    border-radius: 16px;
-    color: var(--color-white);
-    text-decoration: none;
-    background-color: var(--color-primary);
-    transition: 200ms ease-in-out;
-    font-family: var(--font-medium);
-}
-
-.header-content a:hover {
-    background-color: var(--color-secondary);
-}
-
+/* Cookies Banner */
 .cookies-banner {
     left: 20%;
     bottom: 20px;
@@ -224,6 +228,7 @@ nav .buttons-area .buttons a:nth-child(1):hover {
     border: 1px solid var(--color-primary);
 }
 
+/* :nth-child(n) passa uma ordem n de um elemento como filho, para aplicar estilo espefícífico */
 .cookies-banner .buttons button:nth-child(1) {
     background-color: var(--color-white);
     color: var(--color-black);
@@ -249,16 +254,18 @@ main {
     background-color: var(--color-white);
 }
 
-main section:nth-child(4) {
+main section:nth-child(5) {
     background-color: var(--color-secondary);
 }
 
-main section:nth-child(4) h2 {
+main section:nth-child(5) h2 {
     color: var(--color-white) !important;
 }
 
-main section:nth-child(4) p {
-    color: var(--color-white) !important;
+main section:nth-child(5) p {
+    color: var(
+        --color-white
+    ) !important; /* !important dá prioridade de estilização */
 }
 
 main .title-sensors {
