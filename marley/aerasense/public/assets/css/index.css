@@ -22,6 +22,7 @@ header .header-content {
 .header-content .left h1 {
     font-size: 2.5rem;
     padding: 0px 45px 0px 0px;
+    color: var(--color-secondary);
 }
 
 nav {
@@ -250,7 +251,7 @@ main .service-real-time {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
     display: flex;
     padding: 2%;
-    margin: 5%;
+    margin: 5% 5% 10% 5%;
     border-radius: 16px;
 }
 
@@ -269,18 +270,79 @@ main .service-real-time .content {
 }
 
 main .service-real-time .content h2 {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     font-size: 2rem;
     color: var(--color-primary);
 }
 
 main .service-real-time .content p {
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 main .service-real-time img {
     width: 100%;
     border-radius: 16px;
+}
+
+/* Section Testimonials */
+main .testimonials {
+    padding: 5%;
+    margin: 5%;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .testimonials .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+main .testimonials h4 {
+    color: var(--color-terciary);
+}
+
+main .card .name p {
+    font-family: var(--font-bold);
+}
+
+main .card cite {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+main .testimonials .cards-container {
+    display: flex;
+    justify-content: center;
+}
+
+main .cards-container .card {
+    display: flex;
+    width: min-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 5%;
+    border-radius: 16px;
+    padding: 5%;
+    height: 450px;
+    width: 350px;
+    color: var(--color-primary);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    transition: 250ms ease-in-out;
+}
+
+main .cards-container .card:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
 }
 
 /* Section Contact */
