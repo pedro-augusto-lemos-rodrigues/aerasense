@@ -11,13 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const card4 = document.getElementById("benefit4");
   const title4 = document.getElementById("title4");
 
-  card1.addEventListener("mouseover", () => {
+  let velocity = 50;
+
+  card1.addEventListener("click", () => {
     if (card1.style.width === "400px") {
       card1.style.width = "1000px";
 
       setTimeout(() => {
         title1.style.display = "block";
-      }, 400);
+      }, velocity);
 
       card2.style.width = "400px";
       title2.style.display = "none";
@@ -33,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  card2.addEventListener("mouseover", () => {
+  card2.addEventListener("click", () => {
     if (card2.style.width === "400px") {
       card1.style.width = "400px";
       title1.style.display = "none";
@@ -42,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         title2.style.display = "block";
-      }, 400);
+      }, velocity);
 
       card3.style.width = "400px";
       title3.style.display = "none";
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  card3.addEventListener("mouseover", () => {
+  card3.addEventListener("click", () => {
     if (card3.style.width === "400px") {
       card1.style.width = "400px";
       title1.style.display = "none";
@@ -66,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         title3.style.display = "block";
-      }, 400);
+      }, velocity);
 
       card4.style.width = "400px";
       title4.style.display = "none";
@@ -76,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  card4.addEventListener("mouseover", () => {
+  card4.addEventListener("click", () => {
     if (card4.style.width === "400px") {
       card2.style.width = "400px";
       title1.style.display = "none";
@@ -90,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card4.style.width = "1000px";
       setTimeout(() => {
         title4.style.display = "block";
-      }, 400);
+      }, velocity);
     } else {
       card4.style.width = "400px";
       title4.style.display = "none";

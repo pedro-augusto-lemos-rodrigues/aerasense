@@ -22,20 +22,30 @@ header .header-content {
 .header-content .left h1 {
     font-size: 2.5rem;
     padding: 0px 45px 0px 0px;
-    color: var(--color-secondary);
+    color: var(--color-terciary);
+}
+
+.mousedown {
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+}
+
+.mousedown img {
+    width: 50px;
 }
 
 nav {
     box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
     display: flex;
     margin: 0px 5%;
-    border-radius: 16px;
     padding: 10px 50px;
     justify-content: space-between;
     position: fixed;
-    top: 20px;
-    width: 90%;
+    width: 100%;
     background-color: var(--color-white);
+    transition: 300ms ease-in-out;
+    z-index: 20;
 }
 
 nav .logo-area {
@@ -239,6 +249,18 @@ main {
     background-color: var(--color-white);
 }
 
+main section:nth-child(3) {
+    background-color: var(--color-secondary);
+}
+
+main section:nth-child(3) h2 {
+    color: var(--color-white) !important;
+}
+
+main section:nth-child(3) p {
+    color: var(--color-white) !important;
+}
+
 main .products {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -292,6 +314,7 @@ main .benefits {
 main .benefits .container {
     display: flex;
     justify-content: space-between;
+    background-color:;
 }
 
 main .benefits .card {
@@ -303,12 +326,13 @@ main .benefits .card {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    transition: 400ms ease-in-out;
+    transition: 400ms ease;
 }
 
 main .benefits .card .title {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     border-radius: 16px;
+    margin: 10px;
 }
 
 #benefit1:nth-child(1) {
