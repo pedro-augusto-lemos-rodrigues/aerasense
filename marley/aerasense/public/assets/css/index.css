@@ -251,7 +251,7 @@ main .service-real-time {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
     display: flex;
     padding: 2%;
-    margin: 5% 5% 10% 5%;
+    margin: 5% 5% 8% 5%;
     border-radius: 16px;
 }
 
@@ -282,6 +282,67 @@ main .service-real-time .content p {
 main .service-real-time img {
     width: 100%;
     border-radius: 16px;
+}
+
+/* Benefits */
+main .benefits {
+    padding: 2% 5%;
+}
+
+main .benefits .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .benefits .card {
+    border-radius: 16px;
+    background-color: var(--color-secondary);
+    margin: 2% 1%;
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 400ms ease-in-out;
+}
+
+main .benefits .card .title {
+    background-color: var(--color-primary);
+    border-radius: 16px;
+}
+
+#benefit1:nth-child(1) {
+    width: 1000px;
+    background-image: url("../images/vista-frontal-trabalhador-com-capacete-e-mascara-protetora.avif");
+    background-size: cover;
+    background-position: center;
+}
+
+#benefit2:nth-child(2) {
+    width: 400px;
+    background-image: url("../images/trabalhador-sexo-masculino-operando-maquinas-na-fabrica.avif");
+    background-size: cover;
+    background-position: center;
+}
+
+#benefit3:nth-child(3) {
+    width: 400px;
+    background-image: url("../images/avos-aprendendo-usar-o-dispositivo-digital.avif");
+    background-size: cover;
+    background-position: center;
+}
+
+#benefit4:nth-child(4) {
+    width: 400px;
+    background-image: url("../images/pexels-mikhail-nilov-8943269.avif");
+    background-size: cover;
+    background-position: center;
+}
+
+main .card h3 {
+    display: flex;
+    margin: 10% 2%;
+    color: var(--color-white);
 }
 
 /* Section Testimonials */
