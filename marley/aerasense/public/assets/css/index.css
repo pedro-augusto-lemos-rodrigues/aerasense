@@ -249,24 +249,71 @@ main {
     background-color: var(--color-white);
 }
 
-main section:nth-child(3) {
+main section:nth-child(4) {
     background-color: var(--color-secondary);
 }
 
-main section:nth-child(3) h2 {
+main section:nth-child(4) h2 {
     color: var(--color-white) !important;
 }
 
-main section:nth-child(3) p {
+main section:nth-child(4) p {
     color: var(--color-white) !important;
+}
+
+main .title-sensors {
+    display: flex;
+    justify-content: center;
+}
+
+main .title-sensors h2 {
+    color: var(--color-secondary);
+    font-size: 2rem;
 }
 
 main .products {
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
     display: flex;
-    padding: 2%;
-    margin: 5%;
+    margin: 3% 5% 3% 5%;
     border-radius: 16px;
+}
+
+main #products {
+    height: 90px;
+}
+
+main .products .container .card-product img {
+    width: 60%;
+}
+
+main .products .container .card-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+main .products .container .card-product p {
+    width: 100%;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+
+main .products .container .card-product .content {
+    width: 50%;
+    margin: 0% 1%;
+    padding: 5%;
+    border-radius: 16px;
+    background-color: var(--color-secondary);
+}
+
+main .products .container .card-product h2 {
+    font-size: 2.3rem;
+    color: var(--color-white);
+}
+
+main #services {
+    height: 50px;
 }
 
 main .service-real-time {
@@ -306,7 +353,74 @@ main .service-real-time img {
     border-radius: 16px;
 }
 
+main .work-we {
+    padding: 2% 5%;
+}
+
+main .work-we .image img {
+    border-radius: 16px;
+    width: 100%;
+}
+
+main .work-we .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .work-we .container .cards {
+    width: 50vw;
+}
+
+main .work-we .container .card {
+    width: max-content;
+    font-size: 1.3rem;
+    margin: 15px 0% 15px 20%;
+    border-radius: 16px;
+    padding: 3.5%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+    transition: 250ms ease-in-out;
+}
+
+main #work-we {
+    height: 100px;
+}
+
+main .work-we .container .card:hover {
+    transform: translate(12px, -2px);
+}
+
+main .work-we .container .card img {
+    width: 20px;
+    margin: 5px;
+}
+
+main .work-we .container .content {
+    width: 100%;
+}
+
+main .content h2 {
+    display: flex;
+    font-size: 2rem;
+    justify-content: left;
+    margin-left: 5%;
+    color: var(--color-secondary);
+}
+
 /* Benefits */
+main .title-benefits {
+    display: flex;
+    justify-content: left;
+    margin-left: 15px;
+}
+
+main .title-benefits h2 {
+    font-size: 2rem;
+    color: var(--color-secondary);
+}
+
 main .benefits {
     padding: 2% 5%;
 }
@@ -314,7 +428,6 @@ main .benefits {
 main .benefits .container {
     display: flex;
     justify-content: space-between;
-    background-color:;
 }
 
 main .benefits .card {
