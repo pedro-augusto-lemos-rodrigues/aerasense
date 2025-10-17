@@ -1,0 +1,11 @@
+
+.containerInputs{
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+}
+
+.container-resultado{
+    display: none;
+    width: 100%;
+}

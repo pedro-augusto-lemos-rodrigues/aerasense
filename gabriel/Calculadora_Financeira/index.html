@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>By Gabriel M.R</title>
+</head>
+<body>
+    <h1>Calculadora de risco de Gás GPL em cozinhas industriais</h1> <br>
+    <div class="containerInputs">
+        <h3>Armazenamento do gás</h3> 
+        <li>
+            Esta em area externa, com ventilação adequada ?
+            <input type="checkbox" name="" id="Valor1">
+        </li>
+        <li>
+            Esta longe de ralos e fontes de ignição? (motores, tomadas etc)?
+            <input type="checkbox" name="" id="Valor2">
+        </li>
+        <li>
+            O local está devidamente protegido de sol, chuva e calor excessivo?
+            <input type="checkbox" name="" id="Valor3">
+        </li>
+        <li>
+            A sinalização de segurança ("PERIGO", "INFLAMÁVEL") está visível e em bom estado? (Caso não tenha, não marque)
+            <input type="checkbox" name="" id="Valor4">
+        </li>
+        <hr>
+        <h3>Estado do cilindros</h3> 
+        <li>
+            Os cilindros NÃO estão dentro da validade (requalificação)?
+            <input type="checkbox" name="" id="Valor5" onclick="ExibirQuando()">
+            
+        </li>
+        <li style="display: none;" id="IDvalidadeEstadoCilindro_LI">
+            Quanto tempo?
+            <input type="date" name="" id="Valor5_1">
+        </li>
+        <li>
+            Estão na posição vertical
+            <input type="checkbox" name="" id="Valor6">
+        </li>
+        <li>
+            Estão em um piso nivelado
+            <input type="checkbox" name="" id="Valor6_1">
+        </li>
+        <li>
+            Apresentam corrosão, amassados ou danos visíveis?
+            <input type="checkbox" name="" id="Valor7">
+        </li>
+        <hr>
+        <h3>Tubulação e conexão</h3> 
+        <li>
+            Qual a idade da tubulação?
+            <input type="date" name="" id="Valor8">
+        </li>
+        <li>
+            Há sinais de corrosão, danos ou reparos improvisados (gambiarras)?
+            <input type="checkbox" name="" id="Valor9">
+        </li>
+        <h3>A tubulação é de material?</h3>
+        <select name="Valor10" id="">
+            <option value="0">Nenhum dos citados</option>
+            <option value="1">Aço carbono</option>
+            <option value="1">Aço inoxidável</option>
+            <option value="1">Cobre</option>
+            <option value="1">Polietileno de alta densidade (PEAD)</option>
+            <option value="1">Polietileno reticulado (PEX)</option>
+            <option value="1">Tubo multicamadas</option>
+            <option value="0">PVC (Policloreto de Vinila)</option>
+            <option value="0">Mangueiras de plástico, borracha</option>
+        </select>
+        <hr>
+        <li>
+            Quando foi a ultima inspeção feito do seu sistema de armazenamento e controle do GPL?
+            <input type="date" name="" id="Valor11">
+        </li>
+        <br>
+        <button onclick="validar()">Validar riscos e consequencias</button>
+    </div>
+    <div class="container-resultado" ></div>
+</body>
+</html>
+<script>
+    function validar(){
+        var AreaExterna  = Valor1.value 
+        var FontesIgnicao = Valor2.value
+        var LocalProtegido = Valor3.value
+        var SinalizacaoSeg = Valor4.value
+        var DentroValidadeCilindro = Valor5.value
+        var DataValidadeCilindro = Valor5_1.value
+        var PosicaoVertical = Valor6.value
+        var PisoNivelado = Valor6_1.value
+        var CorrosaoCilindro = Valor7.value
+        var CorrosaoTubulacao = Valor9.value
+
+        var UltimaInspecao = Valor11.value
+        var IdadeTubulacao = Valor8.value
+        var MaterialTubulacao = Valor10.value
+        
+        var PontuaçãoRiscoMaxima = 0
+        
+        if(!AreaExterna){ PontuaçãoRiscoMaxima += 2}
+        if(!FontesIgnicao){ PontuaçãoRiscoMaxima += 3 }
+        if(!LocalProtegido){ PontuaçãoRiscoMaxima += 2 }
+        if(!SinalizacaoSeg){ PontuaçãoRiscoMaxima += 1 }
+        if(DentroValidadeCilindro){ PontuaçãoRiscoMaxima += 2 }
+        if(!PosicaoVertical){ PontuaçãoRiscoMaxima += 2 }
+        if(!PisoNivelado){ PontuaçãoRiscoMaxima += 1 }
+        if(CorrosaoCilindro){ PontuaçãoRiscoMaxima += 2 }
+        if(CorrosaoTubulacao){ PontuaçãoRiscoMaxima += 2 }
+        
+        if(DataValidadeCilindro){
+            if(DataValidadeCilindro.value){}
+        }
+
+
+
+        /*
+            Tabela de RISCOS
+        3 - EXPLOSAO
+        2 - Contra as normas
+        1 - Deve tomar sua atenção
+        0 - OK
+
+        Não esta em Area externa = 2
+        Esta perto Fontes de ignicao = 3
+        Não está Protegido pelo sol = 2
+        Sinalizacão segurança = 1
+        
+        Não está em posição vertical = 2
+        Piso não nivelado = 1
+        Não está dentro da validade = 2
+        Corrosão e amassos do cilindro = 2
+        
+        Sinais de corroçao na tubulação = 2
+
+
+
+        Não está dentro da validadde CILINDRO {
+            < 10 dias = 1 
+            > 10 dias = 2
+            > 10 com corroção e danos visiveis = 3
+        }else { OK }
+            
+
+        Idade da tubulação {
+            < 15 anos = 0
+            > 15 anos = 1
+            > 20 anos = 2
+            > 20 com corroção e gambiarra = 3 
+        }
+        
+        Material da tubulação{
+            PVC = 2
+            Plastico = 2
+        * = 0
+        }
+
+        Ultima Inpeção feita = {
+            obs: Inpeções devem ser feitas anualmente
+            < 1 ano = 0
+            > 1 ano = 2
+            > 2 anos = 2
+            > 2 anos com corroção = 3
+        }
+
+
+
+
+
+        CALCULO -
+
+        RISCO PERCENTUAL = (Pontuação total/Pontuação maxima) * 100
+        RISCO PERCENTUAL = (Pontuação total/26) * 100
+
+        
+        0% a 20% Risco Baixo (0) OK. Manter a vigilância e a manutenção preventiva.
+        21% a 40% Atenção (1) Risco Moderado. Corrigir itens de baixa pontuação (1s) a curto prazo.
+        41% a 70% Contra as Normas (2) Risco Alto. Há diversas não conformidades graves. Exige plano de ação urgente e contratação de profissional.
+        71% a 100%EXPLOSÃO (3) Risco Crítico. A presença de um ou mais itens com pontuação 3 eleva o risco de forma inaceitável. A operação deve ser paralisada até a correção dos pontos de risco 3.
+
+        */
+
+
+
+
+
+    }
+    function ExibirQuando(){
+        if( IDvalidadeEstadoCilindro_LI.style.display == 'none' ){
+            IDvalidadeEstadoCilindro_LI.style.display = 'flex'
+        }else{
+            IDvalidadeEstadoCilindro_LI.style.display = 'none'
+        }
+         
+    }
+</script>
