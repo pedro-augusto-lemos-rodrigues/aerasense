@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.style.display = "flex";
   };
 
-  setTimeout(modal, 2000);
+  setTimeout(modal, 2500);
 
   acceptButton.addEventListener("click", () => {
     if (banner.style.display != "none") {

@@ -47,6 +47,11 @@ header .text-side a {
     padding: 15px 50px;
     border-radius: 16px;
     text-decoration: none;
+    transition: 180ms ease-in-out;
+}
+
+header .text-side a:hover {
+    opacity: 0.8;
 }
 
 header .text-side .cta {
@@ -157,11 +162,11 @@ nav #login a {
 nav #register a {
     color: var(--color-white);
     background-color: var(--color-bright-blue);
+    border: 1px solid var(--color-bright-blue);
 }
 
 nav #login a:hover {
     color: var(--color-bright-blue);
-    opacity: 0.9;
 }
 
 nav #register a:hover {
@@ -171,7 +176,339 @@ nav #register a:hover {
 
 /* Main */
 main .companies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color-white);
     padding: 2%;
+    z-index: 20;
+    position: absolute;
+    width: 90%;
+    height: 40vh;
     margin: 0% 5%;
+    border: 1px solid red;
+    border-radius: 16px 16px 0px 0px;
+}
+
+main .companies span {
+    color: #777777;
+}
+
+main .companies .logos {
+    display: flex;
+    justify-content: center;
+}
+
+main .companies .image {
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(100%);
+    transition: 200ms ease-in-out;
+    height: min-content;
+}
+
+main .companies .image:hover {
+    filter: grayscale(0%);
+}
+
+main .companies .logos img {
+    width: 180px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-very-dark-blue);
+    height: 100%;
+    margin-top: 50%;
+    padding: 5%;
+    border-radius: 16px 16px 0px 0px;
+}
+
+footer .logo-area img {
+    width: 350px;
+}
+
+footer .logo-area {
+    color: var(--color-white);
+    height: 100%;
+}
+
+footer .logo-area p {
+    margin-bottom: 5%;
+}
+
+footer .logo-area span a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+footer .logo-area span a:hover {
+    text-decoration: underline;
+}
+
+footer .itens {
+    display: flex;
+}
+
+footer .links {
+    margin: 0% 5%;
+    display: flex;
+}
+
+footer .links .item {
+    margin: 0px 12px;
+}
+
+footer .links .item img {
+    width: 20px;
+    margin-right: 3px;
+}
+
+footer .links .item ul li a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: max-content;
+}
+
+footer .links h3 {
+    color: var(--color-bright-blue);
+    font-family: var(--font-bold);
+}
+
+footer .links ul li {
+    list-style: none;
+    margin: 10px 0px;
+}
+
+footer .links a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+footer .links a:hover {
+    text-decoration: underline;
+}
+
+footer .other {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0%;
+}
+
+footer .newsletter form label {
+    color: var(--color-white);
+    font-family: var(--font-bold);
+}
+
+footer .newsletter form {
+    display: flex;
+    align-items: center;
+}
+
+footer .newsletter form .box {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .newsletter form .check {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+footer .newsletter form #accept {
+    width: 20px !important;
+    font-family: var(--font-regular) !important;
+    margin-right: 5px;
+}
+
+footer .button {
+    margin-left: 10px;
+}
+
+footer .button button {
+    background-color: var(--color-bright-blue);
+    border: none;
+    color: var(--color-white);
+    border-radius: 16px;
+    padding: 16px 50px;
+}
+
+footer .button button:hover {
+    opacity: 0.9;
+}
+
+footer .newsletter form .check label {
+    font-family: var(--font-regular) !important;
+}
+
+footer .newsletter form .box input {
+    padding: 16px;
+    width: 450px;
+    border: none;
+    border-radius: 16px;
+    transition: 200ms ease-in-out;
+}
+
+footer .newsletter form .box input:focus-visible {
+    outline: 1px solid var(--color-bright-blue);
+}
+
+footer .social h2 {
+    color: var(--color-white);
+    font-family: var(--font-bold);
+}
+
+footer .social .links-social ul {
+    display: flex;
+    margin-top: 5px;
+}
+
+footer .social .links-social li {
+    margin-right: 10px;
+    list-style: none;
+}
+
+footer .social .links-social li a {
+    background-color: var(--color-bright-blue);
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    align-items: center;
+    border-radius: 10px;
+    transition: 200ms ease-in-out;
+}
+
+footer .social .links-social li a:hover {
+    background-color: var(--color-dark-blue);
+}
+
+/* Copyright */
+.copyright {
+    padding: 16px 5%;
+    background-color: var(--color-bright-blue);
+}
+
+.copyright span {
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+/* Cookies Banner */
+.cookies-banner {
+    position: absolute;
+    display: none;
+    position: fixed;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    z-index: 100;
+    bottom: 5%;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0% 16%;
+    width: 70%;
+    padding: 20px 30px;
+    transition: 200ms ease-in-out;
+}
+
+.cookies-banner .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cookies-banner span:nth-child(1) {
+    color: var(--color-bright-blue);
+    font-family: var(--font-bold);
+}
+
+.cookies-banner span:nth-child(2) {
+    color: var(--color-very-dark-blue);
+}
+
+.cookies-banner a {
+    text-decoration: underline;
+    color: var(--color-very-dark-blue);
+    transition: 200ms ease-in-out;
+}
+
+.cookies-banner a:hover {
+    text-decoration: underline;
+    color: var(--color-bright-blue);
+}
+
+.cookies-banner img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.cookies-banner .buttons {
+    display: flex;
+}
+
+.cookies-banner .buttons button {
+    padding: 10px 20px;
+    transition: 200ms ease-in-out;
+    margin: 0px 5px;
+    width: 150px;
+    border-radius: 16px;
+    border: none;
+    background-color: var(--color-white);
+}
+
+.cookies-banner button:nth-child(1) {
+    border: 1px solid var(--color-very-dark-blue);
+    color: var(--color-very-dark-blue);
+}
+
+.cookies-banner button:nth-child(2) {
+    border: 1px solid var(--color-bright-blue);
+    background-color: var(--color-bright-blue);
+    color: var(--color-white);
+    transition: 200ms ease-in-out;
+}
+
+.cookies-banner button:nth-child(1):hover {
+    border-color: var(--color-bright-blue);
+    color: var(--color-bright-blue);
+}
+
+.cookies-banner button:nth-child(2):hover {
+    opacity: 0.9;
+}
+
+/* Chat */
+.chat {
+    position: fixed;
+    z-index: 100;
+    right: 5%;
+    bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+}
+
+.chat #chat,
+.chat #whatsapp {
+    transition: 200ms ease-in-out;
+    margin: 5px 0px;
+}
+
+.chat #chat:hover,
+.chat #whatsapp:hover {
+    transform: translate(0px, -5px);
+}
+
+.chat #chat img {
+    width: 60px;
+    border-radius: 50px;
+}
+
+.chat #whatsapp img {
+    width: 70px;
+    border-radius: 10px;
 }
