@@ -1,0 +1,40 @@
+/* Import Fonts */
+@import url(fonts.css);
+
+/* Root declarations */
+:root {
+    /* Colors */
+    --color-primary: #3b9ddc;
+    --color-secondary: #18628d;
+    --color-terciary: #0a2b40;
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* Fonts */
+    --font-regular: "Kanit-Regular", sans-serif;
+    --font-medium: "Kanit-Medium", sans-serif;
+    --font-bold: "Kanit-Bold", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-regular);
+    scroll-behavior: smooth;
+}
+
+body {
+    cursor: default;
+    background-color: var(--color-white);
+}
+
+::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+a,
+button {
+    cursor: pointer;
+}

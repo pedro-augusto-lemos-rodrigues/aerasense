@@ -4,9 +4,9 @@
 /* Root declarations */
 :root {
     /* Colors */
-    --color-primary: #3b9ddc;
-    --color-secondary: #18628d;
-    --color-terciary: #0a2b40;
+    --color-bright-blue: #3b9ddc;
+    --color-dark-blue: #18628d;
+    --color-very-dark-blue: #0a2b40;
     --color-white: #ffffff;
     --color-black: #000000;
 
@@ -14,6 +14,7 @@
     --font-regular: "Kanit-Regular", sans-serif;
     --font-medium: "Kanit-Medium", sans-serif;
     --font-bold: "Kanit-Bold", sans-serif;
+    --font-extrabold: "Kanit-ExtraBold", sans-serif;
 }
 
 * {
@@ -30,7 +31,7 @@ body {
 }
 
 ::selection {
-    background-color: var(--color-secondary);
+    background-color: var(--color-dark-blue);
     color: var(--color-white);
 }
 

@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Segurança de Gás GLP em Cozinhas Industriais: Análise de Risco e
+            Prevenção
+        </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+            .chart-container {
+                position: relative;
+                width: 100%;
+                height: 300px;
+                max-height: 400px;
+            }
+            @media (min-width: 768px) {
+                .chart-container {
+                    height: 350px;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-gray-100 text-gray-800">
+        <!--
+    Chosen Color Palette: Energetic & Playful
+    #00A0B0 (Blue)
+    #6A4A3C (Brown)
+    #CC333F (Red)
+    #EB6841 (Orange)
+    #EDC951 (Yellow)
+    -->
+
+        <!--
+    Infographic Narrative & Structure Plan:
+    1.  Introduction/Hook: Grab attention with a startling statistic about gas incidents in Brazil.
+    2.  Data Overview (The Problem): Visualize the common causes of LPG leaks to show the problem is relatable and frequent.
+    3.  Process Flow (The Escalation): Use a timeline/flowchart to illustrate how quickly a small leak becomes a catastrophe, explaining the concept of LEL (Lower Explosive Limit).
+    4.  In-Depth Analysis (The True Cost): Quantify the multi-faceted costs of an incident, including property damage, business interruption, and intangible brand damage.
+    5.  The Solution: Present a comparative timeline showing the stark difference a sensor makes.
+    6.  Future Outlook/ROI (The Investment): A simple ROI calculator to frame the sensor as a smart financial decision, not an expense.
+    7.  Conclusion/CTA: A clear call to action.
+    -->
+
+        <!--
+    Visualization Selection Plan:
+    1.  Startling Statistic -> Goal: Inform -> Chosen Visualization: Single Big Number. Justification: Immediately conveys the scale of the problem. Method: HTML/Tailwind. (No SVG)
+    2.  Causes of Leaks -> Goal: Compare -> Chosen Visualization: Donut Chart. Justification: Clearly shows the proportion of common failure points. Library: Chart.js/Canvas. (No SVG)
+    3.  Leak Escalation -> Goal: Organize (Process) -> Chosen Visualization: Flow Chart. Justification: Visualizes a sequence of events effectively. Method: HTML/CSS with Tailwind. (No SVG, No Mermaid JS)
+    4.  Financial Impact -> Goal: Compare -> Chosen Visualization: Bar Chart. Justification: Compares the magnitude of different types of financial losses. Library: Chart.js/Canvas. (No SVG)
+    5.  Intangible Costs -> Goal: Inform -> Chosen Visualization: Pictograph. Justification: Simple, symbolic representation of abstract costs. Method: Unicode characters and HTML/Tailwind. (No SVG)
+    6.  With vs. Without Sensor -> Goal: Compare/Change -> Chosen Visualization: Timeline. Justification: Directly contrasts two scenarios over time. Method: HTML/CSS with Tailwind. (No SVG)
+    7.  Sensor ROI -> Goal: Inform/Interact -> Chosen Visualization: Interactive Calculator. Justification: Engages the user and provides personalized financial justification. Method: HTML/JS. (No SVG)
+
+    Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All visualizations are rendered using Chart.js/Canvas or structured HTML/CSS with Tailwind.
+    -->
+
+        <div class="container mx-auto p-4 md:p-8">
+            <header class="text-center mb-12">
+                <h1
+                    class="text-4xl md:text-5xl font-extrabold text-[#00A0B0] mb-2"
+                >
+                    O Risco Silencioso na Sua Cozinha Industrial
+                </h1>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Uma análise de dados sobre vazamentos de gás GLP no Brasil e
+                    como a tecnologia de detecção pode salvar seu negócio.
+                </p>
+            </header>
+
+            <main>
+                <section
+                    id="hook"
+                    class="bg-white rounded-lg shadow-lg p-8 mb-12 text-center"
+                >
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">
+                        A Realidade dos Acidentes com GLP no Brasil
+                    </h2>
+                    <p class="text-7xl font-black text-[#CC333F]">16.000+</p>
+                    <p class="text-xl text-gray-600 mt-2">
+                        Ocorrências anuais envolvendo Gás GLP atendidas apenas
+                        pelo Corpo de Bombeiros de São Paulo.
+                    </p>
+                    <p class="text-sm text-gray-500 mt-4">
+                        Fonte: Dados do Corpo de Bombeiros do Estado de São
+                        Paulo. Embora nem todas as ocorrências sejam em
+                        cozinhas, o número ilustra a alta frequência de
+                        incidentes com GLP.
+                    </p>
+                </section>
+
+                <section
+                    id="data-overview"
+                    class="bg-white rounded-lg shadow-lg p-8 mb-12"
+                >
+                    <h2 class="text-3xl font-bold text-center mb-8">
+                        De Onde Vem o Perigo? As Causas Raízes dos Vazamentos
+                    </h2>
+                    <p
+                        class="max-w-2xl mx-auto text-center text-gray-600 mb-10"
+                    >
+                        Vazamentos de gás raramente acontecem de forma
+                        espontânea. Eles são o resultado de falhas previsíveis
+                        em equipamentos e processos. Compreender as causas é o
+                        primeiro passo para a prevenção eficaz.
+                    </p>
+                    <div class="chart-container max-w-lg mx-auto">
+                        <canvas id="causesChart"></canvas>
+                    </div>
+                </section>
+
+                <section
+                    id="escalation-flow"
+                    class="bg-white rounded-lg shadow-lg p-8 mb-12"
+                >
+                    <h2 class="text-3xl font-bold text-center mb-8">
+                        A Escalada Rápida de um Vazamento para a Catástrofe
+                    </h2>
+                    <p
+                        class="max-w-2xl mx-auto text-center text-gray-600 mb-10"
+                    >
+                        Um pequeno vazamento de GLP pode atingir uma
+                        concentração explosiva em minutos. O gás é mais denso
+                        que o ar e se acumula em níveis baixos, esperando
+                        silenciosamente por uma fonte de ignição.
+                    </p>
+                    <div class="relative w-full overflow-x-auto">
+                        <div
+                            class="flex items-center justify-between space-x-2 md:space-x-4"
+                        >
+                            <div
+                                class="flex flex-col items-center text-center flex-1"
+                            >
+                                <div
+                                    class="w-16 h-16 bg-[#EDC951] rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-md"
+                                >
+                                    1
+                                </div>
+                                <h3 class="mt-2 font-semibold">
+                                    Vazamento Inicia
+                                </h3>
+                                <p class="text-sm text-gray-500">
+                                    Uma pequena falha na mangueira ou conexão.
+                                </p>
+                            </div>
+                            <div
+                                class="flex-grow h-1 bg-gray-300 hidden sm:block"
+                            ></div>
+                            <div
+                                class="flex flex-col items-center text-center flex-1"
+                            >
+                                <div
+                                    class="w-16 h-16 bg-[#EB6841] rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-md"
+                                >
+                                    2
+                                </div>
+                                <h3 class="mt-2 font-semibold">
+                                    Concentração Perigosa
+                                </h3>
+                                <p class="text-sm text-gray-500">
+                                    Em 5-10 min, atinge o Limite Inferior de
+                                    Explosividade (LEL).
+                                </p>
+                            </div>
+                            <div
+                                class="flex-grow h-1 bg-gray-300 hidden sm:block"
+                            ></div>
+                            <div
+                                class="flex flex-col items-center text-center flex-1"
+                            >
+                                <div
+                                    class="w-16 h-16 bg-[#CC333F] rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-md"
+                                >
+                                    3
+                                </div>
+                                <h3 class="mt-2 font-semibold">
+                                    Fonte de Ignição
+                                </h3>
+                                <p class="text-sm text-gray-500">
+                                    Chama piloto, faísca de motor ou
+                                    interruptor.
+                                </p>
+                            </div>
+                            <div
+                                class="flex-grow h-1 bg-gray-300 hidden sm:block"
+                            ></div>
+                            <div
+                                class="flex flex-col items-center text-center flex-1"
+                            >
+                                <div
+                                    class="w-16 h-16 bg-[#6A4A3C] rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-md"
+                                >
+                                    4
+                                </div>
+                                <h3 class="mt-2 font-semibold">
+                                    Incêndio/Explosão
+                                </h3>
+                                <p class="text-sm text-gray-500">
+                                    Resultados devastadores e irreversíveis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    id="costs"
+                    class="bg-white rounded-lg shadow-lg p-8 mb-12"
+                >
+                    <h2 class="text-3xl font-bold text-center mb-8">
+                        O Custo Real de um Incidente: Além do Fogo
+                    </h2>
+                    <p
+                        class="max-w-2xl mx-auto text-center text-gray-600 mb-10"
+                    >
+                        As perdas financeiras diretas são apenas a ponta do
+                        iceberg. Um incidente com gás afeta sua receita, sua
+                        reputação e pode trazer consequências legais severas.
+                    </p>
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+                    >
+                        <div>
+                            <h3 class="font-semibold text-xl text-center mb-4">
+                                Impacto Financeiro Estimado
+                            </h3>
+                            <div class="chart-container max-w-lg mx-auto">
+                                <canvas id="costsChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl text-center mb-4">
+                                Custos Intangíveis e Devastadores
+                            </h3>
+                            <div class="space-y-6">
+                                <div
+                                    class="flex items-center bg-gray-50 rounded-lg p-4 shadow-sm"
+                                >
+                                    <span class="text-4xl mr-4">🤕</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">
+                                            Vidas em Risco
+                                        </h4>
+                                        <p class="text-gray-600">
+                                            A segurança de colaboradores e
+                                            clientes é o ativo mais valioso.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center bg-gray-50 rounded-lg p-4 shadow-sm"
+                                >
+                                    <span class="text-4xl mr-4">📉</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">
+                                            Perda de Credibilidade
+                                        </h4>
+                                        <p class="text-gray-600">
+                                            A confiança do mercado e dos
+                                            clientes pode levar anos para ser
+                                            reconstruída.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center bg-gray-50 rounded-lg p-4 shadow-sm"
+                                >
+                                    <span class="text-4xl mr-4">📰</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">
+                                            Publicidade Negativa
+                                        </h4>
+                                        <p class="text-gray-600">
+                                            Um único acidente pode manchar a
+                                            reputação da sua marca
+                                            permanentemente.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    id="solution"
+                    class="bg-white rounded-lg shadow-lg p-8 mb-12"
+                >
+                    <h2 class="text-3xl font-bold text-center mb-8">
+                        Detecção Precoce: A Diferença Entre um Alerta e uma
+                        Tragédia
+                    </h2>
+                    <p
+                        class="max-w-2xl mx-auto text-center text-gray-600 mb-10"
+                    >
+                        A tecnologia de sensores de gás atua no momento mais
+                        crítico: os segundos iniciais do vazamento. Veja a
+                        comparação direta do tempo de resposta.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div
+                            class="border-2 border-red-200 bg-red-50 p-6 rounded-lg"
+                        >
+                            <h3
+                                class="text-xl font-bold text-red-800 mb-4 text-center"
+                            >
+                                Cenário SEM Sensor
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="font-bold text-red-600 mr-2"
+                                        >T+0s:</span
+                                    >
+                                    Vazamento inicia.
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold text-red-600 mr-2"
+                                        >T+5min:</span
+                                    >
+                                    Gás atinge concentração perigosa.
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold text-red-600 mr-2"
+                                        >T+15min:</span
+                                    >
+                                    Vazamento pode ser notado pelo cheiro, mas
+                                    talvez seja tarde demais.
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold text-red-600 mr-2"
+                                        >T+??:</span
+                                    >
+                                    Ignição acidental leva à catástrofe.
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="border-2 border-green-200 bg-green-50 p-6 rounded-lg"
+                        >
+                            <h3
+                                class="text-xl font-bold text-green-800 mb-4 text-center"
+                            >
+                                Cenário COM Sensor
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="font-bold text-green-600 mr-2"
+                                        >T+0s:</span
+                                    >
+                                    Vazamento inicia.
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold text-green-600 mr-2"
+                                        >T+10s:</span
+                                    >
+                                    Sensor detecta o gás e dispara o alarme
+                                    sonoro e visual.
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold text-green-600 mr-2"
+                                        >T+11s:</span
+                                    >
+                                    Válvula solenoide corta o fluxo de gás
+                                    automaticamente.
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="font-bold text-green-600 mr-2"
+                                        >T+30s:</span
+                                    >
+                                    Equipe evacua e ventila a área com
+                                    segurança. Incidente evitado.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    id="roi-calculator"
+                    class="bg-[#00A0B0] text-white rounded-lg shadow-lg p-8 mb-12"
+                >
+                    <h2 class="text-3xl font-bold text-center mb-2">
+                        Calcule seu Retorno Sobre o Investimento em Prevenção
+                    </h2>
+                    <p
+                        class="max-w-2xl mx-auto text-center text-gray-200 mb-10"
+                    >
+                        Um sensor não é um custo, é um investimento com retorno
+                        garantido. Veja o quanto você protege com uma pequena
+                        fração do seu faturamento.
+                    </p>
+                    <div class="bg-white/20 p-6 rounded-lg max-w-3xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label
+                                    for="monthlyRevenue"
+                                    class="block font-semibold mb-1"
+                                    >Faturamento Mensal Médio (R$)</label
+                                >
+                                <input
+                                    type="number"
+                                    id="monthlyRevenue"
+                                    placeholder="Ex: 80000"
+                                    class="w-full p-2 rounded text-gray-800"
+                                />
+                            </div>
+                            <div>
+                                <label
+                                    for="employees"
+                                    class="block font-semibold mb-1"
+                                    >Número de Colaboradores</label
+                                >
+                                <input
+                                    type="number"
+                                    id="employees"
+                                    placeholder="Ex: 15"
+                                    class="w-full p-2 rounded text-gray-800"
+                                />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button
+                                id="calculateBtn"
+                                class="bg-[#EDC951] text-[#6A4A3C] font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-400 transition-colors"
+                            >
+                                Calcular Risco
+                            </button>
+                        </div>
+                    </div>
+                    <div id="results" class="mt-8 text-center hidden">
+                        <h3 class="text-2xl font-bold mb-4">
+                            Análise de Risco Potencial
+                        </h3>
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+                        >
+                            <div
+                                class="bg-white text-[#CC333F] p-6 rounded-lg shadow-md"
+                            >
+                                <p class="text-lg font-semibold">
+                                    Perda Estimada por Interrupção (3 meses)
+                                </p>
+                                <p id="lossResult" class="text-4xl font-black">
+                                    R$ 0,00
+                                </p>
+                            </div>
+                            <div
+                                class="bg-white text-[#00A0B0] p-6 rounded-lg shadow-md"
+                            >
+                                <p class="text-lg font-semibold">
+                                    Investimento Único em Segurança
+                                </p>
+                                <p
+                                    id="investmentResult"
+                                    class="text-4xl font-black"
+                                >
+                                    ~R$ 2.500
+                                </p>
+                                <p class="text-sm">
+                                    Valor estimado para um sistema básico.
+                                    Consulte para um orçamento preciso.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="text-center mt-12">
+                <h2 class="text-3xl font-bold text-[#00A0B0] mb-4">
+                    Não espere pelo alarme de incêndio.
+                </h2>
+                <p class="text-lg text-gray-600 mb-6">
+                    A prevenção é a única estratégia garantida. Proteja seu
+                    patrimônio, sua equipe e sua marca.
+                </p>
+                <a
+                    href="#"
+                    class="bg-[#EB6841] text-white font-bold py-4 px-10 rounded-lg text-xl hover:bg-orange-600 transition-colors shadow-lg"
+                    >Fale com um Especialista Agora</a
+                >
+            </footer>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const processLabel = (label) => {
+                    if (label.length <= 16) return label;
+                    const words = label.split(" ");
+                    const lines = [];
+                    let currentLine = "";
+                    for (const word of words) {
+                        if (
+                            (currentLine + " " + word).length > 16 &&
+                            currentLine.length > 0
+                        ) {
+                            lines.push(currentLine);
+                            currentLine = word;
+                        } else {
+                            currentLine = currentLine
+                                ? `${currentLine} ${word}`
+                                : word;
+                        }
+                    }
+                    lines.push(currentLine);
+                    return lines;
+                };
+
+                const tooltipTitleCallback = (tooltipItems) => {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(" ");
+                    }
+                    return label;
+                };
+
+                const chartColors = [
+                    "#00A0B0",
+                    "#EB6841",
+                    "#EDC951",
+                    "#CC333F",
+                    "#6A4A3C",
+                ];
+
+                var causesCtx = document
+                    .getElementById("causesChart")
+                    .getContext("2d");
+                new Chart(causesCtx, {
+                    type: "doughnut",
+                    data: {
+                        labels: [
+                            "Mangueira/Conexões Danificadas",
+                            "Falha do Regulador de Pressão",
+                            "Instalação Incorreta",
+                            "Erro Humano",
+                        ],
+                        datasets: [
+                            {
+                                label: "Causas de Vazamentos",
+                                data: [40, 30, 20, 10],
+                                backgroundColor: chartColors,
+                                borderColor: "#FFFFFF",
+                                borderWidth: 2,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: "top",
+                            },
+                            title: {
+                                display: true,
+                                text: "Principais Causas de Vazamentos de GLP em %",
+                                font: { size: 16 },
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback,
+                                },
+                            },
+                        },
+                    },
+                });
+
+                const costsLabels = [
+                    "Danos à Propriedade",
+                    "Perda de Receita (Interrupção)",
+                    "Custos Legais e Multas",
+                    "Aumento do Seguro (anual)",
+                ].map(processLabel);
+                var costsCtx = document
+                    .getElementById("costsChart")
+                    .getContext("2d");
+                new Chart(costsCtx, {
+                    type: "bar",
+                    data: {
+                        labels: costsLabels,
+                        datasets: [
+                            {
+                                label: "Custo em Reais (R$)",
+                                data: [150000, 240000, 50000, 20000],
+                                backgroundColor: chartColors.slice(0, 4),
+                                borderColor: chartColors
+                                    .slice(0, 4)
+                                    .map((c) => c + "B3"),
+                                borderWidth: 1,
+                            },
+                        ],
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: "y",
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function (value, index, values) {
+                                        return "R$ " + value / 1000 + "k";
+                                    },
+                                },
+                            },
+                        },
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback,
+                                    label: function (context) {
+                                        let label = context.dataset.label || "";
+                                        if (label) {
+                                            label += ": ";
+                                        }
+                                        if (context.parsed.x !== null) {
+                                            label += new Intl.NumberFormat(
+                                                "pt-BR",
+                                                {
+                                                    style: "currency",
+                                                    currency: "BRL",
+                                                },
+                                            ).format(context.parsed.x);
+                                        }
+                                        return label;
+                                    },
+                                },
+                            },
+                        },
+                    },
+                });
+
+                const calculateBtn = document.getElementById("calculateBtn");
+                calculateBtn.addEventListener("click", () => {
+                    const revenueInput =
+                        document.getElementById("monthlyRevenue");
+                    const revenue = parseFloat(revenueInput.value);
+
+                    if (isNaN(revenue) || revenue <= 0) {
+                        alert(
+                            "Por favor, insira um valor de faturamento válido.",
+                        );
+                        return;
+                    }
+
+                    const loss = revenue * 3;
+                    const lossResultEl = document.getElementById("lossResult");
+                    const resultsEl = document.getElementById("results");
+
+                    lossResultEl.textContent = new Intl.NumberFormat("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                    }).format(loss);
+                    resultsEl.classList.remove("hidden");
+                });
+            });
+        </script>
+    </body>
+</html>
