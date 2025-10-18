@@ -107,14 +107,14 @@
 
     var PontuacaoTotal = 0;
 
-        if (!AreaExterna) { PontuacaoTotal += 2; }       // (Contra as normas)
-        if (!FontesIgnicao) { PontuacaoTotal += 3; }     // (EXPLOSÃO)
-        if (!LocalProtegido) { PontuacaoTotal += 2; }    // (Contra as normas)
-        if (!SinalizacaoSeg) { PontuacaoTotal += 1; }    // (Atenção)
+        if (AreaExterna == false) { PontuacaoTotal += 2; }       // (Contra as normas)
+        if (FontesIgnicao == false) { PontuacaoTotal += 3; }     // (EXPLOSÃO)
+        if (LocalProtegido == false) { PontuacaoTotal += 2; }    // (Contra as normas)
+        if (SinalizacaoSeg == false) { PontuacaoTotal += 1; }    // (Atenção)
 
         // Estado do Cilindros
-        if (!PosicaoVertical) { PontuacaoTotal += 2; }   // (Contra as normas)
-        if (!PisoNivelado) { PontuacaoTotal += 1; }      // (Atenção)
+        if (PosicaoVertical == false) { PontuacaoTotal += 2; }   // (Contra as normas)
+        if (PisoNivelado == false) { PontuacaoTotal += 1; }      // (Atenção)
         if (CorrosaoCilindro) { PontuacaoTotal += 2; }   // (Contra as normas)
         if (DentroValidadeCilindro) { 
           if (DataValidadeCilindro < 1) { PontuacaoTotal += 1; } // (Deve tomar atenção)
