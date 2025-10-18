@@ -153,9 +153,9 @@
                         <div class="bg"></div>
                         <div class="video-container">
                             <video
-                                autoplay
-                                muted
-                                loop
+                                autoplay="true"
+                                muted="true"
+                                loop="true"
                                 src="public/assets/video/Design sem nome.mp4"
                             ></video>
                         </div>
@@ -167,28 +167,111 @@
         <main>
             <section class="companies">
                 <span>Escolhido por</span>
-                <div class="logos">
-                    <div class="image">
-                        <img src="public/assets/images/organica.jpg" alt="" />
+
+                <div class="logos-area">
+                    <div class="logos">
+                        <div class="image">
+                            <img
+                                src="public/assets/images/organica.jpg"
+                                alt=""
+                            />
+                        </div>
+
+                        <div class="image">
+                            <img
+                                src="public/assets/images/isis-amaro.jpg"
+                                alt=""
+                            />
+                        </div>
+
+                        <div class="image">
+                            <img
+                                src="public/assets/images/ana-monica.jpg"
+                                alt=""
+                            />
+                        </div>
+
+                        <div class="image">
+                            <img src="public/assets/images/radtek.jpg" alt="" />
+                        </div>
+
+                        <div class="image">
+                            <img
+                                src="public/assets/images/salgados-borcelle.jpg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="func">
+                    <div class="information">
+                        <h3>Funcionalidades do nosso sistema</h3>
+                        <h2>
+                            Centralizamos as principais funcionalidades de um
+                            sistema de detecção de vazamento de GLP para
+                            <span>gerar dados e decisões assertivas</span>
+                        </h2>
                     </div>
 
-                    <div class="image">
-                        <img src="public/assets/images/isis-amaro.jpg" alt="" />
+                    <div class="info">
+                        <div></div>
+                        <span
+                            >Tenha informações inteligentes que te ajuda a
+                            entender se algo está fora do normal</span
+                        >
                     </div>
+                </div>
 
-                    <div class="image">
-                        <img src="public/assets/images/ana-monica.jpg" alt="" />
-                    </div>
+                <div class="features">
+                    <div class="cards-container">
+                        <div class="card" id="card1">
+                            <div class="title" id="title1">
+                                <span>Proteção contra asfixia</span>
+                                <p>
+                                    Detecte antes que a concentração cause
+                                    asfixia
+                                </p>
+                            </div>
+                        </div>
 
-                    <div class="image">
-                        <img src="public/assets/images/radtek.jpg" alt="" />
-                    </div>
+                        <div class="card" id="card2">
+                            <div
+                                class="title"
+                                id="title2"
+                                style="display: none"
+                            >
+                                <span
+                                    >Conformidade com as Normas
+                                    Regulamentadoras</span
+                                >
+                                <p>Mantenha-se em estado regular com as NRs</p>
+                            </div>
+                        </div>
 
-                    <div class="image">
-                        <img
-                            src="public/assets/images/salgados-borcelle.jpg"
-                            alt=""
-                        />
+                        <div class="card" id="card3">
+                            <div
+                                class="title"
+                                id="title3"
+                                style="display: none"
+                            >
+                                <span>Esteja sempre conectado</span>
+                                <p>
+                                    Acesso ao painel de forma simples e rápida
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card" id="card4">
+                            <div
+                                class="title"
+                                id="title4"
+                                style="display: none"
+                            >
+                                <span>Garanta continuidade operacional</span>
+                                <p>Livre de suspresas inesperadas</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -204,12 +287,13 @@
                     />
                     <p>
                         Aerasense é uma empresa brasileira de tecnologia de
-                        sensores GLP
+                        sensores GLP<br />
+                        <span>#aerasense #ehdobrasil #sensorgas</span>
                     </p>
                     <span>
                         <a href="#"
                             >Rua Girassol, 1234 - Vila Madalena, São Paulo - SP,
-                            03955-202</a
+                            <br />03955-202</a
                         >
                     </span>
                 </div>
@@ -383,8 +467,8 @@
         <!--Copyright-->
         <div class="copyright">
             <span
-                >&COPY; aerasense tecnologia ltda · todos os direitos reservados
-                · cnpj: 08.640.503/0001-33</span
+                >&COPY; 2025 · aerasense tecnologia ltda · todos os direitos
+                reservados · cnpj: 08.640.503/0001-33</span
             >
         </div>
 
@@ -399,8 +483,8 @@
                 >
             </div>
             <div class="buttons">
-                <button id="decline">Recusar</button>
-                <button id="accept">Concordar</button>
+                <button id="decline-cookies">Recusar</button>
+                <button id="accept-cookies">Concordar</button>
             </div>
         </div>
 
@@ -420,5 +504,8 @@
 
         <!--Cookies Banner-->
         <script src="public/assets/javascript/cookiesBanner.js"></script>
+
+        <!--Cards-->
+        <script src="public/assets/javascript/cards.js"></script>
     </body>
 </html>

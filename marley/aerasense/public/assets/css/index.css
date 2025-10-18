@@ -177,8 +177,9 @@ nav #register a:hover {
 /* Main */
 main .companies {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-self: center;
     background-color: var(--color-white);
     padding: 2%;
     z-index: 20;
@@ -186,8 +187,9 @@ main .companies {
     width: 90%;
     height: 40vh;
     margin: 0% 5%;
-    border: 1px solid red;
-    border-radius: 16px 16px 0px 0px;
+    border-radius: 0px 16px 0px 0px;
+    border-top: 1px solid var(--color-bright-blue);
+    border-right: 1px solid var(--color-bright-blue);
 }
 
 main .companies span {
@@ -217,11 +219,114 @@ main .companies .logos img {
     width: 180px;
 }
 
+main .func {
+    margin-top: 5%;
+    padding: 5% 0%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1px solid var(--color-bright-blue);
+    border-top: 1px solid #dcdcdc;
+}
+
+main .func .information {
+    width: 55vw;
+}
+
+main .func span {
+    color: var(--color-bright-blue);
+}
+
+main .func h3 {
+    color: var(--color-bright-blue);
+}
+
+main .func h2 {
+    color: var(--color-very-dark-blue);
+    font-size: 2rem;
+}
+
+main .func .info {
+    width: 20vw;
+}
+
+main .func .info div:nth-child(1) {
+    height: 5px;
+    width: 150px;
+    content: "";
+    border-radius: 5px;
+    background-color: var(--color-very-dark-blue);
+}
+
+main .func .info span {
+    color: var(--color-very-dark-blue);
+}
+
+main .features .card {
+    width: 500px;
+    height: 450px;
+    border-radius: 16px;
+    margin-right: 50px;
+    transition: 250ms ease-in-out;
+}
+
+main .features .card .title {
+    position: relative;
+    z-index: 10;
+    top: 70%;
+    margin: 10px;
+    border-radius: 16px;
+    align-self: flex-end;
+    padding: 5%;
+    background-color: var(--color-very-dark-blue);
+}
+
+main .features .card .title span {
+    color: var(--color-bright-blue);
+    font-family: var(--font-bold);
+}
+
+main .features .card .title p {
+    color: var(--color-white);
+}
+
+main .features #card1 {
+    width: 500px;
+    background-image: url("../images/vista-frontal-trabalhador-com-capacete-e-mascara-protetora.avif");
+    background-size: cover;
+}
+
+main .features #card2 {
+    width: 200px;
+    background-image: url("../images/trabalhador-sexo-masculino-operando-maquinas-na-fabrica.avif");
+    background-size: cover;
+}
+
+main .features #card3 {
+    width: 200px;
+    background-image: url("../images/avos-aprendendo-usar-o-dispositivo-digital.avif");
+    background-size: cover;
+}
+
+main .features #card4 {
+    width: 200px;
+    background-image: url("../images/pexels-mikhail-nilov-8943269.avif");
+    background-size: cover;
+}
+
+main .features .cards-container {
+    display: flex;
+}
+
+main .features .card img {
+    width: 100%;
+    border-radius: 16px;
+}
+
 /* Footer */
 footer {
     background-color: var(--color-very-dark-blue);
     height: 100%;
-    margin-top: 50%;
+    margin-top: 100%;
     padding: 5%;
     border-radius: 16px 16px 0px 0px;
 }

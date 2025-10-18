@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("banner");
-  const acceptButton = document.getElementById("accept");
-  const declineButton = document.getElementById("decline");
+  const acceptButton = document.getElementById("accept-cookies");
+  const declineButton = document.getElementById("decline-cookies");
 
   const modal = () => {
     banner.style.display = "flex";
