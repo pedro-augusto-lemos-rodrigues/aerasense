@@ -35,6 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Define uma velocidade de aparição do título
   let velocity = 250;
 
+  card1.style.width = wide;
+  card2.style.width = short;
+  card3.style.width = short;
+  card4.style.width = short;
+
+  console.log(card1.width);
+
   card1.addEventListener("click", () => {
     if (card1.style.width === short) {
       card1.style.width = wide;
@@ -51,9 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       card4.style.width = short;
       title4.style.display = "none";
-    } else {
-      card1.style.width = short;
-      title1.style.display = "none";
     }
   });
 

@@ -267,7 +267,7 @@ main .features .card {
     height: 450px;
     border-radius: 16px;
     margin-right: 50px;
-    transition: 250ms ease-in-out;
+    transition: 300ms ease-in-out;
 }
 
 main .features .card .title {
@@ -283,7 +283,7 @@ main .features .card .title {
 
 main .features .card .title span {
     color: var(--color-bright-blue);
-    font-family: var(--font-bold);
+    font-weight: var(--font-bold);
 }
 
 main .features .card .title p {
@@ -346,13 +346,16 @@ main .how .container .title {
 
 main .how .container .image {
     width: 100%;
-    background-color: var(--color-very-dark-blue);
     height: 100%;
     border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main .how .container .image img {
     border-radius: 16px;
+    width: 100%;
 }
 
 main .how .container .title h3 {
@@ -382,6 +385,10 @@ main .how .container .title .text {
 main .products {
     margin-top: 5%;
     background-color: var(--color-white);
+}
+
+main #products-s {
+    height: 1px;
 }
 
 main .products .container .title {
@@ -499,32 +506,29 @@ main .blog .cards .card {
     padding: 20px;
     margin: 10px 20px 0px 0px;
     border-radius: 16px;
-    border: 1px solid var(--color-very-dark-blue);
     transition: 200ms ease-in-out;
+    box-shadow: 0px 5px 5px rgba(150, 150, 150, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
 }
 
 main .blog .cards .card .content {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 main .blog .cards .card:hover {
-    border: 1px solid var(--color-white);
-    transform: translate(0px, -5px);
-    box-shadow: 0px 5px 5px rgba(150, 150, 150, 0.8);
-}
-
-main .blog .title .card .image {
-    width: 300px;
-    height: 100px;
-    border: 16px;
+    transform: translate(0px, -10px);
 }
 
 main .blog .cards .card .image img {
-    width: 300px;
-    height: 200px;
+    width: 315px;
     border-radius: 16px;
+    width: 100%;
+    height: auto;
 }
 
 main .blog .cards .card p {
@@ -534,27 +538,34 @@ main .blog .cards .card p {
 
 main .blog .cards .card .content span {
     color: #777777;
-    margin-top: 10px;
 }
 
 main .blog .cards .card .content a {
     text-decoration: none;
     display: flex;
-    justify-content: flex-start;
+    color: var(--color-white);
+    justify-content: center;
     align-items: center;
     margin-top: 20px;
-    width: max-content;
+    border-radius: 16px;
+    background-color: var(--color-bright-blue);
+    padding: 10px;
+    width: 100%;
 }
 
 main .blog .cards .card .content a:hover {
-    text-decoration: underline;
+    opacity: 0.9;
+    color: var(--color-white);
 }
 
 main .blog .cards .card .content a span {
-    color: var(--color-very-dark-blue);
+    color: var(--color-white);
 }
 
 main .blog .cards .card a img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20px;
     height: 20px;
 }
@@ -663,27 +674,30 @@ main .contact .content form button {
     background-color: var(--color-bright-blue);
     border: 1px solid var(--color-bright-blue);
     border-radius: 16px;
+    color: var(--color-white);
 }
 
 main .contact .content form input,
 main .contact .content form textarea {
-    padding: 8px;
+    padding: 14px 10px;
     border-radius: 10px;
     border: 1px solid var(--color-very-dark-blue);
     transition: 200ms ease-in-out;
 }
 
-main .contact .content form input:focus-visible {
+main .contact .content form input:focus-visible,
+main .contact .content form textarea {
     outline: 1px solid var(--color-bright-blue);
     border-color: var(--color-bright-blue);
 }
 
 main .contact .content form label {
     color: var(--color-very-dark-blue);
+    margin: 2px 0px;
 }
 
 main .contact .content form label::after {
-    content: "*";
+    content: " *";
     color: var(--color-bright-blue);
 }
 
@@ -706,6 +720,10 @@ main .contact .content .checkbox {
 
 main .contact .content .checkbox label a {
     color: var(--color-bright-blue);
+}
+
+main .contact .content .checkbox label {
+    font-size: 0.8rem;
 }
 
 main .contact .content .checkbox input {
@@ -770,7 +788,7 @@ footer .links .item ul li a {
 
 footer .links h3 {
     color: var(--color-bright-blue);
-    font-family: var(--font-bold);
+    font-weight: var(--font-bold);
 }
 
 footer .links ul li {
@@ -795,7 +813,7 @@ footer .other {
 
 footer .newsletter form label {
     color: var(--color-white);
-    font-family: var(--font-bold);
+    font-weight: var(--font-bold);
 }
 
 footer .newsletter form {
@@ -854,7 +872,7 @@ footer .newsletter form .box input:focus-visible {
 
 footer .social h2 {
     color: var(--color-white);
-    font-family: var(--font-bold);
+    font-weight: var(--font-bold);
 }
 
 footer .social .links-social ul {
@@ -916,7 +934,7 @@ footer .social .links-social li a:hover {
 
 .cookies-banner span:nth-child(1) {
     color: var(--color-bright-blue);
-    font-family: var(--font-bold);
+    font-weight: var(--font-bold);
 }
 
 .cookies-banner span:nth-child(2) {

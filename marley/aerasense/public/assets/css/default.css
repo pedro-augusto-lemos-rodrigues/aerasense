@@ -1,6 +1,3 @@
-/* Import Fonts */
-@import url(fonts.css);
-
 /* Root declarations */
 :root {
     /* Colors */
@@ -10,31 +7,37 @@
     --color-white: #ffffff;
     --color-black: #000000;
 
-    /* Fonts */
-    --font-regular: "Kanit-Regular", sans-serif;
-    --font-medium: "Kanit-Medium", sans-serif;
-    --font-bold: "Kanit-Bold", sans-serif;
-    --font-extrabold: "Kanit-ExtraBold", sans-serif;
+    /* Font Family */
+    --font-family: "Kanit", sans-serif;
+
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 600;
+    --font-extrabold: 800;
 }
 
+/* Global Reset */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: var(--font-regular);
+    font-family: var(--font-family);
     scroll-behavior: smooth;
 }
 
+/* Body */
 body {
     cursor: default;
     background-color: var(--color-white);
 }
 
+/* Select */
 ::selection {
     background-color: var(--color-dark-blue);
     color: var(--color-white);
 }
 
+/* Interact */
 a,
 button {
     cursor: pointer;
