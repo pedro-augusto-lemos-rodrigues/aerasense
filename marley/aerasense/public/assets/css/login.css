@@ -1,0 +1,127 @@
+@import url(default.css);
+
+.container {
+    padding: 2% 5% 0% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0% 30%;
+}
+
+.container .logo svg {
+    width: 412px;
+}
+
+.container .title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.container .title h2 {
+    color: var(--color-very-dark-blue);
+    font-weight: bold;
+}
+
+.container .form {
+    width: 100%;
+}
+
+.container .form .inputs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 8px 0px;
+}
+
+.container .form .inputs label {
+    color: var(--color-very-dark-blue);
+}
+
+.container .form .inputs label::after {
+    content: " *";
+    color: var(--color-bright-blue);
+}
+
+.container .form .inputs input {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--color-very-dark-blue);
+    transition: 250ms ease-in-out;
+}
+
+.form input[type="password"] {
+    letter-spacing: 5px;
+}
+
+.container .form .inputs input:focus-visible {
+    outline-color: var(--color-bright-blue);
+    outline-width: 1px;
+    border: 0.5px solid var(--color-bright-blue);
+}
+
+.container .button {
+    margin: 10px 0px;
+}
+
+.container .button button {
+    background-color: var(--color-bright-blue);
+    padding: 12px 30px;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--color-bright-blue);
+    color: var(--color-white);
+    font-weight: bold;
+    transition: 180ms ease-in-out;
+}
+
+.container .button button:hover {
+    background-color: var(--color-dark-blue);
+}
+
+.container .reset-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-very-dark-blue);
+    margin: 10px 0px;
+}
+
+.container .reset-password a {
+    color: var(--color-bright-blue);
+    margin-left: 5px;
+    transition: 180ms ease-in-out;
+}
+
+.container .reset-password a:hover {
+    color: var(--color-dark-blue);
+}
+
+.container .register {
+    margin: 5px 0px;
+    color: var(--color-very-dark-blue);
+}
+
+.container .register a {
+    margin-left: 5px;
+    color: var(--color-bright-blue);
+    transition: 180ms ease-in-out;
+}
+
+.container .register a:hover {
+    margin-left: 5px;
+    color: var(--color-dark-blue);
+}
+
+#message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px 0px;
+}
+
+#message span {
+    margin-left: 5px;
+    color: var(--color-danger);
+}
