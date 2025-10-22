@@ -79,6 +79,7 @@ const servidor = (valoresSensorDigital) => {
 
   // configurações de requisição e resposta
   app.use((request, response, next) => {
+    // Request não está sendo usado
     response.header("Access-Control-Allow-Origin", "*");
     response.header(
       "Access-Control-Allow-Headers",
