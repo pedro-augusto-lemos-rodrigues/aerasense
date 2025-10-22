@@ -9,6 +9,11 @@ body {
     padding: 0;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+}
+
 .container {
     width: 1000px;
     margin: auto;
@@ -22,6 +27,98 @@ body {
     font-size: 14px;
 }
 
+/* Navbar */
+nav {
+    background-color: var(--color-very-dark-blue);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    position: fixed;
+    transition: 250ms ease-in-out;
+    z-index: 100;
+}
+
+nav .logo-area {
+    margin-right: 15px;
+}
+
+nav .logo-area svg {
+    width: 150px;
+    height: max-content;
+}
+
+nav .links-area ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav .links-area li {
+    list-style: none;
+    margin: 0px 10px;
+}
+
+nav .links-area li a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+nav .links-area li a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-bright-blue);
+    text-decoration-thickness: 2px;
+}
+
+nav .buttons {
+    display: flex;
+    align-items: center;
+}
+
+nav .buttons select {
+    background-color: var(--color-very-dark-blue);
+    border: none;
+    color: var(--color-white);
+    padding: 2px 5px;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+}
+
+nav #login,
+nav #register {
+    display: flex;
+    justify-content: center;
+    margin: 0px 8px;
+}
+
+nav #login a,
+nav #register a {
+    padding: 10px 50px;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: 180ms ease-in-out;
+}
+
+nav #login a {
+    color: var(--color-very-dark-blue);
+    background-color: var(--color-white);
+}
+
+nav #register a {
+    color: var(--color-white);
+    background-color: var(--color-bright-blue);
+    border: 1px solid var(--color-bright-blue);
+}
+
+nav #login a:hover {
+    color: var(--color-bright-blue);
+}
+
+nav #register a:hover {
+    color: var(--color-white);
+    opacity: 0.9;
+}
+
 /* Conteúdo Section */
 
 .conteudo-section {
@@ -31,7 +128,7 @@ body {
 }
 
 .conteudo-section h1 {
-    margin-top: 50px;
+    margin-top: 130px;
 }
 
 .conteudo-section span {
@@ -177,6 +274,7 @@ body {
     display: flex;
     margin: 8px 0px;
     justify-content: center;
+    flex-direction: column;
 }
 
 .social a {
@@ -185,4 +283,184 @@ body {
 
 .social a img {
     width: 30px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-very-dark-blue);
+    height: 100%;
+    margin-top: 10%;
+    padding: 5%;
+    border-radius: 16px 16px 0px 0px;
+}
+
+footer .logo-area img {
+    width: 350px;
+}
+
+footer .logo-area {
+    color: var(--color-white);
+    height: 100%;
+}
+
+footer .logo-area p {
+    margin-bottom: 5%;
+}
+
+footer .logo-area span a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+footer .logo-area span a:hover {
+    text-decoration: underline;
+}
+
+footer .itens {
+    display: flex;
+}
+
+footer .links {
+    margin: 0% 5%;
+    display: flex;
+}
+
+footer .links .item {
+    margin: 0px 12px;
+}
+
+footer .links .item img {
+    width: 20px;
+    margin-right: 3px;
+}
+
+footer .links .item ul li a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: max-content;
+}
+
+footer .links h3 {
+    color: var(--color-bright-blue);
+    font-weight: var(--font-bold);
+}
+
+footer .links ul li {
+    list-style: none;
+    margin: 10px 0px;
+}
+
+footer .links a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+footer .links a:hover {
+    text-decoration: underline;
+}
+
+footer .other {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0%;
+}
+
+footer .newsletter form label {
+    color: var(--color-white);
+    font-weight: var(--font-bold);
+}
+
+footer .newsletter form {
+    display: flex;
+    align-items: center;
+}
+
+footer .newsletter form .box {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .newsletter form .check {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+footer .newsletter form #accept {
+    width: 20px !important;
+    font-family: var(--font-regular) !important;
+    margin-right: 5px;
+}
+
+footer .button {
+    margin-left: 10px;
+}
+
+footer .button button {
+    background-color: var(--color-bright-blue);
+    border: none;
+    color: var(--color-white);
+    border-radius: 16px;
+    padding: 16px 50px;
+}
+
+footer .button button:hover {
+    opacity: 0.9;
+}
+
+footer .newsletter form .check label {
+    font-family: var(--font-regular) !important;
+}
+
+footer .newsletter form .box input {
+    padding: 16px;
+    width: 450px;
+    border: none;
+    border-radius: 16px;
+    transition: 200ms ease-in-out;
+}
+
+footer .newsletter form .box input:focus-visible {
+    outline: 1px solid var(--color-bright-blue);
+}
+
+footer .social h2 {
+    color: var(--color-white);
+    font-weight: var(--font-bold);
+}
+
+footer .social .links-social ul {
+    display: flex;
+    margin-top: 5px;
+}
+
+footer .social .links-social li {
+    margin-right: 10px;
+    list-style: none;
+}
+
+footer .social .links-social li a {
+    background-color: var(--color-bright-blue);
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    align-items: center;
+    border-radius: 10px;
+    transition: 200ms ease-in-out;
+}
+
+footer .social .links-social li a:hover {
+    background-color: var(--color-dark-blue);
+}
+
+/* Copyright */
+.copyright {
+    padding: 16px 5%;
+    background-color: var(--color-bright-blue);
+}
+
+.copyright span {
+    text-transform: uppercase;
+    color: var(--color-white);
 }
