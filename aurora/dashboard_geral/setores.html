@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Geral</title>
-    <link rel="stylesheet" href="style_dashGeral.css">
+    <link rel="stylesheet" href="style_setores.css">
 </head>
 <body>
     <!-- Início do menu lateral de navegação -->
@@ -15,13 +15,13 @@
             <li class="logo-div">
                 <div class="logo"><img src="logo/Logo.svg" alt="aerasense"></div>
             </li>
-            <li class="ativo">
+            <li>
                 <a href="dashboard_geral.html">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h240v-560H200v560Zm320 0h240v-280H520v280Zm0-360h240v-200H520v200Z"/></svg>
                 <span>Dashboard Geral</span>
                 </a>
             </li>
-            <li>
+            <li class="ativo">
                 <a href="setores.html">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M220-80q-58 0-99-41t-41-99q0-58 41-99t99-41q18 0 35 4.5t32 12.5l153-153v-110q-44-13-72-49.5T340-740q0-58 41-99t99-41q58 0 99 41t41 99q0 48-28 84.5T520-606v110l154 153q15-8 31.5-12.5T740-360q58 0 99 41t41 99q0 58-41 99t-99 41q-58 0-99-41t-41-99q0-18 4.5-35t12.5-32L480-424 343-287q8 15 12.5 32t4.5 35q0 58-41 99t-99 41Zm520-80q25 0 42.5-17.5T800-220q0-25-17.5-42.5T740-280q-25 0-42.5 17.5T680-220q0 25 17.5 42.5T740-160ZM480-680q25 0 42.5-17.5T540-740q0-25-17.5-42.5T480-800q-25 0-42.5 17.5T420-740q0 25 17.5 42.5T480-680ZM220-160q25 0 42.5-17.5T280-220q0-25-17.5-42.5T220-280q-25 0-42.5 17.5T160-220q0 25 17.5 42.5T220-160Z"/></svg>
                 <span>Setores</span>
@@ -52,51 +52,82 @@
      <!-- conteúdo principal da página, no caso, os chart.js -->
     <main>
         <div class="container">
-            <div class="cabecalho-dash">
-                <span class="titulo-dash">Dashboard Geral</span>
-                <div class="barra-busca">
-                <input type="search" class="ipt-busca" placeholder="buscar..."> 
-                <button class="buscar-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M796-121 533-384q-30 26-69.96 40.5Q423.08-329 378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l264 262-44 44ZM377-389q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></svg>
-                </button>
+            <a href="">
+                <div id="div_card" class="card-setor">
+                
+                <div class="icone-setor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-118 120-398l66-50 294 228 294-228 66 50-360 280Zm0-202L120-600l360-280 360 280-360 280Zm0-280Zm0 178 230-178-230-178-230 178 230 178Z"/></svg>
+                </div>
+                <div class="titulo-setor">
+                    Setor #A0001
+                </div>
+                <div class="texto-setor">
+                    Linha de produção de panettones e chocottones
+                </div>
+                <div class="barra-decorativa"></div>
+            </div>
+            </a>
+            <a href="">
+                <div id="div_card" class="card-setor">
+                
+                <div class="icone-setor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-118 120-398l66-50 294 228 294-228 66 50-360 280Zm0-202L120-600l360-280 360 280-360 280Zm0-280Zm0 178 230-178-230-178-230 178 230 178Z"/></svg>
+                </div>
+                <div class="titulo-setor">
+                    Setor #A0002
+                </div>
+                <div class="texto-setor">
+                    Linha de produção de pães e bolos caseiros
+                </div>
+                <div class="barra-decorativa"></div>
+            </div>
+            </a>
+            <a href="">
+                <div id="div_card" class="card-setor">
+                
+                <div class="icone-setor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-118 120-398l66-50 294 228 294-228 66 50-360 280Zm0-202L120-600l360-280 360 280-360 280Zm0-280Zm0 178 230-178-230-178-230 178 230 178Z"/></svg>
+                </div>
+                <div class="titulo-setor">
+                    Setor #A0003
+                </div>
+                <div class="texto-setor">
+                    Linha de produção de wafers e biscoitos doces
+                </div>
+                <div class="barra-decorativa"></div>
+            </div>
+            </a>
+              <a href="">
+                <div id="div_card" class="card-setor">
+                
+                <div class="icone-setor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-118 120-398l66-50 294 228 294-228 66 50-360 280Zm0-202L120-600l360-280 360 280-360 280Zm0-280Zm0 178 230-178-230-178-230 178 230 178Z"/></svg>
+                </div>
+                <div class="titulo-setor">
+                    Setor #A0004
+                </div>
+                <div class="texto-setor">
+                    Linha de produção de cream crackers 
+                </div>
+                <div class="barra-decorativa"></div>
+            </div>
+            </a>
+              <a href="">
+                <div id="div_card" class="card-setor">
+                
+                <div class="icone-setor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-118 120-398l66-50 294 228 294-228 66 50-360 280Zm0-202L120-600l360-280 360 280-360 280Zm0-280Zm0 178 230-178-230-178-230 178 230 178Z"/></svg>
+                </div>
+                <div class="titulo-setor">
+                    Setor #A0005
+                </div>
+                <div class="texto-setor">
+                    Linha de produção de torradas
                 </div>
             </div>
-            <div class="cards-kpi">
-                <div class="card-individual">
-                    <span class="titulo-card">Maior proporção de críticos*</span>
-                    <span class="dado-kpi">Setor A • 4</span>
-                    <small class="legenda-kpi">*alertas críticos/total de alertas</small>
-                </div>
-                 <div class="card-individual">
-                    <span class="titulo-card">Maior leitura registrada*</span>
-                    <span class="dado-kpi">Setor D • 2,4%</span>
-                    <small class="legenda-kpi">*leitura diária, concentração de GLP</small>
-                </div>
-                <div class="card-individual">
-                    <span class="titulo-card">Maior incidência de alertas*</span>
-                    <span class="dado-kpi">Setor C • 13</span>
-                    <small class="legenda-kpi">*incidência diária</small>
-                </div>
-                 <div class="card-individual">
-                    <span class="titulo-card">Sensores ativos</span>
-                    <span class="dado-kpi">24 sensores</span>
-                    <small class="legenda-kpi">*distribuição por setor no gráfico 3</small>
-                </div>
-            </div>
-            <div class="todos-charts">
-                <div class="grafico-principal">
-                    <canvas id="mediaSetor"></canvas>
-                </div>
-                <div class="linha-charts">
-                    <div class="grafico-secundario">
-                        <canvas id="compararAlertas"></canvas>
-                    </div>
-                    <div class="grafico-secundario">
-                        <canvas id="qtdSensores"></canvas>
-                    </div>
-                </div>
-            </div>
+            </a>
             
+          
         </div>
     </main>
 </body>
