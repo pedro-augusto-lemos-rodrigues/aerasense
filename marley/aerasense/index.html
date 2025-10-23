@@ -687,11 +687,13 @@
                 <div class="newsletter">
                     <form>
                         <div class="box">
-                            <label for="email">Assine nossa newsletter</label>
+                            <label for="input_email_newsletter"
+                                >Assine nossa newsletter</label
+                            >
                             <input
                                 type="email"
                                 autocomplete="email"
-                                id="email"
+                                id="input_email_newsletter"
                                 placeholder="seuemail@mail.com"
                             />
                             <div class="check">
@@ -779,8 +781,12 @@
                 >
             </div>
             <div class="buttons">
-                <button id="decline-cookies">Recusar</button>
-                <button id="accept-cookies">Concordar</button>
+                <button onclick="ocultarCookiesBanner()" id="decline-cookies">
+                    Recusar
+                </button>
+                <button onclick="ocultarCookiesBanner()" d="accept-cookies">
+                    Concordar
+                </button>
             </div>
         </div>
 
@@ -799,7 +805,26 @@
         <script src="public/assets/javascript/dynamic-navbar.js"></script>
 
         <!--Cookies Banner-->
-        <script src="public/assets/javascript/cookiesBanner.js"></script>
+        <script>
+            var bannerCookies = document.getElementById("banner");
+            var aceitar = document.getElementById("accept-cookies");
+            var recusar = document.getElementById("decline-cookies");
+
+            // Função para definir um delay para chamar a função mostratCookiesBanner, o banner de cookies em 3000 milissegundos (3 segundos)
+            setTimeout(mostrarCookiesBanner, 3000);
+
+            // Função refatorada para mostrar o banner de cookies
+            function mostrarCookiesBanner() {
+                bannerCookies.style.display = "flex";
+            }
+
+            // Função refatorada para fechar o banner de cookies
+            function ocultarCookiesBanner() {
+                if (bannerCookies.style.display != "none") {
+                    bannerCookies.style.display = "none";
+                }
+            }
+        </script>
 
         <!--Cards-->
         <script src="public/assets/javascript/cards.js"></script>

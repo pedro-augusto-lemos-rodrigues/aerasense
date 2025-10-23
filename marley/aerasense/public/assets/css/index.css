@@ -686,7 +686,7 @@ main .contact .content form textarea {
 }
 
 main .contact .content form input:focus-visible,
-main .contact .content form textarea {
+main .contact .content form textarea:focus-visible {
     outline: 1px solid var(--color-bright-blue);
     border-color: var(--color-bright-blue);
 }
