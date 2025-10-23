@@ -1,2 +1,0 @@
-Para recriar o menu padrão para as abas de dentro da dashboard do cliente, precisa copiar as pastas ícones, logo, 
-css que está referenciado nos comentários e html referenciado!
