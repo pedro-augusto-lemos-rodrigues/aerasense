@@ -21,11 +21,6 @@ function CadastrarForms(e){
 
 
     // Valida se contem numero nos campos: Nome e sobrenome
-    if( /[0-9]/.test(nome)|| /[0-9]/.test(sobrenome)){
-        ID_Erros.innerHTML = 'Campo nome ou sobrenome invalido!'
-        return
-    }
-
     var listaNumeroString = '1234567890'
     var i = 0
     var b = 0
