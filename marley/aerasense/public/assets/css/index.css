@@ -263,17 +263,17 @@ main .func .info span {
 }
 
 main .features .card {
-    width: 500px;
+    width: 600px;
     height: 450px;
     border-radius: 16px;
-    margin-right: 50px;
+    margin-right: 10px;
     transition: 300ms ease-in-out;
 }
 
 main .features .card .title {
     position: relative;
     z-index: 10;
-    top: 70%;
+    top: 65%;
     margin: 10px;
     border-radius: 16px;
     align-self: flex-end;
@@ -291,27 +291,25 @@ main .features .card .title p {
 }
 
 main .features #card1 {
-    width: 500px;
     background-image: url("../images/vista-frontal-trabalhador-com-capacete-e-mascara-protetora.avif");
     background-size: cover;
 }
 
 main .features #card2 {
-    width: 200px;
     background-image: url("../images/trabalhador-sexo-masculino-operando-maquinas-na-fabrica.avif");
     background-size: cover;
+    background-position: center;
 }
 
 main .features #card3 {
-    width: 200px;
     background-image: url("../images/avos-aprendendo-usar-o-dispositivo-digital.avif");
     background-size: cover;
 }
 
 main .features #card4 {
-    width: 200px;
     background-image: url("../images/pexels-mikhail-nilov-8943269.avif");
     background-size: cover;
+    background-position: center;
 }
 
 main .features .cards-container {
