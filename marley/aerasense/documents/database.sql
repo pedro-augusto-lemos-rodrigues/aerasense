@@ -23,10 +23,11 @@ USE aerasense;
 CREATE TABLE endereco (
 	id INT PRIMARY KEY AUTO_INCREMENT, -- ID do Endereço
 	logradouro VARCHAR(45) NOT NULL, -- Logradouro do Endereço
-	numero VARCHAR(6) NOT NULL, -- Número do Logradouro do Endereço
+	numero VARCHAR(8) NOT NULL, -- Número do Logradouro do Endereço
 	bairro VARCHAR(20) NOT NULL, -- Bairro
 	cidade VARCHAR(25) NOT NULL, -- Cidade
 	uf CHAR(2) NOT NULL, -- Estado (Sigla)
+	cep CHAR(8) NOT NULL, -- CEP
 	complemento VARCHAR(15), -- Complemento
 	matriz TINYINT NOT NULL, -- Se é Matriz
 	CONSTRAINT chkUf -- Adidiona uma restrição para a Sigla do Estado
@@ -66,11 +67,11 @@ CREATE TABLE empresa (
     razao_social VARCHAR(60) NOT NULL, -- Razão Social da Empresa
     cnpj CHAR(14) UNIQUE NOT NULL, -- CNPJ da Empresa
     email VARCHAR(60) UNIQUE NOT NULL, -- E-mail da Empresa
-    fk_id_endereco INT NOT NULL, -- FK de Endereço
     telefone VARCHAR(15) NOT NULL, -- Telefone da Empresa
     status VARCHAR(15) NOT NULL DEFAULT 'Ativo', -- Status da Empresa (Padrão: Ativo)
     data_hora_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Data e Hora do Cadastro (Padrão: Data e Hora Atual incluindo o Fuso Horário)
     data_hora_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Data e Hora de Atualização (Padrão: Data e Hora Atual incluindo o Fuso Horário, definindo a cada Atualização)
+    fk_id_endereco INT NOT NULL, -- FK de Endereço
     CONSTRAINT chkStatusEmpresa
         CHECK (status IN ('Ativo', 'Inativo', 'Bloqueado')), -- Adiciona uma restrição para o registro de status da empresa
     CONSTRAINT fkEndereco
@@ -147,10 +148,10 @@ CREATE TABLE sensor (
     localizacao VARCHAR(45) NOT NULL, -- Localização (Como uma etiqueta de visualização de onde está)
     frequencia_leitura INT NOT NULL, -- Frequência de leitura do sensor
     rotulo VARCHAR(45) NOT NULL, -- Rótulo (Para identificação interna na Empresa)
+    data_hora_registro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, -- Data e Hora do Cadastro (Padrão: Data e Hora Atual incluindo o Fuso Horário)
+    data_hora_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Data e Hora de Atualização (Padrão: Data e Hora Atual incluindo o Fuso Horário, definindo a cada Atualização)
     fk_id_empresa INT NOT NULL, -- FK da Empresa
     fk_id_setor INT NOT NULL, -- FK do Setor
-    data_criacao DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, -- Data e Hora do Cadastro (Padrão: Data e Hora Atual incluindo o Fuso Horário)
-    data_hora_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Data e Hora de Atualização (Padrão: Data e Hora Atual incluindo o Fuso Horário, definindo a cada Atualização)
     PRIMARY KEY (id, fk_id_empresa, fk_id_setor), -- Declaração de PK
     CONSTRAINT fkSensorEmpresa
         FOREIGN KEY (fk_id_empresa) -- Adiciona uma restrição para chave estrangeira da Empresa
