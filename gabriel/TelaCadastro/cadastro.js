@@ -64,7 +64,7 @@ function FnContinuarCadastro(){
          input_CNPJ.style.borderBlockColor ='red';
         return
     }
-    if(nome.length > 3 && sobrenome.length > 3){
+    if(nome.length < 3 && sobrenome.length < 3){
         ID_Erros.innerHTML = 'Nome ou sobrenome invalido! Pequeno demais'
          input_name.style.borderBlockColor = 'red'
         input_sobrenome.style.borderBlockColor = 'red'
