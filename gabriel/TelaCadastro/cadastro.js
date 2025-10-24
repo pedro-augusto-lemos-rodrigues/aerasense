@@ -1,3 +1,76 @@
+
+
+function FnContinuarCadastro(){
+
+    var nome = input_name.value
+    var sobrenome = input_sobrenome.value
+    var empresa = input_empresa.value
+    var cnpj = input_CNPJ.value
+    var celular = input_celular.value
+
+    // Limpa o campo
+    ID_Erros.innerHTML = ''
+
+    if(nome == '' || sobrenome == '' || empresa == '' || cnpj == '' || celular == '' ){
+        ID_Erros.innerHTML = 'Algum campo não está devidamente preenchido!'
+        return
+    }
+
+    // Valida se contem numero nos campos: Nome e sobrenome
+    var listaNumeroString = '1234567890'
+    var i = 0
+    var b = 0
+    var CaracNomeSobre = false
+    // Para cada letra, ele entra no segundo while
+    while(i<nome.length){ 
+        // Já no segundo while, ele ve se a letra é um dos numeros da variavel(string) listaNumeroString
+        while(b<listaNumeroString.length){
+            if(nome[i] == listaNumeroString[b]){
+                CaracNomeSobre = true
+            }
+            b++
+        }
+        b = 0
+        i++
+    }
+    i = 0
+    b = 0
+    // Repete o processo com o sobrenome
+     while(i<sobrenome.length){ 
+        while(b<listaNumeroString.length){
+            if(sobrenome[i] == listaNumeroString[b]){
+                CaracNomeSobre = true
+            }
+            b++
+        }
+        b = 0
+        i++
+    }
+    if(CaracNomeSobre){
+        ID_Erros.innerHTML = 'Campo nome ou sobrenome invalido! Contem numero'
+         return
+    }
+
+
+     // Valida a quantidade de numeros no CNPJ obs: com os pontos e traços inclusos
+    if(cnpj.length < 14){
+        ID_Erros.innerHTML = 'Campo CNPJ invalido ou incompleto!'
+        return
+    }
+    if(nome.length > 3 && sobrenome.length > 3){
+        ID_Erros.innerHTML = 'Nome ou sobrenome invalido!'
+        return
+    }
+ window.location.href = './finacadastro.html';
+
+}
+
+
+
+
+
+
+
 function CadastrarForms(e){
     e.preventDefault();
     console.log("Entrou na função de validação")
@@ -167,14 +240,12 @@ function mascaracelular(){
         
         var valor = input_celular.value;
         var i = 0
-        // input_celular = valor.substring(0,8)
+        
         
         while(i<valor.length){
                 if(isNaN(valor[i]) || valor[i] == ' '){
                     valor = valor.replace(valor[i], '') 
                     input_celular.value = valor
-                    
-                    
                 }
                 i++;
         }
@@ -197,7 +268,7 @@ function mascaracpnj(){
         while(i<valorcnpj.length){
                 if(isNaN(valorcnpj[i]) || valorcnpj[i] == ' '){
                     valorcnpj = valorcnpj.replace(valorcnpj[i], '') 
-                    input_celular.value = valorcnpj
+                    input_CNPJ.value = valorcnpj
 
                 }
                 i++;
@@ -238,4 +309,8 @@ function FnOcultarSenha(senha){
             BtnOcultarConfSenha.style.opacity = '100%'
         }
     }
+}
+
+function FnVoltarPaghome(){
+    window.location.href = './../../marley/aerasense/index.html';
 }
