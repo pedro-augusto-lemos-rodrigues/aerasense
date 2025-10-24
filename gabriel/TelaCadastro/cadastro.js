@@ -1,7 +1,11 @@
 
 
 function FnContinuarCadastro(){
-
+      input_name.style.borderBlockColor = 'gray'
+      input_sobrenome.style.borderBlockColor = 'gray'
+      input_empresa.style.borderBlockColor ='gray';
+      input_CNPJ.style.borderBlockColor ='gray';
+      input_celular.style.borderBlockColor ='gray';
     var nome = input_name.value
     var sobrenome = input_sobrenome.value
     var empresa = input_empresa.value
@@ -48,6 +52,8 @@ function FnContinuarCadastro(){
     }
     if(CaracNomeSobre){
         ID_Erros.innerHTML = 'Campo nome ou sobrenome invalido! Contem numero'
+        input_name.style.borderBlockColor = 'red'
+        input_sobrenome.style.borderBlockColor = 'red'
          return
     }
 
@@ -55,11 +61,19 @@ function FnContinuarCadastro(){
      // Valida a quantidade de numeros no CNPJ obs: com os pontos e traços inclusos
     if(cnpj.length < 14){
         ID_Erros.innerHTML = 'Campo CNPJ invalido ou incompleto!'
+         input_CNPJ.style.borderBlockColor ='red';
         return
     }
     if(nome.length > 3 && sobrenome.length > 3){
-        ID_Erros.innerHTML = 'Nome ou sobrenome invalido!'
+        ID_Erros.innerHTML = 'Nome ou sobrenome invalido! Pequeno demais'
+         input_name.style.borderBlockColor = 'red'
+        input_sobrenome.style.borderBlockColor = 'red'
         return
+    }
+    if(celular.length < 14){
+         ID_Erros.innerHTML = 'Numero de celular invalido!'
+         input_celular.style.borderBlockColor ='red';
+         return
     }
  window.location.href = './finacadastro.html';
 
@@ -74,12 +88,7 @@ function FnContinuarCadastro(){
 function CadastrarForms(e){
     e.preventDefault();
     console.log("Entrou na função de validação")
-    var nome = input_name.value
-    var sobrenome = input_sobrenome.value
-    var empresa = input_empresa.value
-    var cnpj = input_CNPJ.value
     var email = input_email.value
-    var celular = input_email.value
     var senha = input_senha.value
     var confirmasenha = input_confirmsenha.value
     var checkbox = input_termo.checked
@@ -87,58 +96,12 @@ function CadastrarForms(e){
     // Limpa o campo
     ID_Erros.innerHTML = ''
 
-    if(nome == '' || sobrenome == '' || empresa == '' || cnpj == '' || email == '' || celular == '' || senha == '' || confirmasenha == ''){
+    if( email == '' || senha == '' || confirmasenha == ''){
         ID_Erros.innerHTML = 'Algum campo não está devidamente preenchido!'
         return
     }
 
 
-    // Valida se contem numero nos campos: Nome e sobrenome
-    var listaNumeroString = '1234567890'
-    var i = 0
-    var b = 0
-    var CaracNomeSobre = false
-    // Para cada letra, ele entra no segundo while
-    while(i<nome.length){ 
-        // Já no segundo while, ele ve se a letra é um dos numeros da variavel(string) listaNumeroString
-        while(b<listaNumeroString.length){
-            if(nome[i] == listaNumeroString[b]){
-                CaracNomeSobre = true
-            }
-            b++
-        }
-        b = 0
-        i++
-    }
-    i = 0
-    b = 0
-    // Repete o processo com o sobrenome
-     while(i<sobrenome.length){ 
-        while(b<listaNumeroString.length){
-            if(sobrenome[i] == listaNumeroString[b]){
-                CaracNomeSobre = true
-            }
-            b++
-        }
-        b = 0
-        i++
-    }
-    if(CaracNomeSobre){
-        ID_Erros.innerHTML = 'Campo nome ou sobrenome invalido! Contem numero'
-         return
-    }
-
-
-
-
-
-
-
-     // Valida a quantidade de numeros no CNPJ obs: com os pontos e traços inclusos
-    if(cnpj.length < 14){
-        ID_Erros.innerHTML = 'Campo CNPJ invalido ou incompleto!'
-        return
-    }
     // Valida se a senha é diferente da confirmarsenha
     if(senha != confirmasenha){
         ID_Erros.innerHTML = 'Senhas digitadas diferentes. Revise sua senha!'
