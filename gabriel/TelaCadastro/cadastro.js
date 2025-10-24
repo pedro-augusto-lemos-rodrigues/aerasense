@@ -180,12 +180,13 @@ function mascaracelular(){
         }
 
         if(valor.length > 2){
-              valor = `(${valor.substring(0, 2)}) ${valor.substring(3, valor.length)}`
+            valor = valor.replaceAll(' ', '')
+              valor = `(${valor.substring(0, 2)}) ${valor.substring(2, valor.length)}`
              input_celular.value = valor
           }
     
         // Limita a variavel valor para somente 11 caracteres
-        input_celular.value = valor.substring(0,13)
+        input_celular.value = valor.substring(0,14)
 
 
 }
