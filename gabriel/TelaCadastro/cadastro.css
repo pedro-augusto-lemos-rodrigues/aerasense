@@ -51,7 +51,7 @@ body{
     
 }
 .main-container .imgprincipal{
-    background-color: #FF3A3A;
+    /* background-color: #FF3A3A; */
     width: 45%;
     height: 100vh;
 }
@@ -81,8 +81,8 @@ body{
     align-items: center;
     flex-direction: column;
     /* border: solid brown; */
-    width: 95%;
-    height: 100%;
+    width: 75%;
+    height: 80%;
     
     
 }
@@ -113,6 +113,7 @@ body{
     /* border: solid green; */
     width: 100%;
     gap: 15px;
+    color: #0A2B40;
 }
 .container-input{
     display: flex;
@@ -179,13 +180,17 @@ body{
     align-items: center;
     width: 100%;
 }
+.divcadastrologin span{
+    margin-top: 20px;
+}
 .btncadastrar{
     margin-top: 15px;
-    height: 70px;
-    width: 90%;
+    height: 60px;
+    width: 100%;
     border-radius: 10px;
     font-size: 25px;
     color: white;
+    font-size: 20px;
     background-color: #3B9EDB;
     border: none;
     cursor: pointer;
@@ -198,5 +203,7 @@ body{
     color: #3B9EDB;
 }
 .main-text{
-    font-size: 40px;
+    font-size: 35px;
+    width: 100%;
+    color: #0A2B40;
 }

@@ -88,6 +88,7 @@ body{
     /* border: solid green; */
     width: 100%;
     gap: 15px;
+    color: #0A2B40;
 }
 .container-input{
     display: flex;
@@ -174,6 +175,7 @@ body{
 }
 .main-text{
     font-size: 40px;
+    color: #0A2B40;
 }
 .div-main-text{
     display: block;
