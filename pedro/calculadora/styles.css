@@ -1,0 +1,171 @@
+@import url('../../marley/aerasense/public/assets/css/index.css');
+
+body {
+    background-color: var(--color-very-dark-blue);
+    display: flex;
+    justify-content: center;
+}
+
+.container #brasil {
+    background-image: url('../assets/Brazil_Blank_Map.svg');
+    height: 800px;
+    width: 66vw;
+    position: absolute;
+    z-index: -1;
+    /* indice de camada */
+    background-position: center;
+    background-size: cover;
+    right: 3%;
+}
+
+.card {
+    background-color: var(--color-white);
+    padding: 5%;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10% 3% 3% 3%;
+}
+
+.card .esquerdo {
+    color: var(--color-very-dark-blue);
+    margin-right: 15px;
+}
+
+.container .card h3 {
+    margin: 15px 0px;
+}
+
+.container .card span {
+    font-size: 13px;
+}
+
+.card .esquerdo .silencioso {
+    color: var(--color-bright-blue);
+    font-size: 2rem
+}
+
+.card .direito {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--color-very-dark-blue);
+    color: var(--color-white);
+    border-radius: 16px;
+    font-weight: bolder;
+    padding: 2% 3%;
+}
+
+.card .direito .casos {
+    font-size: 3rem;
+    color: var(--color-bright-blue);
+}
+
+.inverted {
+    flex-direction: row-reverse;
+}
+
+
+.inverted .esquerdo .perigo {
+    color: var(--color-bright-blue);
+    font-size: 2rem;
+}
+
+.inverted .esquerdo .vazamento {
+    color: var(--color-bright-blue);
+    font-size: 2rem;
+}
+
+.inverted .direito {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white);
+}
+
+.inverted .direito img {
+    margin: 0px;
+    height: 250px;
+}
+
+.diagrama {
+    background-color: var(--color-white);
+    padding: 5%;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10% 3% 3% 3%;
+}
+
+.diagrama h3 {
+    font-weight: normal;
+}
+
+.diagrama .escalada {
+    color: var(--color-bright-blue);
+    font-size: 2rem;
+}
+
+
+.custoReal {
+    background-color: var(--color-white);
+    padding: 5%;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10% 3% 3% 3%;
+}
+
+.custoReal .custo {
+    font-size: 2rem;
+    color: var(--color-bright-blue);
+}
+
+
+.diagrama-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diagrama-image .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    border: 1px solid red;
+    padding: 0;
+    height: 220px;
+    width: 350px;
+}
+
+.diagrama-image .card .texto {
+    font-weight: normal;
+}
+
+.diagrama-image .card .titulo{
+    color: var(--color-very-dark-blue);
+}
+
+.diagrama-image .bolinha {
+    background-color: var(--color-bright-blue);
+    padding: 20px;
+    margin: 5px 0px;
+    color: var(--color-white);
+    border-radius: 500px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diagrama-image .line {
+    height: 1px;
+    content: "";
+    width: 50px;
+    background-color: black;
+
+}
