@@ -274,7 +274,7 @@ nav #register a:hover {
     display: flex;
     margin: 8px 0px;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .social a {
@@ -423,6 +423,13 @@ footer .newsletter form .box input {
 
 footer .newsletter form .box input:focus-visible {
     outline: 1px solid var(--color-bright-blue);
+}
+
+footer .social {
+    display: flex;
+    margin: 8px 0px;
+    justify-content: center;
+    flex-direction: column;
 }
 
 footer .social h2 {
