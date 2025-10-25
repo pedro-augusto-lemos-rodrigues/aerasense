@@ -17,18 +17,18 @@
     <body>
         <div class="main-container">
             <div class="header">
-                
+
                     <img src="assets/LogoBranca.png" alt="" />
                     <p>Painel dashboard, com vários detalhes para aumentar a eficiência na identificação de vazamentos.</p>
             </div>
 
             <div class="form-container">
                 <form onsubmit="CadastrarForms(event)" class="forms">
-                    
+
                     <div class="div-main-text">
                         <p class="main-text"><span class="mini-asterisco">Finalize</span> seu cadastro</p>
-                    </div>   
-                    
+                    </div>
+
                     <div class="container-input">
                         <span class="minitext">Email <span class="mini-asterisco">*</span></span>
                         <input
@@ -37,9 +37,9 @@
                         id="input_email"
                         />
                     </div>
-                    
+
                     <div class="container-input">
-                        
+
                         <span class="minitext">Senha <span class="mini-asterisco">*</span></span>
                         <div class="container-input-senha">
                             <input
@@ -50,11 +50,11 @@
                             <button id="BtnOcultarSenha" onclick="FnOcultarSenha(1)" type="button"></button>
                         </div>
                     </div>
-                    
+
                     <div class="container-input">
                         <span class="minitext">Confirmar senha <span class="mini-asterisco">*</span></span>
                         <div class="container-input-senha">
-                            
+
                             <input
                             type="password"
                             placeholder="Confirmação de senha"
@@ -63,24 +63,24 @@
                             <button id="BtnOcultarConfSenha" onclick="FnOcultarSenha(2)" type="button"></button>
                         </div>
                     </div>
-                    
+
                     <div class="container-mensagens-errors">
                         <span class="Erros" id="ID_Erros"></span>
                     </div>
-                    
+
                     <div class="container-termocondi">
                         <input type="checkbox" id="input_termo" />
-                        <span
-                        >Concordo com os <a href="">Termos e Condições</a></span
+                        <label for="input_termo"
+                        >Concordo com os <a href="">Termos e Condições</a></label
                         >
                     </div>
-                    
+
                     <div class="divcadastrologin">
                         <button class="btncadastrar">Finalizar cadastro</button>
                         <span>Já possui uma conta? <a href="">Faça login</a></span>
                     </div>
-                </div> 
-                    
+                </div>
+
             </form>
         </div>
     </body>

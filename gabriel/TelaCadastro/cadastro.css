@@ -1,44 +1,37 @@
 /* FONTE */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-
-
-body{
+body {
     margin: 0;
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     font-style: normal;
-   
 }
-.header img{
+.header img {
     width: 170px;
     padding: 0;
     margin-right: -35px;
     cursor: pointer;
 }
-.hr{
+.hr {
     margin-top: 10px;
     margin-bottom: 10px;
     border: solid 2px rgba(128, 128, 128, 0.301);
     width: 95%;
 }
-.fomrs input{
+.fomrs input {
     height: 50px;
     border: 1px solid gray;
-    border-radius: 9px;    
+    border-radius: 9px;
     padding-left: 10px;
     font-size: 15px;
-    
-    
 }
-.fomrs input:focus{
-    outline: #3B9EDB;
-    border: 1px solid #3B9EDB;
+.fomrs input:focus {
+    outline: #3b9edb;
+    border: 1px solid #3b9edb;
     transition: 300ms ease-in-out;
-
 }
-.main-container{
+.main-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -47,15 +40,13 @@ body{
     /* margin: 2% 20%; */
     /* border: solid orange; */
     width: 100%;
-    
-    
 }
-.main-container .imgprincipal{
+.main-container .imgprincipal {
     /* background-color: #FF3A3A; */
     width: 45%;
     height: 100vh;
 }
-.header{
+.header {
     display: flex;
     width: 100%;
     justify-content: start;
@@ -66,16 +57,14 @@ body{
     padding-left: 20px;
 }
 
-
-.header h1{
+.header h1 {
     margin: 0;
     font-size: 35px;
     font-family: "Kanit", sans-serif;
     font-weight: 500;
     font-style: medium;
 }
-.fomrs{
-    
+.fomrs {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,13 +72,11 @@ body{
     /* border: solid brown; */
     width: 75%;
     height: 80%;
-    
-    
 }
 .form-container {
     display: flex;
     /* border: solid 100px rgb(128, 0, 255); */
-    
+
     justify-content: start;
     align-items: center;
     flex-direction: column;
@@ -97,7 +84,7 @@ body{
     width: 60%;
     height: 100vh;
 }
-.container-infos{
+.container-infos {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,7 +92,7 @@ body{
     width: 100%;
     gap: 10px;
 }
-.container-nome{
+.container-nome {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -113,48 +100,45 @@ body{
     /* border: solid green; */
     width: 100%;
     gap: 15px;
-    color: #0A2B40;
+    color: #0a2b40;
 }
-.container-input{
+.container-input {
     display: flex;
     flex-direction: column;
     margin: 0;
     width: 100%;
     margin-top: 5px;
 }
-.container-input-senha{
+.container-input-senha {
     display: flex;
     flex-direction: row;
     justify-content: end;
     width: 1px;
     width: 100%;
-     border: 1px solid gray;
-    border-radius: 9px;    
+    border: 1px solid gray;
+    border-radius: 9px;
     align-items: center;
 }
-.container-input-senha input:focus{
+.container-input-senha input:focus {
     outline: none;
     border: none;
     /* transition: 300ms ease-in-out; */
-    
 }
-.container-input-senha input{
+.container-input-senha input {
     width: 100%;
     border: none;
-}   
-.container-input-senha button{
-    background-image: url('./assets/Ocultarsenha.png');
+}
+.container-input-senha button {
+    background-image: url("./assets/Ocultarsenha.png");
     border: none;
     background-color: white;
     width: 25px;
     height: 25px;
     margin-right: 10px;
-    
-    
 }
-.container-termocondi input{
+.container-termocondi input {
     border-radius: 100%;
-    
+
     border: 0.5px solid black;
     height: 20px;
     width: 20px;
@@ -163,48 +147,48 @@ body{
     transition: 300ms ease-in;
 }
 .container-termocondi input:checked {
-    border: solid #3B9EDB;
+    border: solid #3b9edb;
 }
 
-.container-termocondi{
+.container-termocondi {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 15px;
     gap: 5px;
 }
-.divcadastrologin{
+.divcadastrologin {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.divcadastrologin span{
+.divcadastrologin span {
     margin-top: 20px;
+    color: #0a2b40;
 }
-.btncadastrar{
+.btncadastrar {
     margin-top: 15px;
     height: 60px;
     width: 100%;
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 1rem;
     color: white;
-    font-size: 20px;
-    background-color: #3B9EDB;
+    background-color: #3b9edb;
     border: none;
     cursor: pointer;
 }
-.Erros{
-    color: #FF3A3A;
+.Erros {
+    color: #ff3a3a;
     font-size: 18px;
 }
-.mini-asterisco{
-    color: #3B9EDB;
+.mini-asterisco {
+    color: #3b9edb;
 }
-.main-text{
+.main-text {
     font-size: 35px;
     width: 100%;
-    color: #0A2B40;
+    color: #0a2b40;
     /* font-weight: bold; */
 }
