@@ -1,180 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-/* aqui em cima importei a fonte pra pag da dashboard*/
-/* aqui no root vai todo o design de cores base da página */
-:root {
-  --cor-base: #0a2b40;
-  --cor-hover: #18628d;
-  --cor-ativo: #3b9ddc;
-  --cor-texto: #ffffff;
-  --cor-texto2: #000000;
-  --cor-bg: #ffffff;
-}
-
-/* seletor de estilos universal, aplica pra tudo no doc */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* mesma ideia do root, mas mais usado pra tamanhos, fontes e layout */
-html {
-  font-family: Kanit, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /* tamanho de fonte relativo ao padrão do html (rem) */
-  line-height: 1.5rem;
-}
-
-body {
-  /* tam dinâmico de acordo com tam da tela*/
-  min-height: 100vh;
-  background-color: var(--cor-base);
-  color: var(--cor-texto);
-  display: grid;
-  /* a medida fração do espaço (flexível), proporcional dentro de um grid*/
-  grid-template-columns: auto 1fr;
-}
-
-/* =============== INÍCIO DO CSS DO MENU LATERAL AKA SIDEBAR =============== */
-
-#sidebar {
-  box-sizing: border-box;
-  height: 100vh;
-  width: 250px;
-  padding: 5px 1em;
-  background-color: var(--cor-base);
-
-  position: sticky; /* serve pra ficar no lugar, mas não dar overlap nos textos da main*/
-  top: 0;
-  align-self: start;
-  text-wrap: nowrap;
-}
-
-#sidebar.close {
-  padding: 5px;
-  width: 59px;
-}
-
-#sidebar ul {
-  list-style: none; /* remove os bullet points q aparecem originalmente no modelo lista */
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* aqui é onde organiza a div da logo */
- .logo-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-
-  .logo{
-  height: auto;
-  width: 80%;
-  }
-
-}
-
-/*aqui é onde faz ficar colorido onde tá clicado*/
-#sidebar ul li.ativo a {
-  background-color: var(--cor-ativo);
-  color: var(--cor-texto);
-}
-
-/*aqui é onde deixa bonito os itens do menu*/
-#sidebar a,
-#sidebar .logo,
-#sidebar .perfil,
-#sidebar .logOut-btn {
-  border-radius: 0.5em;
-  padding: 0.85em;
-  text-decoration: none;
-  color: var(--cor-texto);
-  display: flex;
-  align-items: center;
-  gap: 1em;
-}
-
-.perfil {
-  text-wrap: wrap;
-} /* desfaz o nowrap herdado do #sidebar pra poder quebrar a linha no nome no perfil */
-
-.perfil span {
-  flex: 1; /* ocupa o espaço flexível entre os ícones */
-  min-width: 0; /* necessário pro flex permitir quebra */
-  white-space: normal; /* ctz que quebra o texto */
-  line-height: 1.25rem;
-}
-
-
-/*aqui muda o tamanho dos ícones da parte do perfil, supostamente era pra mudar só o do avatar, mas mudou os dois e ficou bom, então é isso*/
-.perfil svg:first-child {
-  width: 1.75em; /* cresce/encolhe em relação à fonte */
-  height: 1.75em;
-}
-
-.perfil {
-  margin-top: auto; /*joga o perfil pro final da sidebar*/
-}
-
-.logOut-btn {
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* pra ficar dinâmico de acordo com o nome, precisava fazer essas alterações específicas */
-.perfil .logOut-btn {
-  width: auto; /* sobrescreve o width:100% herdado */
-  margin-left: auto; /* cola o botão à direita respeitando a margem */
-  padding: 0.35em; /* aumenta o raio de clique sem aumentar a altura do resto*/
-  display: flex;
-  align-items: center;
-}
-
-#sidebar svg {
-  /*aqui define que os ícones gerais da página não redimensionem e define a cor deles*/
-  flex-shrink: 0;
-  fill: var(--cor-texto);
-}
-
-/*aqui garante que os textos fiquem no meio */
-#sidebar a span,
-#sidebar .logOut-btn span {
-  flex-grow: 1;
-}
-
-#sidebar a:hover,
-#sidebar .logOut-btn:hover {
-  /* autoexplicativo: corzinha quando passa o mouse em cima*/
-  background-color: var(--cor-hover);
-}
-
-/* =============== FIM DO CSS DO MENU =============== */
-
-main {
-  padding: min(30px, 7%);
-  background-color: var(--cor-bg);
-  color: var(--cor-texto2);
-}
-main p {
-  margin-top: 5px;
-  margin-bottom: 15px;
-}
 .container {
-  margin-bottom: 20px;
-  /* espaçamento acompanha o tamanho do texto (em) */
+  margin-bottom: 1.25rem;
   padding: min(3em, 15%);
   display: flex;
   flex-direction: row;
-  gap: 36px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container a {
   text-decoration: none;
+}
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: flex-start;
 }
 
 .card-setor {
@@ -182,16 +23,16 @@ main p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 220px;
-  height: 250px;
-  border-radius: 15px;
+  width: 13rem;
+  height: 16rem;
+  border-radius: 1rem;
   background: linear-gradient(var(--cor-bg)50%, var(--cor-ativo) 50%);
   background-size: 100% 200%;
   background-position: 0 2.5%;
   color: var(--cor-texto2);
   box-shadow: 2px 2px 4.6px 0 rgba(10, 43, 64, 0.7);
-  padding: 15px;
-  gap: 30px;
+  padding: 1rem;
+  gap: 2rem;
 }
 
 .card-setor:hover{
@@ -205,19 +46,19 @@ main p {
   justify-content: center;
   align-items: center;
   background-color: var(--cor-ativo);
-  width: 80px;
-  height: 80px;
-  border-radius: 80px;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
 }
 
 #div_card svg{
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   fill: var(--cor-bg);
 }
 
 .titulo-setor{
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .texto-setor {
@@ -225,15 +66,3 @@ main p {
   font-weight: 300;
   text-wrap: balance;
 }
-
-.barra-decorativa {
-  content: "qualquercoisa";
-}
-
-
-
-
-
-
-
-
