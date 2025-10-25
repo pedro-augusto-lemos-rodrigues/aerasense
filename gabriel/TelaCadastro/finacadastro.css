@@ -155,6 +155,9 @@ body{
     width: 100%;
     margin-top: 10px;
 }
+.divcadastrologin span{
+    margin-top: 20px;
+}
 .btncadastrar{
     margin-top: 15px;
     height: 50px;
@@ -174,11 +177,15 @@ body{
     color: #3B9EDB;
 }
 .main-text{
-    font-size: 40px;
+    font-size: 35px;
     color: #0A2B40;
+    /* font-weight: bold; */
 }
 .div-main-text{
     display: block;
     width: 100%;
     justify-content: start;
+}
+.minitext{
+color: #0A2B40;
 }
