@@ -1,16 +1,160 @@
 Chart.register(window["chartjs-plugin-annotation"]);
 const limiteExplosivo = 1.9;
-var x = 0;
 
-while(x < 12){
+const GraphMomentoSensor = document.getElementById(`GraficoMomentoSensor1`);
+const GraphDiaSensor = document.getElementById(`GraficoDiaSensor1`);
+const GraphSemanaSensor = document.getElementById(`GraficoSemanaSensor1`);
+const GraphMesSensor = document.getElementById(`GraficoMesSensor1`);
 
-  x++;
+new Chart((GraphMomentoSensor), {
 
-  const GraphDiaSensor = document.getElementById(`GraficoDiaSensor${x}`);
-  const GraphSemanaSensor = document.getElementById(`GraficoSemanaSensor${x}`);
-  const GraphMesSensor = document.getElementById(`GraficoMesSensor${x}`);
+  type: "line",
+  data: {
 
-  new Chart((GraphDiaSensor), {
+    labels: [
+
+      '22:10', '22:11', '22:12', '22:13', '22:14', '22:15', '22:16', '22:17', '22:18', '22:19'
+
+    ],
+    datasets: [
+
+      {
+
+        label: "Dados Recentes (Últimos 10 minutos)",
+        data: [
+
+          0.6, 0.7, 0.3, 0.4, 0.5, 0.1, 0.5, 1.1, 1.6, 0.1
+
+        ],
+        backgroundColor: "#1f77b4",
+        borderWidth: 3,
+        borderColor: "#1f77b4",
+
+      }
+
+    ],
+
+  },
+  options: {
+
+    scales: {
+
+      y: {
+
+        title: {
+
+          display: true,
+          text: "Concentração de GLP (%)",
+          color: "#555",
+          font: { size: 12, weight: "600" },
+          padding: { bottom: 8 },
+
+        },
+        beginAtZero: true,
+      },
+      x: {
+
+        title: {
+
+          display: true,
+          text: "Horário da Medição",
+          color: "#555",
+          font: { size: 12, weight: "600" },
+          padding: { top: 8 }
+
+        },
+        ticks: {
+
+          font: {
+
+            weight: "bold"
+
+          },
+        },
+      },
+    },
+
+    plugins: {
+
+      annotation: {
+
+        drawtime: "afterdraw",
+        annotations: {
+
+          linhaLimite: {
+
+            type: "line",
+            yMin: limiteExplosivo,
+            yMax: limiteExplosivo,
+            borderWidth: 3,
+            borderColor: "#ff0000",
+            borderDash: [8, 4],
+            label: {
+
+              display: false,
+              content: "Valor limítrofe de explosividade",
+              position: "end",
+              backgroundColor: "rgba(255,0,0,0.65)",
+              color: "white",
+              padding: 6,
+              borderRadius: 6,
+              font: {
+
+                weight: "bold",
+
+              },
+
+            },
+            enter: function (GraphMomentoSensor, event) {
+
+              GraphMomentoSensor.element.label.options.display = true;
+              GraphMomentoSensor.chart.draw(); //aparece a box na linha fixa
+
+            },
+            leave: function (GraphMomentoSensor, event) {
+
+              GraphMomentoSensor.element.label.options.display = false;
+              GraphMomentoSensor.chart.draw(); //some a box da linha fixa
+
+            },
+
+          },
+
+        },
+
+      },
+
+      legend: {
+
+        labels: {
+
+          font: {},
+
+        },
+
+      },
+
+      title: {
+
+        display: true,
+        text: "Dados mais recentes",
+        position: "top",
+        align: "start",
+        font: {
+
+          size: 20,
+
+        },
+
+      },
+
+    }
+
+  },
+
+});
+
+new Chart((GraphDiaSensor), {
 
   type: "line",
   data: {
@@ -29,8 +173,8 @@ while(x < 12){
         label: "Média por horário",
         data: [
 
-          0.05, 0.06, 0.07, 0.8, 0.1, 0.3, 0.2, 0.13, 0.5, 0.1, 0.1, 0.8,
-          1.8, 0.2, 0.5, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3
+          0.3, 1.0, 0.2, 0.5, 0.1, 1.3, 0.8, 0.4, 0.5, 0.7, 0.1, 0.4,
+          0.5, 0.1, 0.9, 0.6, 0.2, 0.1, 1.0, 0.3, 0.5, 0.2, 0.8, 0.3
 
         ],
         backgroundColor: "#1f77b4",
@@ -159,9 +303,9 @@ while(x < 12){
 
   },
 
-});  
+});
 
-  new Chart((GraphSemanaSensor), {
+new Chart((GraphSemanaSensor), {
 
   type: "line",
   data: {
@@ -178,7 +322,7 @@ while(x < 12){
         label: "Média por dia",
         data: [
 
-          0.7, 0.4, 1, 0.5, 0.2, 1.1, 0.8
+          0.4, 0.7, 0.1, 0.3, 0.2, 0.8, 1.0
 
         ],
         backgroundColor: "#1f77b4",
@@ -312,7 +456,7 @@ while(x < 12){
 
 });
 
-  new Chart((GraphMesSensor), {
+new Chart((GraphMesSensor), {
 
   type: "line",
   data: {
@@ -330,9 +474,9 @@ while(x < 12){
         label: "Média por dia",
         data: [
 
-          0.6, 0.7, 0.8, 0.1, 0.3, 0.2, 0.13, 0.5, 0.1, 0.1, 0.8,
-          1.3, 0.2, 0.5, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3,
-          0.2, 0.7, 0.2, 1.1, 0.6, 0.8, 0.9, 1.2
+          0.4, 0.1, 0.9, 0.1, 0.5, 0.8, 0.2, 0.6, 0.8, 0.3, 1.0,
+          0.7, 0.1, 0.2, 0.4, 0.5, 0.1, 0.7, 0.1, 0.6, 0.4, 0.1, 0.7,
+          0.1, 1.4, 0.6, 0.1, 0.4, 0.5, 0.6, 0.8
 
         ],
         backgroundColor: "#1f77b4",
@@ -463,4 +607,4 @@ while(x < 12){
 
 });
 
-}
+
