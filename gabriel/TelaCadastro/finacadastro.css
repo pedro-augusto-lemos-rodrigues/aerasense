@@ -197,8 +197,13 @@ button {
 .main-text {
     font-size: 35px;
     color: #0a2b40;
-    /* font-weight: bold; */
+    font-weight: bold; 
 }
+
+.main-text span {
+    font-weight: bold;
+}
+
 .div-main-text {
     display: block;
     width: 100%;

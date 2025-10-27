@@ -195,7 +195,7 @@ function CadastrarForms(e){
 
     if(MinCatere&&CaracMax&&CaracMin&&CaracNumero&&CaracSimb){
         alert("Cadastro realizado com sucesso!")
-        window.location.href = './../../aurora/dashboard_geral/dashboard_geral.html';
+        window.location.href = './../../marley/aerasense/login.html';
         
     }
     

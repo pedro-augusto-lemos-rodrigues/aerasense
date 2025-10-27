@@ -204,5 +204,9 @@ body{
     font-size: 35px;
     width: 100%;
     color: #0a2b40;
-    /* font-weight: bold; */
+    font-weight: bold; 
+}
+
+.main-text span {
+    font-weight: bold;
 }
