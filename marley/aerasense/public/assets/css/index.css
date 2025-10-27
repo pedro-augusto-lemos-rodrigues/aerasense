@@ -766,6 +766,7 @@ footer .itens {
 footer .links {
     margin: 0% 5%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 footer .links .item {
