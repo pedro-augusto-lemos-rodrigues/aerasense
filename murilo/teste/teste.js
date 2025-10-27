@@ -51,14 +51,12 @@ const pros = async (ArrayVal1,Arrayval2) => {
         rand();
 
         poolBancoDados.execute(
-            'INSERT INTO dado(fkSensor,fkSetor,fkEmpresa,porcentagem) VALUES (?, ?, ?, ?)',
+            'INSERT INTO medicao(fk_id_sensor,fk_id_setor,fk_id_empresa,valor_medicao) VALUES (?, ?, ?, ?)',
             [1, 1, 1, val1]
         );
 
-        console.log(ArrayVal1);
-
         poolBancoDados.execute(
-            'INSERT INTO dado(fkSensor,fkSetor,fkEmpresa,porcentagem) VALUES (?, ?, ?, ?)',
+            'INSERT INTO medicao(fk_id_sensor,fk_id_setor,fk_id_empresa,valor_medicao) VALUES (?, ?, ?, ?)',
             [2, 2, 2, val2]
         );
 

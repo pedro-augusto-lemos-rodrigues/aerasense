@@ -145,7 +145,7 @@ INSERT INTO empresa VALUES
 (DEFAULT, 'Casa Francesa', 'CASA FRANCESA & CIA LTDA', '87654321000170', 'contato@casafrancesa.com.br', '+55', '14', '6851651335', DEFAULT, DEFAULT, DEFAULT),
 (DEFAULT, 'Alimenta+', 'REFEICOES SAUDAVEIS ALIMENTA MAIS S.A.', '12348765000140', 'comercial@alimentamais.com', '+55', '21', '9945678824', DEFAULT, DEFAULT, DEFAULT);
 
-SELECT * FROM EMPRESA;
+SELECT * FROM empresa;
 
 INSERT INTO endereco VALUES
 (DEFAULT, 'Rua das Cozinhas', '1500', 'Vila Nova', 'São Paulo', 'SP', '04442000', 'S/C', 0, DEFAULT, DEFAULT, 1),
@@ -223,11 +223,3 @@ SELECT * FROM medicao;
 
 ALTER TABLE endereco ADD CONSTRAINT chkSeMatriz CHECK(matriz IN(0,1));
 ALTER TABLE usuario ADD CONSTRAINT chkTipoUsuario CHECK(tipo_usuario IN('Admin', 'Comum'));
-
-
-
-
-
-
-
-
