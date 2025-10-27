@@ -10,6 +10,11 @@
   text-decoration: none;
 }
 
+.container-cards{
+  /* p.o.g */
+width: 94%; 
+}
+
 .cards{
   display: flex;
   flex-direction: row;
