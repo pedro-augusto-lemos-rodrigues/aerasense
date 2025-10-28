@@ -54,146 +54,129 @@
     <!-- fim do menu lateral de navegação -->
     <!-- conteúdo principal da página, no caso, os chart.js -->
     <main>
-
-        <div>
+        <div class="container">
 
             <span class="titulo-dash">Sensor #XPTO04</span>
 
-                <div class="container-sensor">
+            <div class="container-sensor">
+                <div class="container-graficos">
 
-                    <div class="container-graficos">
-
-                        <div class="grafico-secundario">
-
-                            <canvas id="GraficoMomentoSensor1"></canvas>
-
-                        </div>
-
+                    <div class="grafico-secundario">
+                        <canvas id="GraficoMomentoSensor1"></canvas>
                     </div>
-                    <div>
-
-                        <div class="card-individual">
-
-                            <span class="titulo-card">Maior pico</span>
-                            <span class="dado-kpi">22:18</span>
-                            <span class="legenda-kpi">*Dados dos últimos 10 minutos</span>
-
-                        </div>
-
-                        <div class="card-individual">
-
-                            <span class="titulo-card">Valor do pico</span>
-                            <span class="dado-kpi">1.6%</span>
-                            <span class="legenda-kpi">*A partir de 2% passa a ser explosivo</span>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
-                <div class="container-sensor">
 
-                    <div class="container-graficos">
+                <div class="cards-kpi">
+                    <div class="card-individual">
 
-                        <div class="grafico-secundario">
-
-                            <canvas id="GraficoDiaSensor1"></canvas>
-
-                        </div>
-
-                    </div>
-                    <div>
-
-                        <div class="card-individual">
-
-                            <span class="titulo-card">Maior pico</span>
-                            <span class="dado-kpi">05:00</span>
-                            <span class="legenda-kpi">*Médias das porcentagens por hora</span>
-
-                        </div>
-
-                        <div class="card-individual">
-
-                            <span class="titulo-card">Valor do pico</span>
-                            <span class="dado-kpi">1.3%</span>
-                            <span class="legenda-kpi">*A partir de 2% passa a ser explosivo</span>
-
-                        </div>
+                        <span class="titulo-card">Maior pico</span>
+                        <span class="dado-kpi">22:18</span>
+                        <span class="legenda-kpi">*Dados dos últimos 10 minutos</span>
 
                     </div>
 
+                    <div class="card-individual">
+
+                        <span class="titulo-card">Valor do pico</span>
+                        <span class="dado-kpi">1.6%</span>
+                        <span class="legenda-kpi">*A partir de 2% passa a ser explosivo</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-sensor">
+                <div class="container-graficos">
+                    <div class="grafico-secundario">
+                        <canvas id="GraficoDiaSensor1"></canvas>
+                    </div>
                 </div>
 
-                <div class="container-sensor">
-
-                    <div class="container-graficos">
-
-                        <div class="grafico-secundario">
-
-                            <canvas id="GraficoSemanaSensor1"></canvas>
-
-                        </div>
-
+                <div class="cards-kpi">
+                    <div class="card-individual">
+                        <span class="titulo-card">Maior pico</span>
+                        <span class="dado-kpi">05:00</span>
+                        <span class="legenda-kpi">*Médias das porcentagens por hora</span>
                     </div>
 
-                    <div>
+                    <div class="card-individual">
 
-                        <div class="card-individual">
-
-                            <span class="titulo-card">Maior pico</span>
-                            <span class="dado-kpi">Domingo</span>
-                            <span class="legenda-kpi">*Médias das porcentagens por hora</span>
-
-                        </div>
-
-                        <div class="card-individual">
-
-                            <span class="titulo-card">Valor do pico</span>
-                            <span class="dado-kpi">1.0%</span>
-                            <span class="legenda-kpi">*A partir de 2% passa a ser explosivo</span>
-
-                        </div>
+                        <span class="titulo-card">Valor do pico</span>
+                        <span class="dado-kpi">1.3%</span>
+                        <span class="legenda-kpi">*A partir de 2% passa a ser explosivo</span>
 
                     </div>
-
-                </div>
-
-                <div class="container-sensor">
-
-                    <div class="container-graficos">
-
-                        <div class="grafico-secundario">
-
-                            <canvas id="GraficoMesSensor1"></canvas>
-
-                        </div>
-
-                    </div>
-                    <div>
-
-                        <div class="card-individual">
-
-                            <span class="titulo-card">Maior pico</span>
-                            <span class="dado-kpi">Dia 25</span>
-                            <span class="legenda-kpi">*Médias das porcentagens por hora</span>
-
-                        </div>
-
-                        <div class="card-individual">
-
-                            <span class="titulo-card">Valor do pico</span>
-                            <span class="dado-kpi">1.4%</span>
-                            <span class="legenda-kpi">*A partir de 2% passa a ser explosivo</span>
-
-                        </div>
-
-                    </div>
-
 
                 </div>
 
             </div>
+
+            <div class="container-sensor">
+
+                <div class="container-graficos">
+
+                    <div class="grafico-secundario">
+
+                        <canvas id="GraficoSemanaSensor1"></canvas>
+
+                    </div>
+
+                </div>
+
+                <div class="cards-kpi">
+
+                    <div class="card-individual">
+
+                        <span class="titulo-card">Maior pico</span>
+                        <span class="dado-kpi">Domingo</span>
+                        <span class="legenda-kpi">*Médias das porcentagens por hora</span>
+
+                    </div>
+
+                    <div class="card-individual">
+
+                        <span class="titulo-card">Valor do pico</span>
+                        <span class="dado-kpi">1%</span>
+                        <span class="legenda-kpi">*A partir de 2% passa a ser explosivo</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container-sensor">
+
+                <div class="container-graficos">
+
+                    <div class="grafico-secundario">
+
+                        <canvas id="GraficoMesSensor1"></canvas>
+
+                    </div>
+
+                </div>
+                <div class="cards-kpi">
+
+                    <div class="card-individual">
+
+                        <span class="titulo-card">Maior pico</span>
+                        <span class="dado-kpi">Dia 25</span>
+                        <span class="legenda-kpi">*Médias das porcentagens por hora</span>
+
+                    </div>
+
+                    <div class="card-individual">
+
+                        <span class="titulo-card">Valor do pico</span>
+                        <span class="dado-kpi">1.4%</span>
+                        <span class="legenda-kpi">*A partir de 2% passa a ser explosivo</span>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
