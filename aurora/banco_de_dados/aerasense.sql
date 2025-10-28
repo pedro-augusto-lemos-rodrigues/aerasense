@@ -152,7 +152,7 @@ INSERT INTO endereco VALUES
 (DEFAULT, 'Rua França', '2879', 'Campo Azul', 'Bauru', 'SP', '02222900', 'S/C', 1, DEFAULT, DEFAULT, 2),
 (DEFAULT, 'Avenida Principal', '45', 'Centro', 'Rio de Janeiro', 'RJ', '06666001', 'S/C', 1, DEFAULT, DEFAULT, 3);
 
-SELECT * FROM ENDERECO;
+SELECT * FROM endereco;
 
 INSERT INTO usuario VALUES
 (DEFAULT, 'Godofredo Luis', 'Silva Santos', 'godofredo@saborexpress.com.br', '0665A0C21689CCB28F234B0533629EB6C65D7919352D676DD9DDBCAECAB6E112', 'Admin', DEFAULT, DEFAULT, DEFAULT, 1, NULL),
@@ -223,3 +223,18 @@ SELECT * FROM medicao;
 
 ALTER TABLE endereco ADD CONSTRAINT chkSeMatriz CHECK(matriz IN(0,1));
 ALTER TABLE usuario ADD CONSTRAINT chkTipoUsuario CHECK(tipo_usuario IN('Admin', 'Comum'));
+
+-- Alteração para adicionar coluna status e constraint
+ALTER TABLE sensor ADD COLUMN status VARCHAR(10);
+
+ALTER TABLE sensor ADD CONSTRAINT chkStatus CHECK (status IN ('ativo','inativo'));
+
+UPDATE sensor SET 
+status  = "ativo"
+WHERE id IN (1,2,4,5,7);
+
+UPDATE sensor SET
+status = "inativo"
+WHERE id IN (3,6,8);
+
+SELECT * FROM sensor;
