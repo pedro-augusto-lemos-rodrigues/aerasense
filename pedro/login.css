@@ -83,6 +83,7 @@ img {
 label {
     display: block;
     text-align: left;
+    margin-left: 5%;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 6px;
@@ -97,6 +98,7 @@ label {
     border-radius: 8px;
     outline: none;
     margin-bottom: 15px;
+    font-family: sans-serif;
 }
 
 .inputEMAIL.erro{ /* deu erro no email */
@@ -111,6 +113,7 @@ label {
     border-radius: 8px;
     outline: none;
     margin-bottom: 15px;
+    font-family: sans-serif;
 }
 
 .inputSENHA.erro { /* deu erro na senha */
@@ -139,7 +142,7 @@ label {
     color: white;
     background-color: #3B9EDB;
     border: none;
-
+    cursor: pointer;
 }
 
 
@@ -165,12 +168,7 @@ label {
     gap: 6px;
 }
 
-/* margem e estilo da mensagem */
-#div_mensagem {
-    margin-top: 15px; 
-    font-size: 16px;
-    color: red;
-}
+
 
 
 
