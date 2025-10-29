@@ -257,6 +257,174 @@ main .details .number #com {
     margin: 10px 0px;
 }
 
+main .real .number {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+main .real .number #impactos {
+    width: 50%;
+}
+
+main .real .title p {
+    color: var(--color-very-dark-blue);
+    padding: 2% 0px;
+}
+
+main .real .number .cards {
+    display: flex;
+    flex-direction: column;
+}
+
+main .real .number .card {
+    padding: 2%;
+    display: flex;
+    margin: 6px 0px;
+    border-radius: 16px;
+    background-color: var(--color-very-dark-blue);
+}
+
+main .real .number .card .content p {
+    color: var(--color-white);
+    margin-top: 5px;
+}
+
+main .real .number .card .image {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bright-blue);
+    border-radius: 16px;
+    margin-right: 15px;
+}
+
+main .real .number .card .image img {
+    width: 50px;
+    height: 50px;
+}
+
+main .real .number .card .title-card {
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+main .real .custos-int .title-cust {
+    color: var(--color-very-dark-blue);
+    font-weight: bold;
+}
+
+main .real .number .grafico-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+main .real .number .grafico-container .title-grafic {
+    color: var(--color-very-dark-blue);
+    font-weight: bold;
+}
+
+main .real .custos-int {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main .calcule {
+    padding: 5% 20%;
+    background-color: var(--color-white);
+}
+
+main .calcule .title h2 {
+    color: var(--color-very-dark-blue);
+    font-size: 2rem;
+}
+
+main .calcule .title h4 {
+    color: var(--color-very-dark-blue);
+    font-size: 1.2rem;
+}
+
+main .calcule .title h2 span {
+    color: var(--color-bright-blue);
+}
+
+main .calcule .container {
+    padding: 2%;
+}
+
+main .calcule .inputs {
+    margin: 15px 0px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+main .calcule .inputs label::after {
+    content: " *";
+    color: var(--color-bright-blue);
+}
+
+main .calcule .inputs label {
+    color: var(--color-very-dark-blue);
+    font-weight: medium;
+}
+
+main .calcule .inputs input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--color-very-dark-blue);
+    transition: 200ms ease-in-out;
+}
+
+main .calcule .inputs select {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-very-dark-blue);
+    transition: 200ms ease-in-out;
+}
+
+main .calcule .inputs button {
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--color-bright-blue);
+    background-color: var(--color-bright-blue);
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+main .calcule .inputs input:focus-visible {
+    border: 1px solid var(--color-bright-blue);
+}
+
+main .calcule .container .buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+main .calcule .container .buttons button {
+    width: 300px;
+    margin: 0px 15px;
+}
+
+main .calcule .resultado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-very-dark-blue);
+}
+
+/*Footer*/
 footer {
-    border: 1px solid red;
+    margin-top: 0;
+}
+
+footer .links {
+    flex-wrap: nowrap;
 }
