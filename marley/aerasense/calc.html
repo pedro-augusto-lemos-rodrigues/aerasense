@@ -253,8 +253,8 @@
                         <span>2</span>
                         <p>Concentração perigosa</p>
                         <span
-                            >Dentre 5-10 min, a concentração ainge o Limite
-                            Inferior de Explosividade (LEL)</span
+                            >A concentração atinge o Limite Inferior de
+                            Explosividade (LEL)</span
                         >
                     </div>
 
@@ -351,6 +351,7 @@
                             min="0.00"
                             max="5"
                             step="0.1"
+                            value="1"
                             oninput="atualizarVazao()"
                         />
                     </div>
@@ -365,6 +366,23 @@
 
                 <div id="div_resultado"></div>
             </section>
+
+            <section class="pontuacao" id="pontuacao" style="display: none">
+                <div class="container">
+                    <div class="title">
+                        <h2>
+                            A <span>Pontuação de Risco</span>de um acidente
+                        </h2>
+                        <div>
+                            <p>
+                                1: LEL inferior a 10% <br>
+                                5: LEL 
+                                10: LEL
+                                15: LEL
+                                20: LEL superior ou igual a 100%
+                            </p>
+                        </div>
+                    </div>
 
             <section class="real" id="real" style="display: none">
                 <div class="container">
@@ -930,9 +948,9 @@
 
                     resultado.innerHTML = `
                       <div class="resultado">
-                          <p><b>Tempo Acumulado:</b> ${contagemMinutos} minutos</p><br><br>
-                          <p><b>Nível LEL Atual:</b> ${lelAtual.toFixed(2)}%</p><br><br>
-                          <p><b>Pontuação de Risco (1 a 20):</b> ${estiloRisco}</p><br><br>
+                          <p><b>Tempo Acumulado:</b> ${contagemMinutos} minutos</p><br>
+                          <p><b>Nível LEL Atual:</b> ${lelAtual.toFixed(2)}%</p><br>
+                          <p><b>Pontuação de Risco (1 a 20):</b> ${estiloRisco}</p><br>
                       </div>
                       `;
                     console.log("OK");
@@ -1114,7 +1132,7 @@
                         legend: { display: false },
                         title: {
                             display: true,
-                            text: "Valores em Mil Reais (R$)",
+                            text: "Valores em Reais (R$)",
                             font: { size: 16 },
                             position: "bottom",
                         },
