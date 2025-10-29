@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Financeira</title>
+    <link
+      rel="icon"
+      href="https://images.vexels.com/media/users/3/127358/isolated/preview/736663fe6f9e03fcb39ace9020c42b4c-icone-estacionario-da-calculadora.png"
+    />
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+    * {
+      font-family: "Kanit", sans-serif;
+    }
+
+    body {
+      margin-top: 20px;
+    }
+
+    h1 {
+      color: #007bff;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+
+  <body>
+    <h2>Calculadora de Perdas</h2>
+    <label for="input_vazamento"
+      >Insira a concentração de Vazamento de Gás (%):
+      <input type="number" id="input_vazamento"
+    /></label>
+    <br /><br />
+    <label for="select_cilindro"
+      >Selecione o tipo de Botijão de Gás:
+      <select id="select_cilindro">
+        <option selected disabled value="#">-- Selecione uma opção --</option>
+        <option value="2">P2</option>
+        <option value="5">P5</option>
+        <option value="13">P13</option>
+        <option value="20">P20</option>
+        <option value="45">P45</option>
+        <option value="90">P90</option>
+      </select></label
+    >
+    <br /><br />
+    <label for="input_precoBotijao"
+      >Insira o preço do Botijão de Gás:
+      <input type="number" id="input_precoBotijao"
+    /></label>
+
+    <br /><br />
+    <button onclick="exibir ()">Calcular</button>
+    <br /><br />
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  var cilindroTipo = select_cilindro;
+
+  function exibir() {
+    var tipoCilindro = cilindroTipo.value;
+
+    var vazamento = Number(input_vazamento.value);
+
+    var precoBotijao = Number(input_precoBotijao.value);
+
+    var capacidadeBotijao = 0;
+
+    if (vazamento > 0 && tipoCilindro != "#" && precoBotijao > 0) {
+      if (tipoCilindro == 2) {
+        capacidadeBotijao = 5.5;
+      } else if (tipoCilindro == 5) {
+        capacidadeBotijao = 12;
+      } else if (tipoCilindro == 13) {
+        capacidadeBotijao = 31.5;
+      } else if (tipoCilindro == 20) {
+        capacidadeBotijao = 48;
+      } else if (tipoCilindro == 45) {
+        capacidadeBotijao = 108;
+      } else {
+        capacidadeBotijao = 216;
+      }
+
+      var quantidadeFinal = 0;
+
+      var perda = 0;
+
+      perda = capacidadeBotijao * (vazamento / 100);
+
+      var prejuizo = 0;
+
+      quantidadeFinal =
+        capacidadeBotijao - (capacidadeBotijao * vazamento) / 100;
+
+      prejuizo =
+        precoBotijao - (precoBotijao * quantidadeFinal) / capacidadeBotijao;
+
+      prejuizo = prejuizo * 60;
+
+      div_mensagem.innerHTML = `
+        Preço do Botijão de Gás: R$${precoBotijao} <br>
+        Quantidade de GLP (capacidade total): ${capacidadeBotijao} L<br><br>
+        <span style="color: red;">Perda de GLP: ${perda.toFixed(2)} L<br>
+        Quantidade final de GLP (restante): ${quantidadeFinal.toFixed(2)} L<br>
+        Prejuízo em minutos (min): R$${prejuizo.toFixed(2)}</span> 
+        `;
+    } else {
+      div_mensagem.innerHTML = `Verifique se preencheu e selecionou todas as informações corretamente!`;
+    }
+  }
+</script>
+
+<!-- // https://conceicaogaseagua.com.br/botijao-de-gas-p13-para-cozinha/#:~:text=Compre%20seu%20G%C3%A1s%20de%20Cozinha,Consulte%2Dnos!
+
+https://www.ultragaz.com.br/o-que-voce-precisa-saber-sobre-o-botijao-de-gas/
+
+https://www.gascenter.com.br/gas/regulador-alianca-1kg-50501-pequeno-ref-01203
+
+A vazão de gás em um vazamento é o fluxo de gás que escapa por meio de uma fissura ou conexão danificada, mas a "vazão"
+não é um valor fixo, pois pode ser sentida pelo cheiro forte, ruídos de assobio e pelo consumo excessivo na conta de gás.
+Para identificar um vazamento, use o teste da espuma de sabão nas conexões. Caso suspeite de vazamento, feche o registro,
+ventile o ambiente abrindo janelas e portas, e não use aparelhos elétricos ou interruptores que possam gerar faíscas.  -->
