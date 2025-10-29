@@ -177,7 +177,7 @@
                     </div>
                     <div class="number">
                         <div class="card">
-                            <span>+4000</span>
+                            <span>+5000</span>
                             <span
                                 >Ocorrências anuais envolvendo Gás GLP atendidas
                                 pelo corpo de bombeiros do Estado de São
@@ -253,8 +253,8 @@
                         <span>2</span>
                         <p>Concentração perigosa</p>
                         <span
-                            >Dentre 5-10 min, a concentração ainge o Limite
-                            Inferior de Explosividade (LEL)</span
+                            >A concentração atinge o Limite Inferior de
+                            Explosividade (LEL)</span
                         >
                     </div>
 
@@ -281,7 +281,110 @@
                 </div>
             </section>
 
-            <section class="real">
+            <section class="calcule">
+                <div class="title">
+                    <h2>
+                        Já pensou no <span>risco </span> que a sua cozinha
+                        possui?
+                    </h2>
+                    <h4>Faça uma simulação:</h4>
+                </div>
+                <div class="container">
+                    <div class="inputs">
+                        <label for="input_faturamento_medio_mensal"
+                            >Faturamento médio mensal (R$)</label
+                        >
+                        <input
+                            type="number"
+                            id="input_faturamento_medio_mensal"
+                            placeholder="Digite um faturamento médio mensal"
+                        />
+                    </div>
+                    <div class="inputs">
+                        <label for="input_area_cozinha"
+                            >Área da cozinha (m²)</label
+                        >
+                        <input
+                            type="number"
+                            id="input_area_cozinha"
+                            placeholder="Digite o valor em m²"
+                        />
+                    </div>
+                    <div class="inputs">
+                        <label for="input_altura_cozinha"
+                            >Altura da cozinha em m</label
+                        >
+                        <input
+                            type="number"
+                            id="input_altura_cozinha"
+                            placeholder="Digite o valor em metros"
+                        />
+                    </div>
+
+                    <div class="inputs">
+                        <label for="input_valor_ativo"
+                            >Valor de ativos físicos da empresa (R$)</label
+                        >
+                        <input
+                            type="number"
+                            id="input_valor_ativo"
+                            placeholder="Total como equipamentos, máquinas, mobílias, bens materiais"
+                        />
+                    </div>
+
+                    <div class="inputs">
+                        <label for="input_vazao">Possui seguro incêndio?</label>
+                        <select id="select_possui_seguro">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="inputs">
+                        <label for="input_vazao"
+                            >Simule o vazão do gás
+                            <span id="vazao"></span> (m³/h)</label
+                        >
+                        <input
+                            type="range"
+                            id="input_vazao"
+                            min="0.00"
+                            max="5"
+                            step="0.1"
+                            value="1"
+                            oninput="atualizarVazao()"
+                        />
+                    </div>
+
+                    <div class="inputs buttons">
+                        <button onclick="simularCenario()" id="btn_adicionar">
+                            +10 min de vazamento
+                        </button>
+                        <button onclick="zerar()">Zerar</button>
+                    </div>
+                </div>
+
+                <div id="div_resultado"></div>
+            </section>
+
+            <section class="pontuacao" id="pontuacao" style="display: none">
+                <div class="container">
+                    <div class="title">
+                        <h2>
+                            A <span>Pontuação de Risco</span>de um acidente
+                        </h2>
+                        <div>
+                            <p>
+                                1: LEL inferior a 10% <br>
+                                5: LEL 
+                                10: LEL
+                                15: LEL
+                                20: LEL superior ou igual a 100%
+                            </p>
+                        </div>
+                    </div>
+            </section>
+            <section class="real" id="real" style="display: none">
                 <div class="container">
                     <div class="title">
                         <h2>
@@ -296,46 +399,91 @@
                                 Compreender as causas é o primeiro passo para a
                                 prevenção eficaz.
                             </p>
-                            <span id="data"
-                                >Fonte: Dados a partir do Corpo de Bombeiros do
-                                Estado de São Paulo. Embora nem todas as
-                                ocorrências sejam em cozinhas, o númeoro ilustra
-                                uma alta frequência de incidentes com GLP.</span
-                            >
                         </div>
                     </div>
                     <div class="number">
-                        <div class="card">
-                            <canvas id="causas"></canvas>
+                        <div class="grafico-container">
+                            <span class="title-grafic">Impacto Financeiro</span>
+                            <canvas
+                                id="impactos"
+                                style="
+                                    width: 50%;
+                                    max-width: 550px;
+                                    height: 50%;
+                                    max-height: 550px;
+                                "
+                            ></canvas>
+                        </div>
+
+                        <div class="custos-int">
+                            <div>
+                                <span class="title-cust"
+                                    >Custos Intangíveis</span
+                                >
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="image">
+                                            <img
+                                                src="../aerasense/public/assets/icons/coracao.svg"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="content">
+                                            <span class="title-card"
+                                                >Vidas em Risco</span
+                                            >
+                                            <p>
+                                                A segurança dos seus
+                                                colaboradores é o ativo mais
+                                                valioso
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image">
+                                            <img
+                                                src="../aerasense/public/assets/icons/perda.svg"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="content">
+                                            <span class="title-card"
+                                                >Perda de Credibilidade</span
+                                            >
+                                            <p>
+                                                A confiança do mercado e dos
+                                                clientes pode ser abalada
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="image">
+                                            <img
+                                                src="../aerasense/public/assets/icons/jou.svg"
+                                                alt=""
+                                            />
+                                        </div>
+
+                                        <div class="content">
+                                            <span class="title-card"
+                                                >Publicidade Negativa</span
+                                            >
+                                            <p>
+                                                Um único acidente pode manchar a
+                                                imagem da sua marca
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section>
-                <div class="container">
-                    <div>
-                        <label for="input_faturamento_medio_mensal"
-                            >Faturamento médio mensal (R$)</label
-                        >
-                        <input
-                            type="number"
-                            id="input_faturamento_medio_mensal"
-                        />
-                    </div>
-                    <div>
-                        <label for="input_quantidade_funcionarios"
-                            >Quantidade de Funcionários</label
-                        >
-                        <input
-                            type="number"
-                            id="input_quantidade_funcionarios"
-                        />
-                    </div>
-                </div>
-            </section>
-
-            <section class="details">
+            <section class="details" id="datails" style="display: none">
                 <div class="container">
                     <div class="title">
                         <h2>
@@ -364,7 +512,7 @@
                                         <span>T+15min:</span> Vazamento pode ser
                                         notado pelo cheiro, mas talvez seja
                                         tarde demais. Pode ser notado confusão
-                                        mental, tonturas e náuseas
+                                        mental, tonturas e náuseas.
                                     </li>
                                     <li>
                                         <span>T+??:</span> Ignição acidental
@@ -438,6 +586,9 @@
                             </li>
                             <li>
                                 <a href="#">Trabalhe conosco</a>
+                            </li>
+                            <li>
+                                <a href="#">Simulador</a>
                             </li>
                         </ul>
                     </div>
@@ -592,17 +743,254 @@
             >
         </div>
 
-        <!--Simulator-->
+        <!--Simulador (Calculadora)-->
         <script>
+            // div que exibe o resultado final ao usuário
+            var resultado = div_resultado;
+
+            // Div com informações sobre custo de perdas
+            var custoReal = document.getElementById("datails");
+
+            // Div com comparativo de tempo de detecção
+            var comparativo = document.getElementById("real");
+
+            // Limite Inferior de Inflamabilidade GLP (% vol) - Constante
+            var lelGLP = 2; // 2% vol = 100% do LEL - Padrão para sensores de gás, geralmente
+
+            // Contagem de minutos (somado a cada 10 min)
+            var contagemMinutos = 0;
+
+            // ID da div para mostrar o valor do Vazão
+            var vazaoMostrar = vazao;
+
+            // Botão de adicionar tempo
+            var adicionarTempo = btn_adicionar;
+
+            var vazaoDisplay = document.getElementById("vazao");
+
+            var input_vazao = document.getElementById("input_vazao");
+
+            // Atualizar vazão de Gás
+            function atualizarVazao() {
+                var valorAtual = input_vazao.value;
+
+                if (vazaoDisplay) {
+                    vazaoDisplay.innerHTML = valorAtual;
+                }
+
+                console.log(
+                    "Vazão atualizada (display):",
+                    vazaoDisplay.innerHTML,
+                );
+            }
+
+            // Valores de custo - Chart
+            const valoresCusto = [0, 0, 0];
+
+            // Zerar valores
+            function zerar() {
+                valoresCusto[0] = 0;
+                valoresCusto[1] = 0;
+                valoresCusto[2] = 0;
+
+                contagemMinutos = 0;
+
+                if (custoReal) custoReal.style.display = "none";
+                if (comparativo) comparativo.style.display = "none";
+
+                if (resultado) resultado.innerHTML = "";
+
+                adicionarTempo.disabled = false;
+                adicionarTempo.style.backgroundColor =
+                    "var(--color-bright-blue)";
+            }
+
+            // Função de simular o cenário
+            function simularCenario() {
+                // Soma 10 min
+                contagemMinutos += 10;
+
+                // Faturamento médio mensal
+                var faturamentoMedioMensal = Number(
+                    input_faturamento_medio_mensal.value,
+                );
+
+                // Área da cozinha em m²
+                var areaCozinha = Number(input_area_cozinha.value);
+
+                // Altura em m da cozinha
+                var alturaCozinha = Number(input_altura_cozinha.value);
+
+                // Se possui seguro incêndio (0 para Não e 1 para Sim)
+                var possuiSeguroIncendio = Number(select_possui_seguro.value);
+
+                // Valor de ativos físicos da empresa (equipamentos, mobílias, máquinas, bens materiais no geral do local, etc)
+                var valorAtivoFisicoEmpresa = Number(input_valor_ativo.value);
+
+                // Idade Média de um Funcionário (anos)
+                // (Cozinheiro Industrial - Salário Brasil)
+                // Fonte: https://www.salario.com.br/profissao/cozinheiro-industrial-cbo-513215/)
+                var idadeMediaFuncionario = 42;
+
+                // Salário Médio (Cozinheiro Industrial - Salário Brasil)
+                // Fonte: https://www.salario.com.br/profissao/cozinheiro-industrial-cbo-513215/)
+                var salarioMedioFuncionario = 2071.15;
+
+                // Expectativa de Vida Média do Brasileiro (anos)
+                // Fonte: https://www.cnnbrasil.com.br/saude/brasileiros-acreditam-que-vao-viver-ate-os-80-anos-mostra-pesquisa/
+                var expectativaDeVidaBrasileiro = 76.4;
+
+                // Volume total do ambiente da cozinha (m³)
+                var volumeTotalAmbiente = areaCozinha * alturaCozinha;
+
+                // Taxa de vazão de GLP (m³/h)
+                var taxaVazaoDeGas = Number(input_vazao.value);
+
+                vazao.innerHTML = taxaVazaoDeGas;
+
+                // Valida se os campos não estão zerados
+                if (
+                    alturaCozinha <= 0 ||
+                    areaCozinha <= 0 ||
+                    taxaVazaoDeGas <= 0
+                ) {
+                    alert("Insira valores válidos\n\nDeve ser maior que 0!");
+                    adicionarTempo.disabled = true;
+                    adicionarTempo.style.backgroundColor = "#dcdcdc";
+                } else {
+                    adicionarTempo.disabled = false;
+                    adicionarTempo.style.backgroundColor =
+                        "var(--color-bright-blue)";
+
+                    // Tempo de vazamento em Horas
+                    var tempoVazamentoEmHoras = contagemMinutos / 60;
+
+                    // Volume do Gás Acumulado (m³)
+                    var volumeGasAcumulado =
+                        taxaVazaoDeGas * tempoVazamentoEmHoras;
+
+                    // Concentração do Gás em (% vol)
+                    var concentracaoVol =
+                        (volumeGasAcumulado / volumeTotalAmbiente) * 100;
+
+                    // LEL autaul (% LEL)
+                    var lelAtual = (concentracaoVol / lelGLP) * 100;
+
+                    // Define que o % LEL deve ser igual a 100 no máximo
+                    if (lelAtual > 100) {
+                        lelAtual = 100;
+                    }
+
+                    // Cálculo base de valor de idenização por Morte/Invalidez de 1 funcionário
+                    var idenizacaoBaseFuncionario =
+                        (expectativaDeVidaBrasileiro - idadeMediaFuncionario) *
+                        salarioMedioFuncionario *
+                        13;
+
+                    // Faixa de Idenização - Pode ser de 5 a 80 por cento do potencial de vida perdido
+                    var idenizacaoMinima = idenizacaoBaseFuncionario * 0.05;
+                    var idenizacaoMaxima = idenizacaoBaseFuncionario * 0.8;
+
+                    var perdasReceita = faturamentoMedioMensal;
+
+                    // Multas e processos (valor estimado de 75% do valor do faturamento)
+                    var multas = 0.75 * faturamentoMedioMensal;
+
+                    // Fator de Seguro Incêndio
+                    var fatorSeguro = 0;
+
+                    // Atribui os fatores de seguro incêndio
+                    if (possuiSeguroIncendio == 1) {
+                        fatorSeguro = 0.2; // Define 20% de fator de danos à propriedade caso possua seguro
+                    } else {
+                        fatorSeguro = 1; // Define 100% de fator de danos à propriedade caso não possua seguro
+                    }
+
+                    // Danos à propriedade
+                    var danosPropriedade =
+                        valorAtivoFisicoEmpresa * fatorSeguro;
+
+                    // Impacto Financeiro
+                    var valorImpacto =
+                        multas + perdasReceita + danosPropriedade;
+
+                    // Pontos de Risco
+                    var pontuacaoRisco = 1;
+
+                    // A Pontuação de Risco varia de acordo com o % LEL
+                    // O fator de risco multiplica o valor de danos à propriedade para aumentar o valor de possível prejuízo
+                    if (lelAtual >= 100) {
+                        pontuacaoRisco = 20;
+                        fatorRisco = 1;
+                    } else if (lelAtual >= 50) {
+                        pontuacaoRisco = 15;
+                        fatorRisco = 0.75;
+                    } else if (lelAtual >= 20) {
+                        pontuacaoRisco = 10;
+                        fatorRisco = 0.5;
+                    } else if (lelAtual >= 10) {
+                        pontuacaoRisco = 5;
+                        fatorRisco = 0.25;
+                    } else {
+                        pontuacaoRisco = 1;
+                        fatorRisco = 0.05;
+                    }
+
+                    var estiloRisco = "";
+
+                    if (pontuacaoRisco <= 20 && pontuacaoRisco >= 15) {
+                        estiloRisco = ` <span style="font-size: 1.5rem; color: var(--color-danger)">${pontuacaoRisco}</span>`;
+                    } else if (pontuacaoRisco <= 15 && pontuacaoRisco >= 10) {
+                        estiloRisco = ` <span style="font-size: 1.5rem; color: #FDC700">${pontuacaoRisco}</span>`;
+                    } else {
+                        estiloRisco = ` <span style="font-size: 1.5rem; color: #007595">${pontuacaoRisco}</span>`;
+                    }
+
+                    resultado.innerHTML = `
+                      <div class="resultado">
+                          <p><b>Tempo Acumulado:</b> ${contagemMinutos} minutos</p><br>
+                          <p><b>Nível LEL Atual:</b> ${lelAtual.toFixed(2)}%</p><br>
+                          <p><b>Pontuação de Risco (1 a 20):</b> ${estiloRisco}</p><br>
+                      </div>
+                      `;
+                    console.log("OK");
+
+                    // Exibe os resultados
+                    custoReal.style.display = "block";
+                    comparativo.style.display = "block";
+
+                    valoresCusto[0] = danosPropriedade * fatorRisco;
+                    valoresCusto[1] = perdasReceita * fatorRisco;
+                    valoresCusto[2] =
+                        valoresCusto[0] + valoresCusto[1] + multas * fatorRisco;
+
+                    console.log(danosPropriedade);
+
+                    console.log(pontuacaoRisco);
+                }
+            }
+        </script>
+
+        <!--Simulator-->
+        <!--<script>
+            var result = div_result;
+
+            var resultado = document.getElementById("datails");
+            var realidade = document.getElementById("real");
+
+            var valorVazao = vazao;
+
             function simular() {
+                var vazaoGas = Number(input_vazao.value);
+
                 // Faturamento Médio Mensal
                 var faturamentoMedioMensal = Number(
-                    input_faturamento_medio_mensal,
+                    input_faturamento_medio_mensal.value,
                 );
 
                 // Quantidade de Funcionários
                 var quantidadeFuncionarios = Number(
-                    input_quantidade_funcionarios,
+                    input_quantidade_funcionarios.value,
                 );
 
                 // Idade Média de um Funcionário (anos)
@@ -611,8 +999,8 @@
                 var idadeMediaFuncionario = 42;
 
                 // Expectativa de Vida Média do Brasileiro (anos)
-                // Fonte:
-                var expectativaDeVidaBrasileiro = 76.8;
+                // Fonte: https://www.cnnbrasil.com.br/saude/brasileiros-acreditam-que-vao-viver-ate-os-80-anos-mostra-pesquisa/
+                var expectativaDeVidaBrasileiro = 76.4;
 
                 // Salário Médio (Cozinheiro Industrial - Salário Brasil)
                 // Fonte: https://www.salario.com.br/profissao/cozinheiro-industrial-cbo-513215/)
@@ -621,11 +1009,52 @@
                 // Valor de indenização em simulação de um acidente que comprometeu
                 // a mobilidade do pulso do trabalhador, envolvendo incêndio o explosão
                 // Fonte:
-                var valorIdenizacao =
+                var valorIdenizacaoBase =
                     (expectativaDeVidaBrasileiro - idadeMediaFuncionario) *
                     salarioMedio;
+
+                // Pé direito da cozinha
+                var peDireitoCozinha = Number(input_pe_direito_cozinha.value);
+
+                // Área da cozinha
+                var areaCozinha = Number(input_area_cozinha.value);
+
+                // Volume da cozinha em m³
+                var volumeCozinha = peDireitoCozinha * areaCozinha;
+
+                // Um valor mocado de simulação de vazamento de um orifício em uma mangeuira de conexão
+                var taxaVazaoGasEmOrificio = 1.3;
+
+                // Percentual de LEL (Limite Inferior de Explosividade)
+                var lel = taxaVazaoGasEmOrificio / volumeCozinha;
+
+                // Valor de multas base
+                var multas = 0.75 * faturamentoMedioMensal;
+
+                // Perdas de receita em 3 meses
+                var perdasReceita = faturamentoMedioMensal * 3;
+
+                // Valor de danos a propriedade
+                var danosPropriedade = 3 * faturamentoMedioMensal;
+
+                // Valor da perda financeira
+                var valorPerda = multas + perdasReceita + danosPropriedade;
+
+                // Mensagem de indeinzação
+                var msg = `<br>Num cenário de fogo com explosão ou chamas,suas perdas com multas, infraestrutura e perda em receita
+                  podem variar entre R$${Number(valorPerda * 0.1)},00(considerando um cenário de perdas mínimas) e R$${valorPerda},00
+                  (considerando um cenário de danos críticos)<br>
+                  Além disso, você pode ter que gastar muito com indenizações. Considerando a ideade média de um trabalhador da área
+                  de cozinhas industrias (42 anos) e seu salário médio (R$2070), dependendo do grau do ferimento, a indenização pode variar
+                  entre R$${(valorIdenizacaoBase * 0.05).toFixed(2)},00 e R$${(valorIdenizacaoBase * 0.8).toFixed(2)},00, para potencialemente
+                  múltiplos funcionários.`;
+
+                result.innerHTML = msg;
+                resultado.style.display = "block";
+                realidade.style.display = "block";
+                valorVazao.innerHTML = vazaoGas;
             }
-        </script>
+        </script>-->
 
         <!--Chart Donut-->
         <script>
@@ -641,7 +1070,7 @@
                 datasets: [
                     {
                         label: "Principais causas de vazamento: ",
-                        data: [40, 30, 20, 10],
+                        data: [50, 30, 10, 10],
                         backgroundColor: [
                             "#3B9EDB",
                             "#3BD0DB",
@@ -653,7 +1082,7 @@
                 ],
             };
 
-            const ctx = "causas";
+            const ctxCausas = "causas";
 
             const config = {
                 type: "doughnut",
@@ -674,7 +1103,42 @@
                 },
             };
 
-            new Chart(ctx, config);
+            new Chart(ctxCausas, config);
+
+            const xValues = [
+                "Danos à propriedade",
+                "Perda de Receita",
+                "Custos Legais e Multas",
+            ];
+            // const yValues = [60, 49, 44, 24, 15];
+            const barColors = ["#3B9EDB", "#3BD0DB", "#3B6BDB", "#47545C"];
+
+            const ctxImpactos = document.getElementById("impactos");
+
+            new Chart(ctxImpactos, {
+                type: "bar",
+                data: {
+                    labels: xValues,
+                    datasets: [
+                        {
+                            backgroundColor: barColors,
+                            data: valoresCusto,
+                        },
+                    ],
+                },
+                options: {
+                    indexAxis: "y",
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: "Valores em Reais (R$)",
+                            font: { size: 16 },
+                            position: "bottom",
+                        },
+                    },
+                },
+            });
         </script>
     </body>
 </html>

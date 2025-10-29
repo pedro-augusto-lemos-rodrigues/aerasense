@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- <script src="login.js"></script> -->
+    <script src="login.js"></script>
      
     <link rel="stylesheet" href="login.css">
     <title>Aerasense | Login</title>
@@ -14,7 +14,10 @@
     <div class="main-container">
 
         <div class="header">
-            <img src="assets/logo.svg" alt="Aerasense Logo" class="logo">
+            <a href="../marley/aerasense/index.html">
+                <img src="assets/logo.svg" alt="Aerasense Logo" class="logo">
+            </a>
+            
         </div>
 
 
@@ -22,18 +25,18 @@
 
         <div>
 
-            <label for="ipt_email">E-mail</label>
-            <input class="inputEMAIL" type="email" placeholder="Digite seu E-mail cadastrado" id="ipt_email" style="display: block;">
+            <label>E-mail</label>
+            <input id="ipt_email" class="inputEMAIL" type="email" placeholder="Digite seu E-mail cadastrado">
 
-            <label for="ipt_senha">Senha</label>
-            <input class="inputSENHA" type="password" placeholder="Digite sua senha cadastrada" id="ipt_senha" style="display: block;">
+            <label>Senha</label>
+            <input id="ipt_senha" class="inputSENHA" type="password" placeholder="Digite sua senha cadastrada">
 
-            <div id="div_mensagemErro" class="mensagemErro">
+            <!-- <div id="div_mensagemErro" class="mensagemErro">
                 <span>E-mail ou senha incorretos</span>
-            </div>
+            </div> -->
 
             <div class="recuperarSenha">
-                
+                Não consegue entrar?                 
                 <a href="#">
                     <u>Recuperar senha</u>
                 </a>
@@ -49,7 +52,7 @@
         <div class="registro">
             <span>Não possui cadastro? 
 
-                <a href="#">
+                <a href="../gabriel/TelaCadastro/cadastro.html">
                     <u>Cadastre-se</u> 
                 </a>
 
@@ -60,3 +63,55 @@
     
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!-- 
+<script>
+    
+function conta(){
+    var email = ipt_email.value
+
+    var senha = ipt_senha.value
+
+    var emailSalvo = "clienteAerasense"
+    var senhaSalva = "12345678"
+
+    var mensagem = ""
+    
+    
+    if(email == emailSalvo && senha == senhaSalva){
+        
+        mensagem = "Seja bem-vindo"
+        
+        ipt_email.style.backgroundColor = ""
+    
+    } else {
+        
+        mensagem = "Email ou senha incorretos"
+        
+        ipt_email.style.border = "2px solid red"
+
+        
+ 
+ 
+ 
+ 
+ 
+            }
+
+
+
+
+            div_mensagem.innerHTML = mensagem
+        }
+        
+    
+
+</script> -->
