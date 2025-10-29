@@ -368,21 +368,29 @@
             </section>
 
             <section class="pontuacao" id="pontuacao" style="display: none">
-                <div class="container">
+                <div class="container-risco">
                     <div class="title">
                         <h2>
-                            A <span>Pontuação de Risco</span>de um acidente
+                            A <span>Pontuação de Risco</span> de um acidente
                         </h2>
                         <div>
                             <p>
-                                1: LEL inferior a 10% <br>
-                                5: LEL 
-                                10: LEL
-                                15: LEL
-                                20: LEL superior ou igual a 100%
+                                1: LEL inferior a 10% <br />
+                                5: LEL superior ou igual a 10% <br />
+                                10: LEL superior ou igual a 10% <br />
+                                15: LEL superior ou igual a 50% <br />
+                                20: LEL superior ou igual a 100% <br />
                             </p>
                         </div>
                     </div>
+                    <div class="pontuacao-imagem">
+                        <img
+                            id="caution"
+                            src="public/assets/images/caution.png"
+                        />
+                    </div>
+                </div>
+            </section>
 
             <section class="real" id="real" style="display: none">
                 <div class="container">
@@ -957,6 +965,7 @@
 
                     // Exibe os resultados
                     custoReal.style.display = "block";
+                    pontuacao.style.display = "block";
                     comparativo.style.display = "block";
 
                     valoresCusto[0] = danosPropriedade * fatorRisco;
