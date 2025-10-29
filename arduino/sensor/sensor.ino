@@ -1,7 +1,7 @@
 const int PINO_SENSOR_MQ2 = A0;
 
-const int VALOR_MINIMO = 1;
-const int VALOR_MAXIMO = 10;
+const int VALOR_MINIMO = 100;
+const int VALOR_MAXIMO = 1000;
 
 void setup() {
   Serial.begin(9600);

@@ -117,11 +117,11 @@ function CadastrarForms(e){
     
     // Validação da senha
     
-    MinCatere = false
-    CaracMax = false
-    CaracMin = false
-    CaracNumero = false
-    CaracSimb = false
+    MinCatere = false //Minino de caracteres
+    CaracMax = false //Caracter maiusculo
+    CaracMin = false //Caracter minusculo
+    CaracNumero = false //Contem numero
+    CaracSimb = false // Contem simbolo
 
 
     // Validar 8 caracteres
@@ -239,15 +239,7 @@ function mascaracpnj(){
         }
 
   //  "00.000.000/0001-XX"
-/* 
-if(valorcnpj.length > 2){
-    valorcnpj = `${valorcnpj.substring(0, 2)}.${valorcnpj.substring(3, valorcnpj.length)}`
-}
-else if(valorcnpj.length > 6){
-    valorcnpj += `${valorcnpj.substring(0, 6)}.${valorcnpj.substring(7, valorcnpj.length)}`
-}
 
-*/
 
     input_CNPJ.value = valorcnpj
 }
